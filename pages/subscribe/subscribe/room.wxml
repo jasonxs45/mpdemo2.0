@@ -1,0 +1,42 @@
+<!--pages/subscribe/room.wxml-->
+<view class="step">
+  <step current="{{stepCurrent}}"></step>
+</view>
+<view class="top">
+  <view class="item1">
+    <picker class="place" bindchange="bindPickerChange" value="{{index}}" range="{{place}}">
+      {{place[index]}}
+      <x-icon type='caret-down' />
+    </picker>
+  </view>
+  <view class="item1 item2">
+    <picker class="place" bindchange="bindPickerChange1" value="{{index3}}" range="{{place3}}">
+      {{place3[index3]}}
+      <x-icon type='caret-down' />
+    </picker>
+  </view>
+  <view class="item1 item2">
+    <picker class="place" bindchange="bindPickerChange2" value="{{index4}}" range="{{place4}}">
+      {{place4[index4]}}
+      <x-icon type='caret-down' />
+    </picker>
+  </view>
+</view>
+<scroll-view scroll-y="true" class="listScroll" scroll-with-animation="true" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="f{{toView}}">
+  <view class="list" wx:for="{{list}}" wx:key="index" data-houseid="{{item.houseId}}" id="f{{item.floor}}" catchtap="wayControl">
+    <view>房间号码：
+      <text>{{item.building}}栋 - {{item.unit}}单元 - {{item.number}}</text>
+    </view>
+    <view>建筑面积：
+      <text>{{item.area}}㎡</text>
+    </view>
+    <view>总价金额：
+      <text>{{item.price}}元</text>
+    </view>
+    <view class="state {{item.state=='可认购'?'on':''}}">{{item.state}}</view>
+  </view>
+  <view class="latest" wx:if="{{latest}}">暂无最新数据</view>
+</scroll-view>
+<!-- <view class="floor">
+  <view wx:for="{{floor}}" wx:key="index" class="{{floorIndex==index?'on':''}}" data-index="{{index}}" catchtap="wayFloor">{{item}}F</view>
+</view> -->

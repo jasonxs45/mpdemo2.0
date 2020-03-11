@@ -1,0 +1,71 @@
+/* rgba(149,109,55, 1) */
+.list-container{
+  padding-top: 0 !important;
+}
+.menber_box {
+  background-color: #fff;
+  margin: 15rpx 0;
+  padding: 30rpx;
+  align-items: center;
+}
+
+.menber_head {
+  width: 94rpx;
+  height: 94rpx;
+  border-radius: 50%;
+}
+
+.menber_text {
+  width: 400rpx;
+  margin-left: 20rpx;
+  flex: 1;
+  color: #333;
+}
+
+.menber_name {
+  width: auto;
+  max-width: 400rpx;
+  height: 40rpx;
+  overflow: hidden;
+  line-height: 40rpx;
+  margin-top: 5rpx;
+  display: block;
+  font-size: 32rpx;
+}
+
+.menber_identity {
+  line-height: 28rpx;
+  display: block;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #666;
+}
+.mes_ico {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  background: #333;
+  width: 64rpx;
+  height: 64rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 64rpx;
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+.tel_ico {
+  display: block;
+  border-radius: 50%;
+  background: rgba(149,109,55,1);
+  width: 64rpx;
+  height: 64rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 64rpx;
+  font-size: 40rpx;
+}
+.arrow{
+  margin-left: 15rpx;
+  color: #999;
+}

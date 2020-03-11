@@ -1,0 +1,1 @@
+<txv-video usePoster showCenterPlayBtn class='video' autoplay vid='{{vid}}' playerid="txv1"/>

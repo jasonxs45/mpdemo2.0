@@ -1,0 +1,44 @@
+/* rgba(149,109,55, 1) */
+.tabs{
+  background: #fff;
+}
+.panel{
+  margin: 30rpx 0;
+}
+.picker-section,
+.input-section{
+  background: #fff;
+  padding: 10rpx 30rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #ddd;
+}
+.cell{
+  flex: 1;
+}
+.picker,
+.input{
+  width: 100%;
+  font-size: 28rpx;
+}
+.title{
+  font-size: 28rpx;
+  flex: 0 0 170rpx;
+  color:#999;
+  text-align: right;
+}
+.tab-item{
+  background: #fff;
+}
+.tab-item.active{
+  color: rgba(149,109,55, 1);
+  background: #fff;
+}
+.btn{
+  margin: 60rpx auto;
+}
+.tip{
+  font-size: 24rpx;
+  color: rgba(149,109,55, 1);
+  padding: 30rpx;
+  text-align: center;
+}

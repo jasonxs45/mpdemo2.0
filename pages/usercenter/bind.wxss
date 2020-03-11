@@ -1,0 +1,37 @@
+.section {
+  padding: 30rpx 0;
+  background: #fff;
+}
+
+.title {
+  font-size: 22rpx;
+  color: rgba(102, 102, 102, 1);
+  line-height: 32rpx;
+}
+
+.input-line {
+  margin: 30rpx 0;
+  background: rgba(248, 248, 248, 1);
+  border-radius: 4rpx;
+}
+
+.input-line x-input, .input-line x-picker {
+  width: 100%;
+}
+
+.btns {
+  padding: 100rpx 0 90rpx;
+}
+
+.btn {
+  margin: 60rpx auto;
+}
+.btn.opac{
+  opacity: .3;
+}
+.tip{
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1.5;
+  margin-top: 60rpx;
+}

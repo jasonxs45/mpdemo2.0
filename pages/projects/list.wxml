@@ -1,0 +1,95 @@
+<view style='top:{{fixedTop?fixedTop + "px":""}}' class='control-group {{fixed?"fixed":""}}' catchtouchmove='{{filterShow?"stop":""}}'>
+  <view class='cover'>
+    <image class='img' src='http://shimaohxnew.1juke.cn/Upload/EditorUpload//世茂云著/列表主图.jpg' />
+    <view class='gradient' />
+  </view>
+  <view id='top' class='top-bar flex'>
+    <top class='op' bindinited='onInit' />
+    <navigator class='map-nav'>
+      <text>地图\n找房</text>
+      <x-icon type='position-fill' />
+    </navigator>
+  </view>
+  <view class='filter-bar'>
+    <view class='bar flex'>
+      <view wx:for='{{filterList}}' wx:key='index' data-index='{{index}}' class='filter-item {{filterIndex === index ? "active":""}}' bindtap='filterTap'>
+        <text class='text {{selectedValues[index].length ? "active":""}}'>{{item.name}}</text>
+        <x-icon class='icon' type='caret-down' />
+      </view>
+    </view>
+    <view hidden='{{!filterShow}}' class='filter-detail-wrapper'>
+      <scroll-view class='filter-detail-scroll-view' scroll-y>
+        <block wx:for='{{filterList}}' wx:for-index='index1' wx:key='index1'>
+          <view wx:if='{{index1 !== filterList.length - 1}}' hidden='{{filterIndex !== index1}}' class='select-group'>
+            <label wx:for='{{filterOpts[index1]}}' wx:key='Name' class='select-label'>
+              <view class='flex select-tar {{item.checked ? "active":""}}' data-index='{{index1}}' data-value='{{index}}' bindtap='onCheckTap'>
+                <view>{{item.Name}}</view>
+                <view class='icon'>
+                  <icon color='rgba(149,109,55, 1)' type='success_no_circle' />
+                </view>
+              </view>
+            </label>
+          </view>
+          <view wx:else hidden='{{filterIndex !== index1}}' class='select-group cell'>
+            <label wx:for='{{filterOpts[index1]}}' wx:key='index' class='select-label'>
+              <view class='select-tar {{item.checked ? "active":""}}' data-index='{{index1}}' data-value='{{index}}' bindtap='onCheckTap'>{{item.Name}}</view>
+            </label>
+          </view>
+        </block>
+      </scroll-view>
+      <view class='btns flex'>
+        <button class='btn close' bindtap='closeFilter'>关闭</button>
+        <button class='btn reset' bindtap='reset'>重置</button>
+        <button class='btn main-theme' bindtap='confirm'>确定</button>
+      </view>
+    </view>
+  </view>
+  <view class='brief-info flex' hidden='{{!briefShow}}'>
+    <view class='desc'>已选：
+      <text class='txt'>{{briefStr}}</text>
+    </view>
+    <view class='clear' bindtap='clear'>清空</view>
+  </view>
+</view>
+<view class='main-scroll-view {{briefShow?"short":""}}'>
+  <list-container length='{{list.length}}' finished='{{finished}}' loading='{{loading}}' noDataText='暂无项目'>
+    <navigator wx:for='{{showList}}' wx:key='ID' url='./detail?id={{item.ID}}' class='nav'>
+      <view class='nav-wrapper'>
+        <view class='title'>{{item.ProjectName}}</view>
+        <view class='tags'>
+          <view wx:for='{{item.tags}}' wx:key='*this' class='tag'>{{item}}</view>
+        </view>
+        <view class='addr'>{{item.SaleAddress}}
+          <x-icon type='position-fill' />
+        </view>
+        <view class='thumbnail'>
+          <img class='img' src='{{item.TitleImg}}' />
+          <view class='info flex'>
+            <view class='focus'>{{item.ViewCount}}人关注</view>
+            <view class='price'>
+              <block wx:if='{{item.ShowPriceType === "UnitPrice"}}'>
+                <block wx:if='{{item.UnitPriceStr}}'>
+                  约
+                  <text class='txt'>{{item.UnitPriceStr}}</text> 元/平
+                  <text wx:if='{{item.MaxUnitPrice === -1}}'>起</text>
+                </block>
+                <block wx:else>价格待定</block>
+              </block>
+              <block wx:elif='{{item.ShowPriceType === "TotalPrice"}}'>
+                <block wx:if='{{item.TotalPriceStr}}'>
+                  约
+                  <text class='txt'>{{item.TotalPriceStr}}</text> 万元/套
+                  <text wx:if='{{item.MaxTotalPrice === -1}}'>起</text>
+                </block>
+                <block wx:else>价格待定</block>
+              </block>
+              <block wx:else>价格待定</block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </list-container>
+</view>
+<view hidden='{{!filterShow}}' class='bg' bindtap='closeFilter' catchtouchmove='stop'></view>
+<mp-tabbar current='{{0}}' extClass='plist-tab' style="position:fixed;bottom:0;width:100%;left:0;right:0;z-index:9999" />

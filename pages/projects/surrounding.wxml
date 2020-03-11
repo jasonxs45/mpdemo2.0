@@ -1,0 +1,7 @@
+<scroll-view wx:if='{{list.length}}' class='scroll-view'>
+  <view wx:for='{{list}}' wx:key='index' class='surrounding-item {{current === index ? "active": ""}}' data-index='{{index}}' bindtap='onTap'>
+    <image mode='aspectFit' class='icon' src='{{cate[item[0]]||"/images/other.png"}}' />
+    <view class='txt'>{{item[0]}}({{item[1].length}})</view>
+  </view>
+</scroll-view>
+<map scale='13' include-points='{{currentPoints}}' show-compass show-scale show-location longitude='{{center.longitude}}' latitude='{{center.latitude}}' markers='{{markers}}' class='map' bindmarkertap='openMap'></map>

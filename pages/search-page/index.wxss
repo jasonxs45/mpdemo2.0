@@ -1,0 +1,66 @@
+page{
+  background: #fff;
+  padding:10rpx 30rpx;
+  box-sizing: border-box;
+}
+.search-bar{
+  display: flex;
+  align-items: center;
+}
+.search-input{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #f2f2f2;
+  border-radius: 8rpx;
+}
+.icon{
+  margin-left: 15rpx;
+  color: #888;
+  font-size: 28rpx;
+}
+.input{
+  flex: 1;
+  font-size: 28rpx;
+}
+.btn{
+  width: 100rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+.latest{
+  margin-top: 30rpx;
+  padding-top: 30rpx;
+  border-top: 1rpx solid #ddd;
+}
+.title{
+  justify-content: space-between;
+  align-items: center;
+}
+.latest .tit{
+  color:rgba(149,109,55, 1);
+  font-size: 28rpx;
+}
+.title .clear{
+  font-size: 28rpx;
+  background: #ddd;
+  color: #888;
+  padding: 10rpx 15rpx;
+  border-radius: 4rpx;
+}
+.tags{
+  font-size: 0;
+  margin-left: -15rpx;
+  margin-right: -15rpx;
+}
+.tags .tag{
+  display: inline-block;
+  padding:20rpx 15rpx;
+  margin: 15rpx;
+  min-width: 120rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background: #eee;
+  border-radius: 8rpx;
+}

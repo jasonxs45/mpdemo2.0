@@ -1,0 +1,24 @@
+:host{
+  display: inline-block;
+}
+.loading{
+  text-align: center;
+}
+@keyframes rotate {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.icon-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  transform-origin: center;
+  color: #888;
+  animation: rotate 1.5s linear infinite;
+}
+.text{
+  display: inline-block;
+  font-size: 30rpx;
+  color: #888;
+  margin-left: 10rpx;
+  vertical-align: middle;
+}

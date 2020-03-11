@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "项目列表",
+  "backgroundColor": "#000",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "list-container": "/components/list-container/index",
+    "top": "/components/top/index",
+    "x-input": "/components/x-input/index",
+    "x-icon": "/components/x-icon/index",
+    "flex": "/components/flex/index",
+    "img": "/components/img/index",
+    "cell-select-group": "/components/cell-select/cell-select-group",
+    "cell-select-item": "/components/cell-select/cell-select-item",
+    "mp-tabbar": "/components/tabbar/tabbar"
+  }
+}

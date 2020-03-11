@@ -1,0 +1,122 @@
+/* pages/index/list.wxss */
+@import "../index.wxss";
+page{
+  background: rgb(240, 242, 245);
+  padding-bottom: 50rpx;
+}
+
+.top{
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; */
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+.topTitle{
+  height: 118rpx;
+  position: relative;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+
+.place{
+  line-height: 118rpx;
+  text-align: center;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+  margin: 0 100rpx;
+}
+.place image{
+  margin-left: 15rpx;
+  transform: rotate(90deg);
+}
+.place view{
+  line-height: 118rpx;
+}
+.list{
+  background:rgba(255,255,255,1);
+  border-radius:16rpx;
+  margin: 0 30rpx 20rpx 30rpx;
+  overflow: hidden;
+}
+.listImg{
+  width:100%;
+  height:auto;
+  min-height: 260rpx;
+  line-height: 260rpx;
+  text-align: center;
+  display: block;
+  background: #ccc;
+}
+.listText{
+  padding: 20rpx 20rpx 40rpx; 
+}
+.listText .item1{
+  font-size:28rpx;
+  font-weight:600;
+  color:rgba(51,51,51,1);
+  line-height:40rpx;
+  margin-bottom: 10rpx;
+}
+.listText .item1 view{
+  float: right;
+  font-size:24rpx;
+  font-weight:600;
+  color:#999;
+}
+.listText .item1 view text{
+  color:rgba(149,109,55, 1);
+  padding-right: 10rpx;
+}
+.listText .item2{
+  font-size:24rpx;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:34rpx;
+}
+.latest{
+  padding: 10rpx;
+  height:34rpx;
+  font-size:24rpx;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:34rpx;
+  text-align: center;
+}
+
+.bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height:98rpx;
+  text-align: center;
+  background:rgba(255,255,255,1);
+  box-shadow:0px -4rpx 8rpx 0px rgba(0,0,0,0.05);
+}
+.bottom view,.bottom navigator{
+  display: inline-block;
+  width: 50%;
+  font-size:20rpx;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  line-height:28rpx;
+  padding-top: 14rpx;
+  position: relative;
+}
+.bottom view image,.bottom navigator image{
+  display: block;
+  margin:0 auto 0.4rem;
+}
+.bottom view.on,.bottom navigator.on{
+  color: #333333;
+}
+.bottom view button,.bottom navigator button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

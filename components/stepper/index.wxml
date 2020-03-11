@@ -1,0 +1,11 @@
+<view class='stepper-container'>
+  <view class='btn {{minusDisable?"disabled":""}}' hover-class='{{minusDisable?"":"btn-hover-class"}}' catchtap='minus'>
+    <x-icon type='minus' />
+  </view>
+  <view class='input-wrapper'>
+    <input disabled='{{!editable}}' type='number' value='{{value}}' class='input' bindinput='inputHandler' bindblur='blurHandler' />
+  </view>
+  <view class='btn {{plusDisable?"disabled":""}}' hover-class='{{plusDisable?"":"btn-hover-class"}}' catchtap='plus'>
+    <x-icon type='plus' />
+  </view>
+</view>

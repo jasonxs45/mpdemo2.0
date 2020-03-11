@@ -1,0 +1,36 @@
+<import src="/templates/project-item/index.wxml" />
+<import src="/templates/housetype-item/index.wxml" />
+<import src="/templates/news-item/index.wxml" />
+<tab-group line barStyle='background-color:rgba(149,109,55, 1)' class="tabs" bindchange="onChange" current="{{currentIndex}}">
+  <tab-item wx:for="{{tabs}}" wx:key="index" label='{{item.text}}' class="tab-item" />
+</tab-group>
+<swiper current='{{currentIndex}}' bindchange='onChange' class='main' duration='500'>
+  <swiper-item wx:for='{{showLists}}' wx:key='index'>
+    <scroll-view enable-back-to-top scroll-y class='scroll-view' bindscrolltolower='onReachLower'>
+      <list-container length='{{item.length}}' finished='{{finishes[index]}}' loading='{{loading[index]}}'>
+        <view>
+          <block wx:for='{{showLists[index]}}' wx:key='ID'>
+            <template wx:if='{{currentIndex === 0}}' is='project' data='{{item}}' />
+            <template wx:if='{{currentIndex === 1}}' is='houseType' data='{{item}}' />
+            <template wx:if='{{currentIndex === 2}}' is='news' data='{{item}}' />
+          </block>
+        </view>
+      </list-container>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+<template name='project'>
+  <navigator url='/pages/projects/detail?id={{item.ObjectID}}' class='project-item-nav'>
+    <template is='project-item' data='{{...item}}' />
+  </navigator>
+</template>
+<template name='houseType'>
+  <navigator class='card flex' url='/pages/projects/housetype-detail?id={{item.ObjectID}}'>
+    <template is='housetype-item' data='{{...item}}' />
+  </navigator>
+</template>
+<template name='news'>
+  <navigator class='card' url='/pages/news/detail?id={{item.ObjectID}}'>
+    <template is='news-item-line' data='{{...item}}' />
+  </navigator>
+</template>

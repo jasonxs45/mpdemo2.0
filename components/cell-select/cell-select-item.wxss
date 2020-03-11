@@ -1,0 +1,36 @@
+:host{
+  display: inline-block;
+  width: 33.33%;
+  padding: 15rpx;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.cell-select-item{
+  min-height: 80rpx;
+  overflow: hidden;
+  width: 100%;
+}
+.cell-select-item .label.cell-select-active{
+  background: #ccc;
+  color: #333;
+}
+.cell-select-item.disabled{
+  opacity: .4;
+}
+.cell-select-item .label{
+  width: 100%;
+  height: 100%;
+  line-height: 80rpx;
+  padding: 0 15rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  text-align: center;
+  border: 1px solid #777;
+  color: #777;
+  transition: all .2s;
+}
+.cell-select-item .label.round{
+  border-radius: 8rpx;
+}

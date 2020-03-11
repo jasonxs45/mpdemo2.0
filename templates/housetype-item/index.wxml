@@ -1,0 +1,35 @@
+<template name='housetype-item'>
+  <view class='housetype-item flex'>
+    <img lazy class='thumbnail' mode='aspectFit' src='{{Img}}' />
+    <view class='contents'>
+      <view class='name'>{{Name}}
+        <text class='tag'>{{SaleState}}</text>
+      </view>
+      <view class='huxing'>{{HuXing}}</view>
+      <view class='price'>总价：
+        <block wx:if='{{TotalPriceStr}}'>
+          约<text class='num'>{{TotalPriceStr}}</text>万元/套
+          <text wx:if='{{MaxTotalPrice === -1}}'>起</text>
+        </block>
+        <block wx:else>待定</block>
+      </view>
+      <view class='price'>单价：
+        <block wx:if='{{UnitPriceStr}}'>
+          约<text class='num'>{{UnitPriceStr}}</text>元/平
+          <text wx:if='{{MaxUnitPrice === -1}}'>起</text>
+        </block>
+        <block wx:else>待定</block>
+      </view>
+      <view class='area'>建筑面积：
+          <block wx:if='{{FloorAreaStr}}'>
+            约<text class='txt'>{{FloorAreaStr}}</text>㎡
+            <text wx:if='{{MaxFloorArea === -1}}'>起</text>
+          </block>
+          <block wx:else>暂无</block>
+      </view>
+      <view class='area'>朝向：
+        <text class='txt'>{{Direction || '暂无'}}</text>
+      </view>
+    </view>
+  </view>
+</template>

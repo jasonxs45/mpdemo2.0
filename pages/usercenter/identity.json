@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的阳光荟",
+  "backgroundColor": "#ffffff",
+  "usingComponents": {
+    "img": "/components/img/index"
+  }
+}

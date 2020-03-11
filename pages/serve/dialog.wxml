@@ -1,0 +1,39 @@
+<fixed-footer-container class='page'>
+  <scroll-view slot='content' scroll-y enable-back-to-top class='dialogMain' scroll-into-view='{{lastID}}'>
+    <block wx:for="{{showList}}" wx:key="index">
+      <view class="cha_list clear" id="msg{{item.ID}}">
+        <text class="cha_time f10 fw black4">{{item.AddTime}}</text>
+        <view class='flex dialog-item {{item.direction}}'>
+          <img circle src='{{item.avatar}}' class='avatar' mode='aspectFill' />
+          <view class='content'>
+            <text>{{item.Content}}</text>
+          </view>
+          <view class='loading'>
+            <x-icon type='loading' />
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view slot='bottom' class="cha_bottom">
+    <form bindsubmit='registerFormSubmit' report-submit='true'>
+      <view class='flex bar'>
+        <!-- <view class='pic' bindtap='wayImg'>
+          <x-icon type='picture-fill' />
+        </view> -->
+        <view class='input'>
+          <!-- <textarea class='textarea' fixed show-confirm-bar='{{false}}' auto-height cursor-spacing='20' placeholder='请输入您要咨询的内容' bindlinechange='onLineChange' bindinput="onInput" /> -->
+          <input class='textarea' confirm-type='send' value='{{msg}}' cursor-spacing='20' placeholder='请输入您要咨询的内容' bindinput="onInput" bindconfirm='registerFormSubmit' />
+        </view>
+        <button disabled='{{!msg}}' size='mini' type='primary' class='btn' form-type='submit'>发送</button>
+      </view>
+      <!-- <image src='img/cha_pic01.png' class="cha_ico" bindtap="wayImg"></image> -->
+      <!-- <view class='search_bg'>
+        
+      </view> -->
+      <!-- <view class='cha_btn f14 red'>发送
+        <button form-type='submit'></button>
+      </view> -->
+    </form>
+  </view>
+</fixed-footer-container>

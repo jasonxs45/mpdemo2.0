@@ -1,0 +1,12 @@
+<!--pages/subscribe/consultant.wxml-->
+<view class="step">
+  <step current="{{stepCurrent}}"></step>
+</view>
+<view class="title">请选择您的跟办顾问</view>
+<scroll-view scroll-y="true" class="listScroll" scroll-with-animation="true">
+  <view class="list" wx:for="{{list}}" wx:key="index" data-index="{{index}}" catchtap="waySelect">
+    <text class="{{index==listIndex?'on':''}}"></text><view><image src="{{item.headImgUrl}}"></image></view>{{item.name}}
+    <tel phoneNumber='{{item.tel}}' custom class="icon02"><x-icon type='tel-fill' /></tel>
+  </view>
+</scroll-view>
+<button class="btn main-theme" bindtap="submit">下一步</button>

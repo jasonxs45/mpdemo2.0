@@ -1,0 +1,7 @@
+<view
+  class='tab-item custom-class {{active?"active active-class":""}} {{scroll?"scroll-cell":""}}'
+  bindtap='onTap'
+>
+  <view wx:if='{{label}}' class='label'>{{label}}</view>
+  <slot wx:else />
+</view>

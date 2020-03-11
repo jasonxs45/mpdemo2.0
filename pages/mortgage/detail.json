@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "房贷详情",
+  "usingComponents": {
+    "tab-group": "/components/tabs/tab-group",
+    "tab-item": "/components/tabs/tab-item"
+  }
+}

@@ -1,0 +1,45 @@
+<img class='banner' src='{{detail.Img}}' />
+<view class='intro'>
+  <view class='tag {{detail.State==="进行中"?"":"off"}}'>{{detail.State}}</view>
+  <view class='name'>{{detail.Title}}</view>
+  <view class='title'>报名时间</view>
+  <view class='p'>
+    <text class='ph'>开始：</text>
+    <text class='pb'>{{detail.ActivityStartTime}}</text>
+  </view>
+  <view class='p'>
+    <text class='ph'>截止：</text>
+    <text class='pb'>{{detail.ActivityEndTime}}</text>
+  </view>
+  <split style='margin:20rpx 0;' height='1rpx' />
+  <view class='title'>活动时间</view>
+  <view class='p'>
+    <text class='ph'>开始：</text>
+    <text class='pb'>{{detail.SignStartTime}}</text>
+  </view>
+  <view class='p'>
+    <text class='ph'>截止：</text>
+    <text class='pb'>{{detail.SignEndTime}}</text>
+  </view>
+</view>
+<block wx:if='{{myInfo}}'>
+  <split height='10rpx' />
+  <view class='my-info'>
+    <view class='name'>签到二维码</view>
+    <view class='qr-img'>
+      <img mode='aspectFill' class='img {{myInfo.State === "已签到"?"checked":""}}' src='{{myInfo.QRCodeImg}}' />
+      <view wx:if='{{myInfo.State === "已签到"}}' class='cover'>{{myInfo.State}}</view>
+    </view>
+    <view wx:if='{{myInfo.State === "已签到"}}' class='p'>签到时间：{{myInfo.CheckTime}}</view>
+    <view wx:else class='p'>请向管理员出示二维码，签到后获得奖励积分</view>
+  </view>
+</block>
+<split height='10rpx' />
+<view class='detail'>
+  <view class='line-title'>活动详情</view>
+  <article words='{{words}}' />
+</view>
+<view wx:if='{{!myInfo}}' class='btns'>
+  <button wx:if='{{!tel}}' class='btn main-theme' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber'>我要报名</button>
+  <button wx:else class='btn main-theme' bindtap='submit'>我要报名</button>
+</view>

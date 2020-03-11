@@ -1,0 +1,18 @@
+<picker
+  mode='{{mode}}'
+  range='{{range}}'
+  range-key="{{rangeKey}}"
+  start='{{start}}'
+  value='{{value}}'
+  disabled='{{disabled}}'
+  bindchange='onChange'
+  class='x-picker {{disabled? "disable":""}} custom-class'
+>
+  <flex align='center'>
+    <view class='picker-content'>
+      <view wx:if='{{placeholder&&!labelValue}}' class='placeholder'>{{placeholder}}</view>
+      <view wx:if='{{labelValue}}' class='value'>{{labelValue}}</view>
+    </view>
+    <x-icon type='caret-down' color='#999' />
+  </flex>
+</picker>

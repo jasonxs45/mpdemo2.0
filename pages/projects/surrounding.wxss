@@ -1,0 +1,28 @@
+/* rgba(149,109,55,1) */
+.scroll-view{
+  background:#fff;
+  height: 130rpx;
+}
+.surrounding-item{
+  position: relative;
+  display: inline-block;
+  min-width: 150rpx;
+  font-size: 24rpx;
+  padding: 0 15rpx;
+  text-align: center;
+}
+.surrounding-item .icon{
+  width: 65rpx;
+  height: 65rpx;
+}
+.surrounding-item .txt{
+  margin-top: 15rpx;
+}
+.surrounding-item.active{
+  font-weight: 500;
+  color: rgba(149,109,55,1);
+}
+.map{
+  width: 100vw;
+  height: calc(100vh - 130rpx);
+}

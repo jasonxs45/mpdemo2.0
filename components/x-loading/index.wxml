@@ -1,0 +1,6 @@
+<view class='loading custom-class'>
+  <view class='icon-wrapper'>
+    <x-icon color='{{color}}' type='loading' />
+  </view>
+  <view wx:if='{{text}}' class='text' style='font-size:{{size}}'>{{text}}</view>
+</view>

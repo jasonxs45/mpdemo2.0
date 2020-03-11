@@ -1,0 +1,149 @@
+<import src="/templates/project-item/index.wxml" />
+<import src="/templates/housetype-item/index.wxml" />
+<fixed-footer-container>
+  <view slot='content' class='main-scroll-view'>
+    <view class='top'>
+      <view class='page-num'>{{current + 1}}/{{banners.length}}</view>
+      <swiper class='swiper' bindchange='swiperChange'>
+        <swiper-item wx:for='{{banners}}' wx:key='index' class='swiper-item'>
+          <image wx:if='{{item.ResourceType === "Image"}}' mode='aspectFit' class='banner' src='{{item.Image}}' bindtap='preview' />
+          <media wx:else type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' class='banner'  />
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class='section brief-info'>
+      <container>
+        <view class='flex'>
+          <view style='flex: 1'>
+            <view class='name'>{{detail.Name}}<view class='tag'>{{detail.SaleState}}</view></view>
+            <view class='huxing'>{{detail.HuXing}}</view>
+          </view>
+          <auth-btn class='like-btn func-btn' bindsuccess='addShare'>
+            <button class='btn' bindtap='like'>
+              <x-icon class='icon' type='{{isLike?"star-fill":"star"}}' />
+              <text class='txt'>{{isLike?"已收藏":"收藏"}}</text>
+            </button>
+          </auth-btn>
+        </view>
+        <view class='price flex cl'>
+          <view style='flex: 1'>
+            <view class='p flex'>
+              <view class='ph'>
+                <text>总价：</text>
+              </view>
+              <view class='pb'>
+                <block wx:if='{{detail.TotalPriceStr}}'>
+                  约<text class='num'>{{detail.TotalPriceStr}}</text>万元/套
+                  <text wx:if='{{detail.MaxTotalPrice === -1}}'>起</text>
+                </block>
+                <block wx:else>待定</block>
+              </view>
+            </view>
+            <view class='p flex'>
+              <view class='ph'>
+                <text>单价：</text>
+              </view>
+              <view class='pb'>
+                <block wx:if='{{detail.UnitPriceStr}}'>
+                  约<text class='num'>{{detail.UnitPriceStr}}</text>元/平
+                  <text wx:if='{{detail.MaxUnitPrice === -1}}'>起</text>
+                </block>
+                <block wx:else>待定</block>
+              </view>
+            </view>
+          </view>
+          <navigator class='to-calc' url='/pages/mortgage/mortgage'>
+            <!-- <image class='icon' src='./1.png' /> -->
+            <x-icon type='wallet-fill' class='icon' />
+            <text class='txt'>房贷计算</text>
+          </navigator>
+        </view>
+        <view class='flex spec-info-container'>
+          <view class='half'>
+            <view class='flex p'>
+              <view class='ph'>业态类型：</view>
+              <view class='pb'>
+                <block wx:if='{{projectType.ProjectType}}'>{{projectType.ProjectType}}</block>
+                <block wx:else>暂无</block>
+              </view>
+            </view>
+            <view class='flex p'>
+              <view class='ph'>
+                <text space='emsp'>装  修：</text>
+              </view>
+              <view class='pb'>
+                <block wx:if='{{projectType.DecorationStandard}}'>{{projectType.DecorationStandard}}</block>
+                <block wx:else>暂无</block>
+              </view>
+            </view>
+          </view>
+          <view class='half'>
+            <view class='flex p'>
+              <view class='ph'>建筑面积：</view>
+              <view class='pb'>
+                <block wx:if='{{detail.FloorAreaStr}}'>
+                  约<text class='txt'>{{detail.FloorAreaStr}}</text>㎡
+                  <text wx:if='{{detail.MaxFloorArea === -1}}'>起</text>
+                </block>
+                <block wx:else>暂无</block>
+              </view>
+            </view>
+            <view class='flex p'>
+              <view class='ph'>
+                <text space='emsp'>产  权：</text>
+              </view>
+              <view class='pb'>
+                <block wx:if='{{projectType.PropertyRight}}'>{{projectType.PropertyRight}}</block>
+                <block wx:else>暂无</block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </container>
+    </view>
+    <split height='10rpx' />
+    <view class='section project-info'>
+      <container>
+        <view class='title'>所属楼盘</view>
+        <navigator open-type='redirectTo' style='padding:30rpx 0;' url='./detail?id={{project.ID}}'>
+          <template is='project-item' data='{{...project}}' />
+        </navigator>
+      </container>
+    </view>
+    <split height='10rpx' />
+    <view class='section list-info'>
+      <container>
+        <view class='title'>户型推荐</view>
+        <navigator wx:for='{{list}}' wx:key='ID' class='card house-type-nav flex' open-type='redirectTo' url='./housetype-detail?id={{item.ID}}'>
+          <template is='housetype-item' data='{{...item}}' />
+        </navigator>
+      </container>
+    </view>
+    <view class='tips'>免责条款：本资料为要约邀请，不作为要约或承诺；买卖双方的权利义务以双方签订的《商品房买卖合同》及其补充协议、附件等书面文件为准。</view>
+  </view>
+  <view slot='bottom' class='footer flex'>
+    <auth-btn openType='share' class='func-btn' bindsuccess='addShare'>
+      <button class='btn'>
+        <image class='icon' src='/images/wechat.png' />
+        <text class='txt'>转发</text>
+      </button>
+    </auth-btn>
+    <auth-btn class='func-btn' bindsuccess='addShare'>
+      <button class='btn' bindtap='shareTimeline'>
+        <image class='icon' src='/images/timeline.png' />
+        <text class='txt'>分享</text>
+      </button>
+    </auth-btn>
+    <auth-btn class='func-btn' bindsuccess='addShare'>
+      <button class='go-form' bindtap='goForm'>{{member ? '预约看房' : '授权注册'}}</button>
+    </auth-btn>
+  </view>
+</fixed-footer-container>
+<view hidden='{{!posterShow}}' class='poster-bg' bindtap='closePoster' />
+<view hidden='{{!posterShow}}' class='poster-wrapper'>
+  <view class='title'>保存后分享</view>
+  <img preview mode='aspectFit' class='poster' src='{{poster}}' />
+  <view class='btns'>
+    <button class='btn red' bindtap='saveImg'>保存图片</button>
+  </view>
+</view>

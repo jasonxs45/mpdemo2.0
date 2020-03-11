@@ -1,0 +1,11 @@
+<view class='fixed-footer-container {{isIphoneX?"is-x":""}}'>
+  <view class='fixed-footer'>
+    <view class='real-area'>
+      <slot name='bottom' />
+    </view>
+    <view wx:if='{{isIphoneX}}' class='footer-bar' />
+  </view>
+  <view class='content'>
+    <slot name='content' />
+  </view>
+</view>

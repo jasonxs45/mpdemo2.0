@@ -1,0 +1,24 @@
+<list-container length='{{list.length}}' finished='{{finished}}' loading='{{loading}}'>
+  <view class='act_list'>
+    <view class='menber_box' wx:for="{{showList}}" wx:key="{{index}}" data-consultantid="{{item.ConsultantID}}" data-tofansid="{{item.FansID}}">
+      <view class='body flex'>
+        <image src='{{item.HeadImgUrl}}' class="menber_head" />
+        <view class="menber_text">
+          <text class='menber_name'>{{item.Name}}</text>
+          <text class="menber_identity">所属项目：{{item.ProjectName}}</text>
+        </view>
+        <navigator url='./dialog?consultantID={{member.ConsultantID}}&userUnionID={{item.UnionID}}&fromUnionID={{uid}}&toUnionID={{item.UnionID}}' class="mes_ico">
+          <x-icon type='chat-fill' />
+          <view wx:if='{{item.NotReadCount}}' class='red-dot' />
+        </navigator>
+        <tel class="tel_ico" custom phoneNumber='{{item.Tel}}'>
+          <x-icon type='tel-fill' />
+        </tel>
+      </view>
+      <view class="menber_text2 flex">
+        <text class='menber_time'>预约时间：{{item.date}}</text>
+        <button size='mini' class='arrive_btn' disabled='{{item.State=="已到访"}}' data-id="{{item.ID}}" data-index="{{index}}" bindtap="wayVisit">{{item.State==="已到访" ? item.State : '点击到访'}}</button>
+      </view>
+    </view>
+  </view>
+</list-container>

@@ -1,0 +1,10 @@
+.container{
+  padding:0 30rpx;
+  overflow-x:hidden;
+  overflow-y: auto;
+}
+.container:after{
+  content: '';
+  display: table;
+  clear:both;
+}

@@ -1,0 +1,215 @@
+page {
+  background: #000;
+}
+
+.bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.bg .img {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .gradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .1) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+.home-tab {
+  background: #000 !important;
+}
+
+.home-tab .weui-tabbar__label {
+  color: #fff;
+}
+
+.main {
+  position: absolute;
+  width: 100%;
+  padding-top: 100rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: calc(152rpx + constant(safe-area-inset-bottom));
+  padding-bottom: calc(152rpx + env(safe-area-inset-bottom));
+}
+
+.swiper {
+  width: 100%;
+  height: 430rpx;
+}
+.swiper .wx-swiper-dots{
+  transform: translate(-50%, 15rpx)
+}
+.swiper .wx-swiper-dot{
+  width:8rpx;
+  height:8rpx;
+  border:2rpx solid rgba(255,255,255,1);
+}
+.swiper .wx-swiper-dot-active{
+  background: #fff;
+}
+.swiper .media {
+  display: block;
+  width: 630rpx;
+  height: 400rpx;
+  margin: 0 auto;
+}
+.swiper .media .img{
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, .2);
+}
+
+.menus {
+  width: 630rpx;
+  height: 300rpx;
+  margin: 30rpx auto;
+  justify-content: space-between;
+}
+
+.color-block {
+  background: rgba(149, 109, 55, 0.8);
+  border-radius: 6rpx;
+  padding: 20rpx;
+}
+
+.color-block .tit {
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 41rpx;
+}
+
+.color-block .sub-tit {
+  color: #fff;
+  font-size: 20rpx;
+  font-weight: 500;
+}
+
+.color-block .tit .sub-tit {
+  margin-left: 10rpx;
+}
+
+.color-block .desc{
+  font-size:24rpx;
+  color:rgba(0,0,0,1);
+  line-height:41rpx;
+  margin-top: 24rpx;
+}
+.news, .gift {
+  height: 140rpx;
+}
+
+.gift {
+  margin-top: 20rpx;
+}
+
+.half {
+  width: 300rpx;
+}
+
+.act {
+  height: 100%;
+}
+
+.ads-wrapper .bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+}
+
+.ads-wrapper .panel {
+  position: fixed;
+  width: 520rpx;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: -260rpx;
+  text-align: center;
+}
+
+.ads-wrapper .ads {
+  width: 100%;
+  height: 780rpx;
+}
+
+.ads-wrapper .tip {
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.ads-wrapper .tip .label {
+  display: inline-block;
+  padding: 20rpx;
+}
+
+.ads-wrapper .tip .icon {
+  font-size: 140%;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.ad-img {
+  width: 100%;
+  height: 100%;
+}
+
+.dots {
+  justify-content: center;
+  padding: 15rpx;
+}
+
+.dot {
+  border: 1px solid #fff;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  margin: 10rpx;
+}
+
+.dot.active {
+  background: #fff;
+  transform: scale(1.5);
+}
+
+.advisory {
+  position: fixed;
+  bottom: 165rpx;
+  right: 42rpx;
+  width: 115rpx;
+  height: 117rpx;
+  z-index: 2;
+  /* display: none; */
+}
+
+.advisory image {
+  width: 100%;
+  height: 100%;
+}
+
+.advisory text {
+  position: absolute;
+  bottom: 6rpx;
+  left: 0;
+  width: 100%;
+  font-size: 18rpx;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  line-height: 18rpx;
+  text-align: center;
+  letter-spacing: 4rpx;
+}

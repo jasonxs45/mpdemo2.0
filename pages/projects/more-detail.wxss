@@ -1,0 +1,19 @@
+.p{
+  background: #fff;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.ph{
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #888;
+  flex: 0 0 180rpx;
+  text-align: right;
+}
+.pb{
+  flex: 1;
+  line-height: 1.5;
+  font-size: 28rpx;
+  color: #333;
+  padding-left: 30rpx;
+}

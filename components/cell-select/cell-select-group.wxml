@@ -1,0 +1,5 @@
+<container>
+  <row class='cell-select-row custom-class'>
+    <slot />
+  </row>
+</container>

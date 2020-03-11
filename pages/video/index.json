@@ -1,0 +1,6 @@
+{
+  "backgroundColor": "#000",
+  "usingComponents": {
+    "txv-video": "plugin://tencentvideo/video"
+  }
+}

@@ -1,0 +1,79 @@
+.project-item .thumbnail {
+  width: 300rpx;
+  flex: 1;
+  height: 230rpx;
+  border-radius: 8rpx;
+}
+
+.project-item  .contents {
+  flex: 0 0 390rpx;
+  width: 390rpx;
+  padding-left: 30rpx;
+}
+
+.project-item .name {
+  font-weight: 500;
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-item .price,
+.project-item .area,
+.project-item .focus-num,
+.project-item .tel,
+.project-item .address {
+  margin-top: 15rpx;
+  font-size: 24rpx;
+  color: #888;
+  font-weight: 300;
+}
+
+.project-item .price .txt {
+  color: rgba(149,109,55, 1);
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.project-item .area .txt,
+.project-item .tel .txt,
+.project-item .address .txt {
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.project-item .address {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-item .flex.center {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-item .tags {
+  font-size: 0;
+  margin-top: 10rpx;
+  margin-left: -10rpx;
+  margin-right: -10rpx;
+  height: 36rpx;
+  overflow:hidden;
+  text-overflow: clip;
+}
+
+.project-item .tag {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 20rpx;
+  background: rgba(149,109,55, 0.1);
+  font-weight: 500;
+  color: rgba(149,109,55, 1);
+  line-height: 36rpx;
+  padding: 0 10rpx;
+  border-radius: 4rpx;
+  margin:0 10rpx;
+}

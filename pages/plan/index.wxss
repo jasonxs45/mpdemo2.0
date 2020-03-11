@@ -1,0 +1,52 @@
+/**app.wxss**/
+page{
+  font-size: 26rpx;
+  line-height: 36rpx;
+}
+button{
+  padding: 0;
+}
+button::after{
+  display: none;
+}
+button::before{
+  display: none;
+}
+.navigator-hover{
+  opacity: 1;
+  background: transparent;
+}
+.hide{
+  display: none !important;
+}
+image{
+  box-sizing: content-box
+}
+.nvaIcon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.icon1{
+  width: 14rpx;
+  height: 22rpx;
+}
+.icon01{
+  width: 32rpx;
+  height: 32rpx;
+}
+.icon12{
+  width: 16rpx;
+  height: 12rpx;
+}
+.icon21{
+  width: 32rpx;
+  height: 34rpx;
+}
+.icon22{
+  width: 32rpx;
+  height: 30rpx;
+}
+.icon23{
+  width: 32rpx;
+  height: 32rpx;
+}

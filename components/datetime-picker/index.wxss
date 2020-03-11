@@ -1,0 +1,22 @@
+.datetime-picker{
+  width: auto;
+  height: 90rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon{
+  display: block;
+  width: 50rpx;
+  color: #666;
+  font-size: 30rpx;
+  text-align:right;
+}
+.text{
+  font-size: 30rpx;
+}
+.placeholder{
+  color: #888;
+}

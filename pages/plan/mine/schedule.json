@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "认筹客户",
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "x-icon": "/components/x-icon/index"
+  }
+}

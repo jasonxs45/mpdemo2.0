@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的认筹协议",
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "x-icon": "/components/x-icon/index"
+  }
+}

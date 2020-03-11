@@ -1,0 +1,27 @@
+<view class="x-input custom-class">
+  <input
+    class='inner-input'
+    value='{{value}}'
+    type='{{type}}'
+    password='{{password}}'
+    placeholder='{{placeholder}}'
+    placeholder-style='{{placeholderStyle}}'
+    disabled='{{disabled}}'
+    maxlength='{{maxlength}}'
+    cursor-spacing='{{cursorSpacing}}'
+    focus='{{focus}}'
+    confirm-type='{{confirmType}}'
+    confirm-hold='{{confirmHold}}'
+    cursor='{{cursor}}'
+    selection-start='{{selectionStart}}'
+    selection-end='{{selectionEnd}}'
+    adjust-position='{{adjustPosition}}'
+    bindinput='inputHandler'
+    bindblur='blurHandler'
+    bindfocus='focusHandler'
+    bindconfirm='confirmHandler'
+  />
+  <view class="icon" wx:if="{{clear && !!value && !disabled}}" bindtap='clear' >
+    <icon class='clear' size='16' type="clear" />
+  </view>
+</view>

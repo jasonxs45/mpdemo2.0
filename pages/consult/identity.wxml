@@ -1,0 +1,69 @@
+<import src="/templates/project-item/index.wxml" />
+<view class='top'></view>
+<view class='section'>
+  <view class='id-card flex'>
+    <img circle mode='aspectFill' src='{{consultInfo.AccountUrl}}' class='avatar' />
+    <view class='info'>
+      <view class='name-tag'>
+        <view class='name'>{{consultInfo.AccountName}}</view>
+        <view class='tag'>置业顾问</view>
+      </view>
+      <view wx:if='{{consultInfo.StaffTel}}' class='telnum'>
+        <tel icon phoneNumber='{{consultInfo.StaffTel}}' />
+      </view>
+      <split height='1px' />
+      <view wx:if='{{isMine}}' class='btns'>
+        <button class='btn main-theme' open-type='share'>
+          <x-icon type='share-fill' />分享转发
+        </button>
+        <button class='btn red' bindtap='showCode'>
+          <x-icon type='mp-circle' />名片码
+        </button>
+      </view>
+      <view wx:else class='btns'>
+        <auth-btn class='auth' bindsuccess='onAuth'>
+          <button class='btn main-theme' bindtap='goChat'>
+            <x-icon type='chat-fill' />立即联系
+          </button>
+        </auth-btn>
+        <tel wx:if='{{consultInfo.StaffTel}}' phoneNumber='{{consultInfo.StaffTel}}' custom class='tel-com'>
+          <button class='btn red'>
+            <x-icon type='tel-fill' />一键拨打
+          </button>
+        </tel>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if='{{imgs.length}}' class='customers section'>
+  <view class='flex'>
+    <view class='title'><x-icon type='group-fill' />服务客户</view>
+    <view class='num'>已服务<text class='txt'>{{imgs.length}}</text>人</view>
+    <view class='imgs'>
+      <image wx:for='{{showImgs}}' wx:key='index' src='{{item.HeadImgUrl}}' class='img' />
+    </view>
+  </view>
+</view>
+<view class='section projects'>
+  <view class='line-title'>服务楼盘</view>
+  <navigator wx:for='{{projects}}' wx:key='ID' url='/pages/projects/detail?id={{item.ID}}' class='nav'>
+    <template is='project-item' data='{{...item}}' />
+  </navigator>
+</view>
+<view wx:if='{{words}}' class='section intro'>
+  <view class='line-title'>个人简介</view>
+  <article words='{{words}}' />
+</view>
+<view hidden='{{!qrShow}}' class='bg' bindtap='hideCode' />
+<view hidden='{{!qrShow}}' class='qr-code-wrapper'>
+  <view class='name'>{{consultInfo.AccountName}}</view>
+  <view class='tag'>置业顾问</view>
+  <view wx:if='{{consultInfo.StaffTel}}' class='telline'>
+    <tel icon phoneNumber='{{consultInfo.StaffTel}}' />
+  </view>
+  <image class='qr-img' mode='aspectFit' src='{{consultInfo.QRcode}}' />
+  <view class='controls'>
+    <button class='btn main-theme' bindtap='saveImg'>保存名片码</button>
+    <button class='btn' bindtap='hideCode'>关闭</button>
+  </view>
+</view>

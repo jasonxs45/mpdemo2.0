@@ -1,0 +1,25 @@
+<block wx:if='{{type === "VR"}}'>
+  <navigator class='media-wrapper' url='/pages/outlink/index?src={{link}}'>
+    <image lazy-load mode="aspectFill" src="{{src}}" class="img" />
+    <view class='icon'>
+      <x-icon type='pano' />
+    </view>
+  </navigator>
+</block>
+<block wx:elif='{{type === "Video"}}'>
+  <!-- <txv-video class='media-txv' wx:if='{{link}}' usePoster isHiddenStop poster='{{src}}' vid='{{link}}' playerid='{{link}}' /> -->
+  <navigator class='media-wrapper' url='/pages/video/index?vid={{link}}'>
+    <image lazy-load mode="aspectFill" src="{{src}}" class="img" />
+    <view class='icon'>
+      <x-icon type='play' />
+    </view>
+  </navigator>
+</block>
+<block wx:else='{{type === "Image"}}'>
+  <view wx:if="{{link}}" class='media-wrapper' data-url="{{link}}" bindtap='imgLink'>
+    <image lazy-load mode="aspectFill" src="{{src}}" class="img" />
+  </view>
+  <view wx:else class='media-wrapper'>
+    <image lazy-load mode="aspectFill" src="{{src}}" class="img" />
+  </view>
+</block>

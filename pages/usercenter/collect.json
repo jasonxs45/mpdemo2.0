@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "我的收藏",
+  "backgroundColor": "#f2f2f2",
+  "backgroundColorTop": "#fff",
+  "backgroundColorBottom": "#f2f2f2",
+  "disableScroll": true,
+  "usingComponents": {
+    "tab-group": "/components/tabs/tab-group",
+    "tab-item": "/components/tabs/tab-item",
+    "list-container": "/components/list-container/index",
+    "img": "/components/img/index",
+    "x-icon": "/components/x-icon/index",
+    "flex": "/components/flex/index"
+  }
+}

@@ -1,0 +1,4 @@
+.rate-container{
+  display: inline-block;
+  font-size: 0;
+}

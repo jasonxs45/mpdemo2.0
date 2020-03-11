@@ -1,0 +1,14 @@
+.fixed-footer{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 9;
+  background: #f2f2f2;
+}
+.footer-bar{
+  height: 68rpx;
+}
+.fixed-footer-container.is-x .content {
+  padding-bottom: 68rpx;
+}

@@ -1,0 +1,67 @@
+<view wx:if='{{success}}' class='result'>
+  <view class='icon'>
+    <x-icon class='font' type='correct' />
+  </view>
+  <view class='tit'>预约成功</view>
+  <view class='desc'>您已预约成功，请您耐心等待我们的专属顾问会与您取得联系，届时请保持您的手机畅通</view>
+  <split height='1px' />
+  <view class='flex p'>
+    <view class='ph'>项目名称</view>
+    <view class='pb'>{{result.Project.ProjectName}}</view>
+  </view>
+  <view class='flex p'>
+    <view class='ph'>预约时间</view>
+    <view class='pb'>{{result.AppointTime}}</view>
+  </view>
+  <view class='flex p'>
+    <view class='ph'>专属顾问</view>
+    <view class='pb'>{{result.Consultant.AccountName}}</view>
+  </view>
+  <view class='go-chat'>
+    <button class='btn main-theme' bindtap='goChat'>联系置业顾问</button>
+  </view>
+  <navigator class='link' open-type='redirectTo' url='./appoint-record'>预约记录</navigator>
+</view>
+<block wx:else>
+  <view class='section'>
+    <container>
+      <block wx:if='{{select}}'>
+        <view class='flex consult-info'>
+          <view class='title'>选择置业顾问</view>
+          <view class='consult-name'>{{consultInfo}}</view>
+        </view>
+        <radio-group wx:if='{{list.length}}' class='consults' data-attr='consultIndex' bindchange='onChange'>
+          <label wx:for='{{list}}' wx:key='index' class='consult-wrapper'>
+            <radio class='radio' value='{{index}}' />
+            <view class='consult flex'>
+              <image class='avatar' mode='aspectFill' src='{{item.AccountUrl}}' />
+              <view class='name'>{{item.AccountName}}</view>
+            </view>
+          </label>
+        </radio-group>
+        <!-- <view class='input-line'>
+          <x-picker range='{{list}}' range-key='AccountName' placeholder='请选择置业顾问' data-attr='consultIndex' bindchange='onChange' />
+        </view> -->
+        <!-- <view class='detail-info flex'>
+          <image src='{{}}' />
+        </view> -->
+      </block>
+      <view class='title'>姓名</view>
+      <view class='input-line'>
+        <x-input data-attr='name' placeholder='请填写姓名' bindinput='onInput' />
+      </view>
+      <view class='title'>电话</view>
+      <view class='input-line'>
+        <button wx:if='{{!tel}}' class='tel-btn' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber'>获取手机号码</button>
+        <view wx:else class='tel-input'>{{tel}}</view>
+      </view>
+      <view class='title'>日期</view>
+      <view class='input-line' style='padding-left:15rpx;padding-right:15rpx;'>
+        <x-picker data-attr='date' mode='date' start='{{today}}' initValue='{{date}}' placeholder='请选择预约日期' bindchange='onChange' />
+      </view>
+    </container>
+  </view>
+  <view class='btns'>
+    <button class='btn main-theme {{tel?"":"opac"}}' bindtap='submit'>提交预约</button>
+  </view>
+</block>

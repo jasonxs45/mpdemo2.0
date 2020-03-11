@@ -1,0 +1,50 @@
+@import '/templates/shop-item/index.wxss';
+.nav-bar{
+  background: #fff;
+  align-items: center;
+  padding:10rpx 15rpx;
+}
+.search-bar{
+  flex: 1;
+  background: #f8f8f8;
+  border-radius: 4rpx;
+}
+.search-input{
+  flex: 1;
+}
+.search-input .x-input,
+.search-input .x-picker,
+.search-input .x-picker .picker-content{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+.search-btn{
+  width: 100rpx !important;
+  padding:0;
+  margin: 0 !important;
+  position: relative;
+  background: none;
+  color: #666;
+}
+.search-btn .icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main-scroll-view{
+  height: calc(100vh - 100rpx);
+}
+.list-container{
+  padding-top: 15rpx !important;
+}
+.list{
+  padding: 0 15rpx;
+}
+.nav{
+  display: inline-block;
+  width: 50%;
+  padding:0 15rpx;
+  margin: 15rpx 0;
+}

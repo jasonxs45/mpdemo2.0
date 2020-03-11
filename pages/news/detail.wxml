@@ -1,0 +1,40 @@
+<fixed-footer-container>
+  <view slot='content' class='body'>
+    <view class='main'>
+      <view class='title'>{{content.Title}}</view>
+      <view class='date'>{{content.AddTime}}</view>
+      <view class='content'>
+        <article words='{{content.Content}}' />
+      </view>
+      <!-- <view class='read'><x-icon type='file' />已有{{content.ViewCount}}人看过</view> -->
+    </view>
+  </view>
+  <view slot='bottom' class='footer flex'>
+    <auth-btn class='func-btn' bindsuccess='addShare'>
+      <button class='btn' bindtap='like'>
+        <x-icon class='icon' type='{{isLike?"star-fill":"star"}}' />
+        <text class='txt'>{{isLike?"已收藏":"收藏"}}</text>
+      </button>
+    </auth-btn>
+    <!-- <auth-btn openType='share' class='func-btn' bindsuccess='addShare'>
+      <button class='btn'>
+        <image class='icon' src='/images/wechat.png' />
+        <text class='txt'>转发</text>
+      </button>
+    </auth-btn>
+    <auth-btn class='func-btn' bindsuccess='addShare'>
+      <button class='btn' bindtap='shareTimeline'>
+        <image class='icon' src='/images/timeline.png' />
+        <text class='txt'>分享</text>
+      </button>
+    </auth-btn> -->
+  </view>
+</fixed-footer-container>
+<view hidden='{{!posterShow}}' class='poster-bg' bindtap='closePoster' />
+<view hidden='{{!posterShow}}' class='poster-wrapper'>
+  <view class='title'>保存后分享</view>
+  <img preview mode='aspectFit' class='poster' src='{{poster}}' />
+  <view class='btns'>
+    <button class='btn red' bindtap='saveImg'>保存图片</button>
+  </view>
+</view>

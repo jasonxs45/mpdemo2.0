@@ -1,0 +1,52 @@
+/* components/step/index.wxss */
+.step{
+  width: 700rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content:space-between;
+}
+.step>view{
+  flex-grow:1;
+  position: relative;
+  opacity: 0.4;
+  width: 16.66%;
+  text-align: center;
+}
+.step>view.on{opacity: 1;}
+.step>view::after{
+  content: "";
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+  width: 50%;
+  height: 6rpx;
+  background: rgba(149,109,55, 1);
+}
+.step>view::before{
+  content: "";
+  position: absolute;
+  top: 20rpx;
+  right: 0;
+  width: 50%;
+  height: 6rpx;
+  background: rgba(149,109,55, 1);
+}
+.step>view:first-of-type::after{
+  display: none;
+}
+.step>view:last-of-type::before{
+  display: none;
+}
+.step>view text{
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 auto 10rpx;
+  background: rgba(149,109,55, 1);
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 50rpx;
+  color: #fff;
+}

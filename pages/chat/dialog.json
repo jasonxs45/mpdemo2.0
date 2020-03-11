@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "聊天",
+  "usingComponents": {
+    "fixed-footer-container": "/components/fixed-footer-container/index",
+    "x-icon": "/components/x-icon/index",
+    "img": "/components/img/index"
+  }
+}

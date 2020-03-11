@@ -1,0 +1,41 @@
+page {
+  background: #fff;
+  padding-top: 30rpx;
+}
+
+.card {
+  display: block;
+  width: 558rpx;
+  height: 340rpx;
+  margin: 50rpx auto;
+  box-shadow: 0 0 20px -8px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+.content {
+  width: 558rpx;
+  margin: 80rpx auto 0;
+}
+.p {
+  margin: 40rpx 0;
+}
+.ph .icon {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: top;
+  margin-right: 20rpx;
+}
+
+.ph .txt {
+  display: inline-block;
+  font-size: 32rpx;
+  color: rgba(102, 102, 102, 1);
+  vertical-align: top;
+  line-height: 36rpx;
+}
+.pb{
+  font-size: 32rpx;
+  color: rgba(102, 102, 102, 1);
+  line-height: 36rpx;
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "详情",
+  "backgroundColorTop": "#fff",
+  "backgroundColorBottom": "#f2f2f2",
+  "usingComponents": {
+    "fixed-footer-container": "/components/fixed-footer-container/index",
+    "auth-btn": "/components/auth-btn/index",
+    "article": "/components/article/index",
+    "x-icon": "/components/x-icon/index"
+  }
+}

@@ -1,0 +1,28 @@
+.media-wrapper{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.media-wrapper .img {
+  width: 100%;
+  height: 100%;
+}
+.media-wrapper .icon{
+  position: absolute;
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 72rpx;
+  text-align: center;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+.media-txv{
+  display: none;
+}

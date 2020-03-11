@@ -1,0 +1,23 @@
+<tab-group wx:if='{{tabs.length}}' line barStyle='background-color:rgba(149,109,55, 1)' class="tabs" bindchange="onChange" current="{{currentIndex}}">
+  <tab-item wx:for="{{tabs}}" wx:key="index" label='{{item.text}}' class="tab-item" />
+</tab-group>
+<swiper current='{{currentIndex}}' bindchange='onChange' class='main' duration='500'>
+  <swiper-item wx:for='{{showLists}}' wx:key='index'>
+    <scroll-view enable-back-to-top scroll-y class='scroll-view' bindscrolltolower='onReachLower'>
+      <list-container length='{{item.length}}' finished='{{finishes[index]}}' loading='{{loading[index]}}'>
+        <view>
+          <navigator wx:for='{{showLists[index]}}' wx:key='ID' url='/pages/shop/detail?id={{item.ID}}' class='nav'>
+            <view class='card flex'>
+              <img class='img' mode='aspectFill' src='{{item.Img}}' />
+              <view class='desc'>
+                <view class='name'>{{item.Title}}</view>
+                <view class='project'>所属项目：{{item.ProjectName}}</view>
+                <view class='date'>兑换时间：{{item.AddTime}}</view>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </list-container>
+    </scroll-view>
+  </swiper-item>
+</swiper>

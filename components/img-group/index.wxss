@@ -1,0 +1,30 @@
+.img-wrapper{
+  vertical-align: top;
+  display: inline-block;
+  width: 20%;
+  padding: 15rpx;
+  position: relative;
+}
+.img-row{
+  padding: 0 15rpx;
+}
+.img{
+  position: relative;
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+}
+.clear{
+  position: absolute;
+  top:0;
+  right: 0;
+}
+.plus-btn{
+  padding:0;
+  margin:0;
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 60rpx;
+  color:#888;
+}

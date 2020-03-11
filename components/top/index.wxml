@@ -1,0 +1,11 @@
+<view class='top'>
+  <view class='nav-bar'>
+    <location bindinited='onInit' />
+    <view class='search-bar'>
+      <view class='search-input'>
+        <x-input disabled class='search-x-input' value='{{keyword}}' placeholder='查找我的意向楼盘' bindtap='onFocus' bindclear='onClear' />
+        <x-icon class='icon' type='search-fill' />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<view class='address custom-class' catchtap='openMap'>
+  <block wx:if='{{!custom}}'>
+    <x-icon wx:if='{{icon}}' type='position-fill' />
+    <text>{{label}}</text>
+  </block>
+  <slot wx:else />
+</view>

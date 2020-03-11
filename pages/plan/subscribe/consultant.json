@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "线上认筹",
+  "usingComponents": {
+    "step": "../components/step/index",
+    "x-icon": "/components/x-icon/index",
+    "tel": "/components/tel/index"
+  }
+}

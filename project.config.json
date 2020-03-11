@@ -1,0 +1,512 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.1",
+	"appid": "wx2e1dbdad2be69f4f",
+	"projectname": "newhxsm",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 44,
+			"list": [
+				{
+					"id": -1,
+					"name": "项目介绍-列表",
+					"pathName": "pages/projects/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "项目介绍-详情",
+					"pathName": "pages/projects/detail",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "项目介绍-详情-扫码进入",
+					"pathName": "pages/projects/detail",
+					"query": "scene=1,o221D1THeaoWOEPeWHywW81i16n0",
+					"scene": 1047
+				},
+				{
+					"id": 3,
+					"name": "项目介绍-详情-转发进入",
+					"pathName": "pages/projects/detail",
+					"query": "id=1&shareunionid=obJUf0b30kmNMGy_nrh83axY1GJ4",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "项目介绍-周边地图",
+					"pathName": "pages/projects/surrounding",
+					"query": "id=1&type=",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "项目介绍-预约记录",
+					"pathName": "pages/projects/appoint-record",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "项目介绍-户型详情",
+					"pathName": "pages/projects/housetype-detail",
+					"query": "id=66",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "项目介绍-户型详情-转发进入",
+					"pathName": "pages/projects/housetype-detail",
+					"query": "id=1&shareunionid=o221D1THeaoWOEPeWHywW81i16n0",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "项目介绍-户型详情-扫码进入",
+					"pathName": "pages/projects/housetype-detail",
+					"query": "scene=1,o221D1THeaoWOEPeWHywW81i16n0",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "项目介绍-项目相册",
+					"pathName": "pages/projects/photoes",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "项目介绍-更多详情",
+					"pathName": "pages/projects/more-detail",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "项目介绍-预约",
+					"pathName": "pages/projects/form",
+					"query": "id=1&select=123",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "公告详情",
+					"pathName": "pages/news/announcement-detail",
+					"query": "code=hygz",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "在线客服-置业顾问列表",
+					"pathName": "pages/chat/list",
+					"query": "consultantID=1&userFansID=2&fromFansID=2&toFansID=1",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "在线客服-置业顾问的预约列表",
+					"pathName": "pages/chat/list2",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "在线客服-我的客户列表",
+					"pathName": "pages/chat/customers",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 16,
+					"name": "在线客服-聊天",
+					"pathName": "pages/chat/dialog",
+					"query": "consultantID=2&userUnionID=o221D1THeaoWOEPeWHywW81i16n0&fromUnionID=o221D1egVCkVcQb5vmY_EvwJbUlM&toUnionID=o221D1THeaoWOEPeWHywW81i16n0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "计算器",
+					"pathName": "pages/mortgage/mortgage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "计算结果",
+					"pathName": "pages/mortgage/detail",
+					"query": "parentActiveIndex=0&commercialTotal=870000&gjjTotal=500000&interestRatePerMou0=0.049&interestRatePerMou1=0.0325&totalMouths=360",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "新闻-列表",
+					"pathName": "pages/news/list",
+					"query": "type=购房百科",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "新闻-详情",
+					"pathName": "pages/news/detail",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": 20,
+					"name": "活动-列表",
+					"pathName": "pages/activity/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 21,
+					"name": "活动-详情",
+					"pathName": "pages/activity/detail",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "置业顾问列表",
+					"pathName": "pages/consult/list",
+					"query": "pid=1",
+					"scene": null
+				},
+				{
+					"id": 23,
+					"name": "置业顾问信息-项目点击入口",
+					"pathName": "pages/consult/index",
+					"query": "pid=1",
+					"scene": null
+				},
+				{
+					"id": 25,
+					"name": "置业顾问信息-用户扫码入口",
+					"pathName": "pages/consult/index",
+					"query": "scene=ConsultantID%3D1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/usercenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的收藏",
+					"pathName": "pages/usercenter/collect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的活动",
+					"pathName": "pages/usercenter/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的分享",
+					"pathName": "pages/usercenter/share",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 33,
+					"name": "我的礼品",
+					"pathName": "pages/shop/record",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的积分",
+					"pathName": "pages/usercenter/score",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 22,
+					"name": "扫码核销",
+					"pathName": "pages/scan/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 30,
+					"name": "新闻-详情-扫码进入",
+					"pathName": "pages/news/detail",
+					"query": "scene=1,o221D1THeaoWOEPeWHywW81i16n0",
+					"scene": null
+				},
+				{
+					"id": 30,
+					"name": "新闻-详情-转发进入",
+					"pathName": "pages/news/detail",
+					"query": "id=1&shareunionid=o221D1THeaoWOEPeWHywW81i16n0",
+					"scene": null
+				},
+				{
+					"id": 31,
+					"name": "商场-列表",
+					"pathName": "pages/shop/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 32,
+					"name": "商城-详情",
+					"pathName": "pages/shop/detail",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "业主绑定",
+					"pathName": "pages/usercenter/bind",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "业主身份",
+					"pathName": "pages/usercenter/identity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索页面",
+					"pathName": "pages/search-page/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "城市定位页面",
+					"pathName": "pages/city-page/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "视频播放",
+					"pathName": "pages/video/index",
+					"query": "vid=x0033ha88sy",
+					"scene": null
+				},
+				{
+					"id": 42,
+					"name": "认购-入口列表",
+					"pathName": "pages/subscribe/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 45,
+					"name": "认购-项目详情",
+					"pathName": "pages/subscribe/index/details",
+					"query": "projid=23e34ea2-17e1-4201-a02f-baa84c841cd9&title=%E7%9F%A9%E9%98%B5%E8%BE%89%E7%85%8C%E5%B9%BF%E5%9C%BA",
+					"scene": null
+				},
+				{
+					"id": 44,
+					"name": "认证",
+					"pathName": "pages/subscribe/subscribe/attest",
+					"query": "orderid=f795e4c1-93d9-45fb-8473-19bf7a2459cb",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的认购协议",
+					"pathName": "pages/subscribe/mine/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 46,
+					"name": "认购-表单页面",
+					"pathName": "pages/subscribe/subscribe/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 47,
+					"name": "认购-选择职业顾问",
+					"pathName": "pages/subscribe/subscribe/consultant",
+					"query": "orderid=060d0f7c-57f6-4c6a-aa02-3d0b8e0bba89&projectid=23e34ea2-17e1-4201-a02f-baa84c841cd9",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "认购-填写资料",
+					"pathName": "pages/subscribe/subscribe/form",
+					"query": "orderid=060d0f7c-57f6-4c6a-aa02-3d0b8e0bba89",
+					"scene": null
+				},
+				{
+					"id": 49,
+					"name": "认购-认购成功",
+					"pathName": "pages/subscribe/subscribe/success",
+					"query": "orderid=060d0f7c-57f6-4c6a-aa02-3d0b8e0bba89",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "优惠券-列表",
+					"pathName": "pages/coupon/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 51,
+					"name": "优惠券-详情",
+					"pathName": "pages/coupon/detail",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": 52,
+					"name": "优惠券-我的记录",
+					"pathName": "pages/coupon/record",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "置业顾问信息-用户转发",
+					"pathName": "pages/consult/index",
+					"query": "consultid=2",
+					"scene": null
+				},
+				{
+					"id": 54,
+					"name": "客服-在线咨询列表",
+					"pathName": "pages/serve/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "客服-我的用户列表",
+					"pathName": "pages/serve/customers",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "认购-跟办列表",
+					"pathName": "pages/subscribe/mine/schedule",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 57,
+					"name": "首页-带城市码扫码进入",
+					"pathName": "pages/index/index",
+					"query": "scene=武汉",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "认购-我的认购协议",
+					"pathName": "pages/subscribe/mine/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 59,
+					"name": "置业顾问-个人名片-扫码",
+					"pathName": "pages/consult/identity",
+					"query": "scene=ConsultantID%3D4",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "置业顾问-个人名片-正常",
+					"pathName": "pages/consult/identity",
+					"query": "id=5",
+					"scene": null
+				},
+				{
+					"id": 60,
+					"name": "认筹-我的认筹协议",
+					"pathName": "pages/plan/mine/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "认筹-我的跟办客户",
+					"pathName": "pages/plan/mine/schedule",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "认筹-认筹认证",
+					"pathName": "pages/plan/subscribe/attest",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

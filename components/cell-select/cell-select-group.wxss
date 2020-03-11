@@ -1,0 +1,6 @@
+:host{
+  display: block;
+  height: auto;
+  margin-left: -15rpx;
+  margin-right: -15rpx;
+}

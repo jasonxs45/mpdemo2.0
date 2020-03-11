@@ -1,0 +1,198 @@
+<view class='section top'>
+  <view class='flex info'>
+    <img class='avatar' circle mode='aspectFill' src='{{member.HeadImgUrl}}' />
+    <view style='flex: 1'>
+      <view wx:if='{{member}}' class='nickname'>
+        <view class='txt'>{{member.NickName}}</view>
+        <view class='id-tag {{member.IsStaff?"staff":"main-theme"}}'>{{member.IsStaff?'员工':'会员'}}</view>
+      </view>
+      <auth-btn wx:else class='nickname'>
+        <button class='authbtn'>登录</button>
+      </auth-btn>
+    </view>
+    <!-- <navigator wx:if='{{member}}' url='./score' class='to-score flex'>
+      <view>
+        <view>我的积分</view>
+        <text class='num'>123</text>
+      </view>
+      <x-icon type='arrow-right' />
+    </navigator> -->
+  </view>
+  <view wx:if='{{conflict ? member && !member.IsStaff : member}}' class='flex nav'>
+    <auth-btn>
+      <navigator class='nav-item' url='/pages/usercenter/collect'>
+        <view class='icon'>
+          <x-icon class='nav-icon' type='star-fill' />
+        </view>
+        <text class='txt'>收藏</text>
+      </navigator>
+    </auth-btn>
+    <auth-btn>
+      <navigator class='nav-item' url='/pages/usercenter/share'>
+        <view class='icon'>
+          <x-icon class='nav-icon' type='share-fill' />
+        </view>
+        <text class='txt'>分享</text>
+      </navigator>
+    </auth-btn>
+    <auth-btn>
+      <navigator class='nav-item' url='/pages/projects/appoint-record'>
+        <view class='icon'>
+          <x-icon type='date' />
+        </view>
+        <text class='txt'>预约</text>
+      </navigator>
+    </auth-btn>
+    <auth-btn>
+      <navigator class='nav-item' url='/pages/chat/list'>
+        <view class='icon'>
+          <x-icon class='nav-icon' type='service-fill' />
+          <view wx:if='{{member.NotReadCount}}' class='red-dot' />
+        </view>
+        <text class='txt'>顾问</text>
+      </navigator>
+    </auth-btn>
+  </view>
+</view>
+<block wx:if='{{showIdentifyChips && member}}'>
+  <split height='10rpx' />
+  <view class='group'>
+    <navigator wx:if='{{showIdentifyChipsBtn}}' class='flex cell' url='/pages/subscribe/index/index'>
+      <view class='icon'>
+        <x-icon type='trade' />
+      </view>
+      <view class='txt'>我要认购</view>
+    </navigator>
+    <navigator class='flex cell' url='/pages/subscribe/mine/list'>
+      <view class='icon'>
+        <x-icon type='licence-fill' />
+      </view>
+      <view class='txt'>我的认购协议</view>
+    </navigator>
+    <navigator wx:if='{{isRengouConsult}}' url='/pages/subscribe/mine/schedule' class='flex cell'>
+      <view class='icon'>
+        <x-icon type='group-fill' />
+      </view>
+      <view class='txt'>认购跟办客户</view>
+    </navigator>
+  </view>
+</block>
+<block wx:if='{{showPresale && member}}'>
+  <split height='10rpx' />
+  <view class='group'>
+    <navigator wx:if='{{showPresaleBtn}}' class='flex cell' url='/pages/plan/index/index'>
+      <view class='icon'>
+        <x-icon type='trade' />
+      </view>
+      <view class='txt'>我要认筹</view>
+    </navigator>
+    <navigator class='flex cell' url='/pages/plan/mine/list'>
+      <view class='icon'>
+        <x-icon type='licence-fill' />
+      </view>
+      <view class='txt'>我的认筹协议</view>
+    </navigator>
+    <navigator wx:if="{{isRenchouConsult}}" url='/pages/plan/mine/schedule' class='flex cell'>
+      <view class='icon'>
+        <x-icon type='group-fill' />
+      </view>
+      <view class='txt'>认筹跟办客户</view>
+    </navigator>
+  </view>
+</block>
+<block wx:if='{{conflict ? member && !member.IsStaff : member}}'>
+  <split height='10rpx' />
+  <view class='group'>
+    <navigator class='flex cell' url='./score'>
+      <view class='icon'>
+        <x-icon type='score' />
+      </view>
+      <view class='txt'>我的积分</view>
+    </navigator>
+    <navigator class='flex cell' url='/pages/coupon/record'>
+      <view class='icon'>
+        <x-icon type='tag-fill' />
+      </view>
+      <view class='txt'>我的优惠券</view>
+    </navigator>
+    <navigator class='flex cell' url='/pages/shop/record'>
+      <view class='icon'>
+        <x-icon type='gift-fill' />
+      </view>
+      <view class='txt'>我的礼品</view>
+    </navigator>
+    <navigator class='flex cell' url='/pages/usercenter/activity'>
+      <view class='icon'>
+        <x-icon type='flag-fill' />
+      </view>
+      <view class='txt'>我的活动</view>
+    </navigator>
+    <navigator url='/pages/news/announcement-detail?code=hygz' class='flex cell'>
+      <view class='icon'>
+        <x-icon type='file-fill' />
+      </view>
+      <view class='txt'>会员规则</view>
+    </navigator>
+  </view>
+</block>
+<block wx:if='{{member.IsStaff}}'>
+  <split height='10rpx' />
+  <view class='group'>
+    <navigator url='/pages/scan/index' class='flex cell'>
+      <view class='icon'>
+        <x-icon type='scan' />
+      </view>
+      <view class='txt'>扫码核销</view>
+    </navigator>
+  </view>
+  <block wx:if='{{member.IsConsultant}}'>
+    <split height='10rpx' />
+    <view class='group'>
+      <navigator class='flex cell' url='/pages/consult/identity?id={{member.ConsultantID}}'>
+        <view class='icon'>
+          <x-icon type='mp-code' />
+        </view>
+        <view class='txt'>我的名片</view>
+      </navigator>
+      <navigator url='/pages/chat/list2' class='flex cell'>
+        <view class='icon'>
+          <x-icon type='date' />
+        </view>
+        <view class='txt'>预约客户</view>
+      </navigator>
+      <navigator url='/pages/chat/customers' class='flex cell'>
+        <view class='icon'>
+          <x-icon type='group-fill' />
+        </view>
+        <view class='txt'>我的客户</view>
+      </navigator>
+      <view class='flex cell' bindtap='showForm'>
+        <view class='icon'>
+          <x-icon type='manager-fill' />
+        </view>
+        <view class='txt'>绑定矩客码</view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{member.IsCustomerService}}">
+    <split height='10rpx' />
+    <view class='group'>
+      <navigator url='/pages/serve/customers' class='flex cell'>
+        <view class='icon'>
+          <x-icon type='group-fill' />
+        </view>
+        <view class='txt'>我的咨询客户</view>
+      </navigator>
+    </view>
+  </block>
+</block>
+<view hidden='{{!formShow}}' class='bg' bindtap='hideForm'></view>
+<view hidden='{{!formShow}}' class='qr-code-wrapper'>
+  <view class='form'>
+    <view class='form-body'>
+      <view class='tit'>请填入您的矩客码</view>
+      <x-input class='input' placeholder="请填入您的矩客码" bindinput='onInput' />
+    </view>
+    <button class='btn main-theme' bindtap='bindJuke'>绑定</button>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<template name='project-item'>
+  <view class='project-item card flex'>
+    <image lazy-load src='{{TitleImg}}' mode='aspectFill' class='thumbnail' />
+    <view class='contents'>
+      <view class='name'>{{ProjectName}}</view>
+      <view class='flex center'>
+        <view class='focus-num'>{{ViewCount}}人关注</view>
+      </view>
+      <view class='price'>
+        <block wx:if='{{ShowPriceType === "UnitPrice"}}'>
+          <block wx:if='{{UnitPriceStr}}'>
+            约<text class='txt'>{{UnitPriceStr}}</text>元/平
+            <text wx:if='{{MaxUnitPrice === -1}}'>起</text>
+          </block>
+          <block wx:else>价格待定</block>
+        </block>
+        <block wx:elif='{{ShowPriceType === "TotalPrice"}}'>
+          <block wx:if='{{TotalPriceStr}}'>
+            约<text class='txt'>{{TotalPriceStr}}</text>万元/套
+            <text wx:if='{{MaxTotalPrice === -1}}'>起</text>
+          </block>
+          <block wx:else>价格待定</block>
+        </block>
+        <block wx:else>价格待定</block>
+      </view>
+      <view class='area'>
+        <block wx:if='{{FloorAreaStr}}'>
+          约<text class='txt'>{{FloorAreaStr}}</text>㎡
+          <text wx:if='{{MaxFloorArea === -1}}'>起</text>
+        </block>
+        <block wx:else>面积暂无</block>
+      </view>
+      <view class='tags'>
+        <view wx:for='{{tags}}' wx:key='index' class='tag'>{{item}}</view>
+      </view>
+      <!-- <view class='tel'>电话：
+          <text class='txt'>{{Phone}}</text>
+        </view> -->
+      <view class='address'>地址：
+        <text class='txt'>{{CityName ? CityName : ''}}{{AreaName ? '·'+AreaName : ''}}</text>
+      </view>
+    </view>
+  </view>
+</template>

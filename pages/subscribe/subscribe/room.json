@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "线上认购",
+  "usingComponents": {
+    "x-icon": "/components/x-icon/index",
+    "step": "../components/step/index"
+  }
+}

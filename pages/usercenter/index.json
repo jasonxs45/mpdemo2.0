@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "usingComponents": {
+    "split": "/components/split/index",
+    "img": "/components/img/index",
+    "x-icon": "/components/x-icon/index",
+    "x-input": "/components/x-input/index",
+    "auth-btn": "/components/auth-btn/index"
+  }
+}

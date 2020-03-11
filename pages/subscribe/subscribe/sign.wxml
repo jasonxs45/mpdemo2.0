@@ -1,0 +1,2 @@
+<!--pages/subscribe/sign.wxml-->
+<web-view src="{{src}}"></web-view>

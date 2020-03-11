@@ -1,0 +1,55 @@
+<view class="main detailsA1">
+  <swiper autoplay interval="4000" wx:if="{{details.projImg.length}}" indicator-dots indicator-color='rgba(255,255,255, .6)' indicator-active-color='#fff' class='banner'>
+    <swiper-item wx:for="{{details.projImg}}" wx:key="index">
+      <image src="{{item}}" class="detaisImg" mode="aspectFill" />
+    </swiper-item>
+  </swiper>
+  <view class="detaisImg" wx:else>暂无图片</view>
+  <view class="item1">{{details.projName}}
+    <view>
+      <text>{{details.price}}</text>
+    </view>
+  </view>
+  <view class="item2 flex">
+    <view class='ph'>项目地址：</view>
+    <view class='pb'>
+      <address coordinate='{{coordinate}}' icon label='{{details.address}}' name='{{details.projName}}' address='{{details.address}}' />
+    </view>
+  </view>
+  <view class="item2 flex">
+    <view class='ph'>联系电话：</view>
+    <view class='pb'>
+      <tel icon label='{{details.tel}}' phoneNumber='{{details.tel}}'/>
+    </view>
+  </view>
+  <view class="item2 flex" wx:if="{{details.licence}}">
+    <view class='ph'> 预售许可证号：</view>
+    <view class='pb'>{{details.licence}}</view>
+  </view>
+</view>
+<split />
+<view class="main detailsA2">
+  <view class="title">项目介绍</view>
+  <article words="{{details.introduce}}" />
+</view>
+<split />
+<view class="main detailsA3">
+  <view class="map" wx:if="{{markersShow}}">
+    <map id="myMap" latitude="{{markers[0].latitude}}" longitude="{{markers[0].longitude}}" markers="{{markers}}" enable-scroll='{{false}}' enable-rotate='{{false}}' enable-zoom='{{false}}' scale='13' ></map>
+  </view>
+</view>
+<view class="bottom" wx:if="{{details.state!='已结束'}}">
+  <button class='btn main-theme' bindtap="sub">认购</button>
+</view>
+<view class="box" hidden='{{!boxShoe}}'>
+  <view class='bg' bindtap='hideBox'></view>
+  <view class="boxMain">
+    <view class="boxTitle">线上认购须知</view>
+    <scroll-view scroll-y class="boxText">
+      <article words="{{details.facilities}}" />
+    </scroll-view>
+    <!-- <view class="boxBut" bindtap="jump">我已阅读</view> -->
+    <view class="boxBut" wx:if="{{unionid}}" bindtap="jump">我已阅读</view>
+    <button class="btn main-theme" wx:if="{{!unionid}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">我已阅读</button>
+  </view>
+</view>

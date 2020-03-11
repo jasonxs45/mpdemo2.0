@@ -1,0 +1,11 @@
+.no-data{
+  text-align: center;
+  font-size: 24rpx;
+  color: #888;
+}
+.no-data .img{
+  width: 220rpx;
+  height: 220rpx;
+  display: block;
+  margin: 30rpx auto;
+}

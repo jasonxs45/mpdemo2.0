@@ -1,0 +1,41 @@
+:host{
+  display: inline-block;
+}
+.x-input{
+  font-size: inherit;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  position: relative;
+  align-items: center;
+  /* background: #ccc; */
+  border-radius: inherit;
+}
+.icon{
+  flex: 0 0 60rpx;
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  position: relative;
+}
+.icon .clear{
+  display: block;
+  position: absolute;
+  /* height: 100%; */
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.x-input .inner-input {
+  height: 100%;
+  font-size: inherit;
+  flex: 1;
+  margin: 0 30rpx;
+}
+.icon .clear.input-index-clear{
+  display: block !important;
+  margin:0 !important;
+  padding:0 !important;
+  position: static;
+}

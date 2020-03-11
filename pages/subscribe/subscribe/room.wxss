@@ -1,0 +1,94 @@
+/* pages/subscribe/room.wxss */
+@import "../index.wxss";
+page{
+  background: rgb(240, 242, 245);
+}
+.step{
+  background: #fff;
+  padding: 30rpx 0;
+  margin-bottom: 30rpx;
+}
+
+.top{
+  height: 98rpx;
+  border-bottom: 2rpx solid #F2F2F2;
+  line-height: 98rpx;
+}
+.top .item1{
+  display: inline-block;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+  padding-left: 30rpx;
+}
+.top .item1 .place{
+  display: inline-block;
+}
+.top .item1 image{
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+.top .item2{
+  margin-left: 60rpx;
+}
+
+.listScroll{
+  position: fixed;
+  top: 260rpx;
+  left: 0;
+  right: 0;
+  bottom: 20rpx;
+  width: 100%;
+}
+.list{
+  margin: 30rpx;
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  line-height: 64rpx;
+  color: rgb(122, 122, 122);
+  position: relative;
+}
+.list text{
+  color: #000;
+  font-weight: 600;
+  line-height: 64rpx;
+}
+.list .state{
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  transform: translateY(-50%);
+  color: rgb(255, 4, 4);
+  width: 100rpx;
+}
+.list .state.on{
+  color: #1aad19;
+}
+.floor{
+  position: fixed;
+  top: 300rpx;
+  right: 30rpx;
+}
+.floor view{
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+.floor view.on{
+  background: rgba(149,109,55, 1);
+  color: #fff;
+}
+
+.latest{
+  padding: 10rpx;
+  height:34rpx;
+  font-size:24rpx;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:34rpx;
+  text-align: center;
+}

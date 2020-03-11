@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "置业顾问",
+  "backgroundColor": "#ffffff",
+  "usingComponents": {
+    "tel": "/components/tel/index",
+    "x-icon": "/components/x-icon/index",
+    "img": "/components/img/index"
+  }
+}

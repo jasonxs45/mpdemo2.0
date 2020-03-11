@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "详情",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "fixed-footer-container": "/components/fixed-footer-container/index",
+    "container": "/components/container/index",
+    "address": "/components/address/index",
+    "tel": "/components/tel/index",
+    "split": "/components/split/index",
+    "x-icon": "/components/x-icon/index",
+    "auth-btn": "/components/auth-btn/index",
+    "img": "/components/img/index",
+    "media": "/components/media/index",
+    "article": "/components/article/index",
+    "mp-navigation-bar": "/components/navigation-bar/navigation-bar"
+  }
+}

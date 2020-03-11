@@ -1,0 +1,24 @@
+:host{
+  display: inline-block;
+}
+.x-picker{
+  height: 90rpx;
+  padding:0 15rpx;
+}
+.x-picker.disable{
+  opacity: .3;
+}
+.picker-content{
+  width: 100%;
+  height: 90rpx;
+}
+.picker-content .placeholder,
+.picker-content .value{
+  height: 90rpx;
+  line-height: 90rpx;
+  white-space: nowrap;
+  padding-right: 15rpx;
+}
+.picker-content .placeholder{
+  color: #888;
+}

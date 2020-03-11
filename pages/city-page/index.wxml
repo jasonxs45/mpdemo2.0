@@ -1,0 +1,8 @@
+<view class='tit'>当前定位</view>
+<view class='tags'>
+  <view class='tag active' bindtap='onCityTap'>{{city.Name}}</view>
+</view>
+<view class='tit'>选择城市</view>
+<view class='tags'>
+  <view wx:for='{{cityList}}' wx:key='index' class='tag' data-index='{{index}}' bindtap='onTagTap'>{{item.Name}}</view>
+</view>

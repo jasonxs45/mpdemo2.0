@@ -1,0 +1,34 @@
+<view class='top'>
+  <img class='banner' src='{{detail.Img}}' />
+</view>
+<view class='intro'>
+  <view class='tag {{detail.State==="已上架"?"":"off"}}'>{{detail.State}}</view>
+  <view class='name'>{{detail.Title}}</view>
+  <view class='p flex info'>
+    <view class='ph'>
+      <view class='info-line'>兑换截止时间：{{detail.ExchangeEndTime}}</view>
+      <view class='info-line'>剩余数量：{{detail.InventoryTotal}}</view>
+    </view>
+    <view wx:if='{{!myInfo}}' class='btns'>
+      <button wx:if='{{!tel}}' size='mini' class='get-btn btn main-theme' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber'>立即领取</button>
+      <button wx:else size='mini' class='get-btn btn main-theme' bindtap='submit'>立即领取</button>
+    </view>
+  </view>
+</view>
+<block wx:if='{{myInfo}}'>
+  <split height='10rpx' />
+  <view class='my-info'>
+    <view class='line-title'>核销二维码</view>
+    <view class='qr-img'>
+      <img mode='aspectFill' class='img {{myInfo.State === "已核销"?"checked":""}}' src='{{myInfo.QRCodeImg}}' />
+      <view wx:if='{{myInfo.State === "已核销"}}' class='cover'>{{myInfo.State}}</view>
+    </view>
+    <view wx:if='{{myInfo.State === "已核销"}}' class='p'>核销时间：{{myInfo.CheckTime}}</view>
+    <view wx:else class='p'>请向工作人员出示二维码进行核销</view>
+  </view>
+</block>
+<split height='10rpx' />
+<view class='detail'>
+  <view class='line-title'>使用说明</view>
+  <article words='{{words}}' />
+</view>

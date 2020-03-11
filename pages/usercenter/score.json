@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的积分",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "list-container": "/components/list-container/index",
+    "x-icon": "/components/x-icon/index"
+  }
+}

@@ -1,0 +1,2 @@
+<image mode='widthFix' class="logo" src="/images/logo.png" />
+<button disabled='{{disabled}}' class='btn main-theme' bindtap="openScan">点击扫码</button>

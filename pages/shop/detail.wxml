@@ -1,0 +1,40 @@
+<img class='banner' src='{{detail.Img}}' />
+<view class='intro'>
+  <!-- <view class='tag {{detail.State==="已上架"?"":"off"}}'>{{detail.State}}</view> -->
+  <view class='name'>{{detail.Title}}</view>
+  <view class='desc flex'>
+    <view class='desc_l'>
+      <view class='p'>
+        <text class='ph'>消耗积分：</text>
+        <text class='pb cost'>{{detail.PointPrice}}</text>
+      </view>
+      <view class='p'>
+        <text class='ph'>剩余：</text>
+        <text class='pb'>{{detail.InventoryTotal}}</text>
+      </view>
+    </view>
+    <button wx:if='{{!myInfo}}' class='btn main-theme exchange-btn' bindtap='submit'>我要兑换</button>
+  </view>
+</view>
+<block wx:if='{{myInfo}}'>
+  <split height='10rpx' />
+  <view class='my-info'>
+    <view class='name' style='font-size:80%;'>核销二维码</view>
+    <view class='qr-img'>
+      <img mode='aspectFill' class='img {{myInfo.State === "已核销"?"checked":""}}' src='{{myInfo.QRCodeImg}}' />
+      <view wx:if='{{myInfo.State === "已核销"}}' class='cover'>{{myInfo.State}}</view>
+    </view>
+    <view wx:if='{{myInfo.State === "已核销"}}' class='p'>核销时间：{{myInfo.CheckTime}}</view>
+    <view wx:else class='p'>请向管理员出示二维码，核销后领取物品</view>
+  </view>
+</block>
+<split height='10rpx' />
+<view class='detail'>
+  <view class='line-title'>商品介绍</view>
+  <article words='{{words}}' />
+</view>
+<split height='10rpx' />
+<view class='detail'>
+  <view class='line-title'>兑换说明</view>
+  <article words='{{detail.ExchangeInstruction}}' />
+</view>

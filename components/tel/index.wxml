@@ -1,0 +1,7 @@
+<view class='custom-class tel' catchtap='makecall'>
+  <block wx:if='{{!custom}}'>
+    <x-icon wx:if='{{icon}}' type='tel-fill' />
+    <text>{{label||phoneNumber}}</text>
+  </block>
+  <slot wx:else />
+</view>

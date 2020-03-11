@@ -1,0 +1,6 @@
+<import src="/templates/activity-item/index.wxml" />
+<list-container length='{{list.length}}' finished='{{finished}}' loading='{{loading}}'>
+  <navigator wx:for='{{showList}}' wx:key='id-{{item.ID}}' url='/pages/activity/detail?id={{item.ID}}' class=''>
+    <template is='activity-item' data='{{...item}}' />
+  </navigator>
+</list-container>

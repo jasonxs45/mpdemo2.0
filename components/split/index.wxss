@@ -1,0 +1,12 @@
+:host{
+  font-size: 0;
+  display: block;
+}
+.split{
+  background: #f2f2f2;
+}
+.vertical-split{
+  width: 1rpx;
+  display: inline-block;
+  vertical-align: top;
+}

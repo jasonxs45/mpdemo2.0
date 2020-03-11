@@ -1,0 +1,132 @@
+/* pages/subscribe/attest.wxss */
+@import "../index.wxss";
+page{
+  background: #fff;
+}
+.step{ 
+  margin-bottom: 60rpx;
+  background: #fff;
+  padding: 30rpx;
+}
+.preview-tips {
+  margin: 20rpx 0;
+}
+.video {
+  margin: 50px auto;
+  width: 100%;
+  height: 300px;
+}
+.title{
+  margin: 30rpx 30rpx 60rpx 30rpx;
+  color: #E50113;
+}
+.client{
+  text-align: center;
+  min-height: 50vh;
+}
+.clientM{
+  display: inline-block;
+  text-align: left;
+  margin: 0 10rpx 50rpx 10rpx;
+  vertical-align: middle;
+}
+.clientM .item1{
+  width: 280rpx;
+  padding: 10rpx 30rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #ccc;
+  line-height: 60rpx;
+  box-sizing: content-box;
+}
+.clientM .item1 view{
+  line-height: 60rpx;
+}
+.clientM .item1 text{
+  float: right;
+  color: #ccc;
+  line-height: 60rpx;
+}
+.clientM .item2{
+  text-align: center;
+  width: 200rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 20rpx 0;
+  margin: 50rpx auto;
+  background:rgba(149,109,55, 1);
+  border-radius: 10rpx;
+  color: #fff;
+  box-sizing: content-box;
+}
+.clientM .item2.on{
+  background: #ccc;
+}
+
+.but.on{
+  background: #ccc;
+  box-shadow:0px 16rpx 28rpx 0px rgba(155, 155, 155, 0.3);
+}
+.but{
+  width:630rpx;
+  height:88rpx !important;
+  line-height: 88rpx !important;
+  padding: 0 !important;
+  text-align: center;
+  background:rgba(149,109,55, 1);
+  box-shadow:0px 16rpx 28rpx 0px rgba(149,109,55, 0.3);
+  border-radius:4rpx;
+  font-size:36rpx;
+  font-weight:600;
+  color:rgba(255,255,255,1);
+  letter-spacing:1rpx;
+  margin:80rpx auto;
+}
+
+.box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+.boxMain{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700rpx;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 50rpx 40rpx;
+}
+.boxTitle{
+  text-align: center;
+  font-size: 36rpx;
+}
+.boxText{
+  height: 50vh;
+  overflow-y: auto;
+  margin:0 0 30rpx 0;
+}
+.boxBut{
+  width:430rpx;
+  height:88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background:rgba(149,109,55, 1);
+  box-shadow:0px 16rpx 28rpx 0px rgba(149,109,55, 0.3);
+  border-radius:4rpx;
+  font-size:36rpx;
+  font-weight:600;
+  color:rgba(255,255,255,1);
+  letter-spacing:1rpx;
+  margin: 0 auto;
+}
+.page-body{
+  margin: 30rpx;
+}
+.page-body-wrapper{
+  height: 75vh;
+}

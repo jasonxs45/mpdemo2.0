@@ -1,0 +1,65 @@
+<view class='bg'>
+  <img class='img' mode='aspectFill' src='{{bg}}' />
+  <view class='gradient'/>
+</view>
+<view class='main'>
+  <view wx:if='{{banners.length}}' class='banner'>
+    <swiper previous-margin='45rpx' next-margin='45rpx' current='{{topCurrent}}' duration='200' indicator-dots autoplay interval="4000" class="swiper">
+      <swiper-item wx:for="{{banners}}" wx:key="index" class="swiper-item">
+        <media type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' class='media' />
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class='menus flex'>
+    <view class='half'>
+      <navigator url='/pages/activity/list' class='color-block act'>
+        <view class='tit'>活动推荐</view>
+        <text class='sub-tit'>/ Activity</text>
+        <view style='margin-top: 110rpx' class='desc'>商圈购物</view>
+        <view style='margin-top: 10rpx' class='desc'>
+          <view><text>社区访谈 住宅升级</text></view>
+        </view>
+      </navigator>
+    </view>
+    <view class='half'>
+      <navigator url='/pages/news/list' class='color-block news'>
+        <view class='tit'>热点新闻<text class='sub-tit'>/ News</text></view>
+        <view class='desc'>因值得，而选择！</view>
+      </navigator>
+      <navigator url='/pages/shop/list' class='color-block gift'>
+        <view class='tit'>积分礼品<text class='sub-tit'>/ Gift</text></view>
+        <view class='desc'>更多礼品,欢迎来go~</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<mp-tabbar current='{{1}}' extClass='home-tab' style="position:fixed;bottom:0;width:100%;left:0;right:0;" />
+<block wx:if='{{ads.length}}'>
+  <view hidden='{{!adShow}}' class='ads-wrapper'>
+    <view class='bg'></view>
+    <view class='panel'>
+      <swiper current='{{current}}' duration='200' autoplay='{{adShow}}' interval="5000" class="swiper ads" bindchange='onChange'>
+        <swiper-item wx:for="{{ads}}" wx:key="index" class="swiper-item">
+          <media type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' class="ad-img" />
+        </swiper-item>
+      </swiper>
+      <view class='dots flex'>
+        <view wx:for="{{ads}}" wx:key="index" class='dot {{current===index ? "active":""}}' />
+      </view>
+      <view class='tip'>
+        <view class='label' bindtap='toggle'>
+          <x-icon class='icon' type='{{ignore ? "checkbox-fill" : "checkbox"}}' />
+          <text>{{max}}天内不再提示</text>
+        </view>
+      </view>
+      <icon type='cancel' size='30' color='#fff' bindtap='hideAd' />
+    </view>
+  </view>
+</block>
+<!-- 客服 -->
+<view wx:if='{{serveListShow}}' class='advisory'>
+  <auth-btn class='chat-nav'>
+    <image src="/images/advisory.png" bindtap='goConsult'></image>
+    <text>在线咨询</text>
+  </auth-btn>
+</view>

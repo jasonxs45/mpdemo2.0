@@ -1,0 +1,6 @@
+<view wx:for='{{albums}}' wx:key='list-{{index}}' class='section'>
+  <view class='title'>{{item.title}}({{item.length}})</view>
+  <view class='img-row'>
+    <image wx:for='{{item.imgs}}' wx:for-index='index1' wx:for-item='img' wx:key='img-{{index}}-{{index1}}' data-index='{{index}}' data-index1='{{index1}}' src='{{img}}' mode='aspectFill' class='img' bindtap='preview' />
+  </view>
+</view>

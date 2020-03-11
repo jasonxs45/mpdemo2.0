@@ -1,0 +1,7 @@
+<!--pages/subscribe/success.wxml-->
+<view class="step">
+  <step current="{{stepCurrent}}"></step>
+</view>
+<view class="title"><x-icon class="icon" type='correct' />认购成功</view>
+<view class="but" bindtap="jump">个人中心</view>
+<view class="but" data-index="0" bindtap="waySign">查看协议</view>

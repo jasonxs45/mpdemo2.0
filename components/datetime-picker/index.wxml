@@ -1,0 +1,9 @@
+<picker mode="multiSelector" range='{{datetimeRange}}' value='{{datetimeValue}}' bindcolumnchange='columnChange' bindchange='confirm'>
+  <view class='datetime-picker custom-class'>
+    <view wx:if="{{value !== null}}" class='text'>{{value}}</view>
+    <view wx:else class="placeholder text">{{placeholder || '请选择时间'}}</view>
+    <view class="icon">
+      <x-icon type="caret-down" />
+    </view>
+  </view>
+</picker>

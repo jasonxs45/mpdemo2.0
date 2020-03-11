@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "location": "/components/location/index",
+    "x-input": "/components/x-input/index",
+    "x-icon": "/components/x-icon/index"
+  }
+}

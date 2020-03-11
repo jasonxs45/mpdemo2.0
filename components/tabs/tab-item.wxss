@@ -1,0 +1,25 @@
+:host{
+  flex: 1;
+  height: 100%;
+}
+.tab-item{
+  font-size: 28rpx;
+  text-align: center;
+  height: 100%;
+  transition: background .2s;
+}
+.tab-item.scroll-cell{
+  padding: 0 20rpx;
+  width: 200rpx;
+}
+.active{
+  font-weight: bold;
+  background-color: #ddd;
+}
+.label{
+  line-height: 100rpx;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,4 @@
+<view class='footer custom-class'>
+  <image mode='widthFix' class='logo' src='/images/logo.png' />
+  <image mode='widthFix' class='bottom' src='bottom.png' />
+</view>

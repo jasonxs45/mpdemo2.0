@@ -1,0 +1,8 @@
+<view class='main'>
+  <view class='title'>{{content.Title}}</view>
+  <view class='date'>{{content.AddTime}}</view>
+  <view class='content'>
+    <article words='{{content.Content}}' />
+  </view>
+  <!-- <view class='read'><x-icon type='file' />已有{{content.ViewCount}}人看过</view> -->
+</view>

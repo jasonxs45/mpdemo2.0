@@ -1,0 +1,69 @@
+<tab-group line barStyle='background-color:rgba(149,109,55, 1)' class="tabs" bindchange="onChange" current="{{currentIndex}}">
+  <tab-item wx:for="{{tabs}}" wx:key="index" label='{{item.text}}' class="tab-item" />
+</tab-group>
+<swiper current='{{currentIndex}}' bindchange='onChange' class='main' duration='500'>
+  <swiper-item wx:for='{{showLists}}' wx:key='index'>
+    <scroll-view enable-back-to-top scroll-y class='scroll-view' bindscrolltolower='onReachLower'>
+      <list-container length='{{item.length}}' finished='{{finishes[index]}}' loading='{{loading[index]}}' noDataText='暂无记录'>
+        <view>
+          <block wx:for='{{showLists[index]}}' wx:key='id-{{item.ID}}'>
+            <template wx:if='{{currentIndex === 0}}' is='project' data='{{item}}' />
+            <template wx:if='{{currentIndex === 1}}' is='houseType' data='{{item}}' />
+            <template wx:if='{{currentIndex === 2}}' is='news' data='{{item}}' />
+          </block>
+        </view>
+      </list-container>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+<template name='project'>
+  <navigator url='/pages/projects/detail?id={{item.ObjectID}}' class='project-item-nav'>
+    <view class='flex card'>
+      <image mode='aspectFill' class='thumbnail' src='{{item.TitleImg}}'  />
+      <view class='content'>
+        <view class='title'>{{item.ProjectName}}</view>
+        <view class='desc'>地址：<text>{{item.ProjectAddress}}</text></view>
+      </view>
+      <view class='vote'>
+        <x-icon type='thumbup-fill' />
+        <view class='count'>
+          共<text>{{item.ViewCount}}</text>人助力
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>
+<template name='houseType'>
+  <navigator url='/pages/projects/housetype-detail?id={{item.ObjectID}}'>
+    <view class='flex card'>
+      <image mode='aspectFit' class='thumbnail' src='{{item.Img}}'  />
+      <view class='content'>
+        <view class='title'>{{item.Name}}{{'-' + item.HuXing}}</view>
+        <view class='desc'>{{item.ProjectName}}</view>
+      </view>
+      <view wx:if='{{0}}' class='vote'>
+        <x-icon type='thumbup-fill' />
+        <view class='count'>
+          共<text>{{item.ViewCount}}</text>人助力
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>
+<template name='news'>
+  <navigator url='/pages/news/detail?id={{item.ObjectID}}'>
+    <view class='flex card'>
+      <image mode='aspectFill' class='thumbnail' src='{{item.Img}}'  />
+      <view class='content'>
+        <view class='title'>{{item.Title}}</view>
+        <view class='desc'>{{item.ProjectAddress}}</view>
+      </view>
+      <view wx:if='{{0}}' class='vote'>
+        <x-icon type='thumbup-fill' />
+        <view class='count'>
+          共<text>{{item.ViewCount}}</text>人助力
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>

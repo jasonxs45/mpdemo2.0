@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "container": "/components/container/index",
+    "row": "/components/row/index"
+  }
+}

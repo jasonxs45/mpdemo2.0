@@ -1,0 +1,8 @@
+<view class='tab-group custom-class'>
+  <scroll-view class='scroll-view' scroll-with-animation scroll-x='{{scroll}}' scroll-left='{{scrollLeft}}'>
+    <view class='tab-group-wrapper'>
+      <view wx:if='{{line}}' class='line' style='{{lineStyle}}{{barStyle}}'></view>
+      <slot />
+    </view>
+  </scroll-view>
+</view>

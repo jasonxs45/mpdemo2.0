@@ -1,0 +1,12 @@
+<view class='rate-container'>
+  <x-icon
+    class='rate-item'
+    wx:for='{{max}}'
+    wx:key='rate-{{index}}'
+    data-index='{{index}}'
+    type='{{types[index]}}'
+    custom-class='icon'
+    size='{{size}}'
+    bindtap='onTap'
+  />
+</view>

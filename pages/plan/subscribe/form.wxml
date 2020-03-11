@@ -1,0 +1,137 @@
+<view class="step">
+  <step current="{{stepCurrent}}"></step>
+</view>
+<view class="room">
+  <view class="item1">所选项目</view>
+  <view class="item2"><text class='out'>{{details.projName}}</text></view>
+</view>
+<view class="form" wx:for="{{paramMain}}" wx:key="index" wx:if="{{item}}">
+  <view class="fonmTitle">客户信息
+    <text class="on" wx:if="{{index>0}}" data-index="{{index}}" bindtap="deleteClient">删除</text>
+    <text wx:if="{{index==paramMain.length-1&&index!=paramindex-1}}" data-index="{{index}}" bindtap="addClient">新增联名人</text>
+  </view>
+  <view class="input">
+    <view class="inputTitle">姓名</view>
+    <view class="inputText">
+      <input type="text" value="{{param.ownerName[index]}}" data-index="ownerName" data-number="{{index}}" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <view class="icon01" data-index="ownerName" data-number="{{index}}" bindtap="clear">
+        <icon class='clear' size='20' type="clear" />
+      </view>
+    </view>
+  </view>
+  <view class="input">
+    <view class="inputTitle">电话号码</view>
+    <view class="inputText">
+      <input type="number" value="{{param.tel[index]}}" data-index="tel" data-number="{{index}}" maxlength="11" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <view class="icon01" data-index="tel" data-number="{{index}}" bindtap="clear">
+        <icon class='clear' size='20' type="clear" />
+      </view>
+    </view>
+  </view>
+  <view class="input">
+    <view class="inputTitle">身份证号</view>
+    <view class="inputText">
+      <input type="idcard" value="{{param.idNumber[index]}}" data-index="idNumber" data-number="{{index}}" maxlength="18" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <view class="icon01" data-index="idNumber" data-number="{{index}}" bindtap="clear">
+        <icon class='clear' size='20' type="clear" />
+      </view>
+    </view>
+  </view>
+  <view class="input">
+    <view class="inputTitle">身份证地址</view>
+    <view class="inputText">
+      <input type="text" value="{{param.cardAddress[index]}}" data-index="cardAddress" data-number="{{index}}" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <view class="icon01" data-index="cardAddress" data-number="{{index}}" bindtap="clear">
+        <icon class='clear' size='20' type="clear" />
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class="form form2" wx:if="{{paramindex>0}}">
+  <view class="fonmTitle">客户信息2<text bindtap="addClient">删除</text></view>
+  <view class="input">
+    <view class="inputTitle">姓名</view>
+    <view class="inputText">
+      <input type="text" value="{{param.ownerName[1]}}" data-index="ownerName" data-number="2" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <image src="/img/icon01.png" class="icon01" data-index="ownerName" data-number="2" bindtap="clear"></image>
+    </view>
+  </view>
+  <view class="input">
+    <view class="inputTitle">电话号码</view>
+    <view class="inputText">
+      <input type="number" value="{{param.tel[1]}}" data-index="tel" data-number="2" maxlength="11" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <image src="/img/icon01.png" class="icon01" data-index="tel" data-number="2" bindtap="clear"></image>
+    </view>
+  </view>
+  <view class="input">
+    <view class="inputTitle">身份证号</view>
+    <view class="inputText">
+      <input type="idcard" value="{{param.idNumber[1]}}" data-index="idNumber" data-number="2" maxlength="18" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <image src="/img/icon01.png" class="icon01" data-index="idNumber" data-number="2" bindtap="clear"></image>
+    </view>
+  </view>
+  <view class="input">
+    <view class="inputTitle">身份证地址</view>
+    <view class="inputText">
+      <input type="text" value="{{param.cardAddress[1]}}" data-index="cardAddress" data-number="2" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <image src="/img/icon01.png" class="icon01" data-index="cardAddress" data-number="2" bindtap="clear"></image>
+    </view>
+  </view>
+</view> -->
+<view class="form">
+  <view class="input">
+    <view class="inputTitle">电子邮箱</view>
+    <view class="inputText">
+      <input type="text" value="{{param.email}}" data-index="email" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <view class="icon01" data-index="email" bindtap="clear">
+        <icon class='clear' size='20' type="clear" />
+      </view>
+    </view>
+  </view>
+  <view class="input">
+    <view class="inputTitle">所在省市区</view>
+    <view class="inputText picker">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view wx:if="{{region[0]==''}}">必填</view>
+        <view wx:else>{{region[0]}}-{{region[1]}}-{{region[2]}}</view>
+        <view class="icon12">
+          <x-icon type='caret-down' />
+        </view>
+      </picker>
+    </view>
+    <!-- <view class="inputText">
+      <input type="text" value="{{param.provinceCity}}" data-index="provinceCity" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <image src="/img/icon01.png" class="icon01" data-index="provinceCity" bindtap="clear"></image>
+    </view> -->
+  </view>
+  <view class="input">
+    <view class="inputTitle">街道地址</view>
+    <view class="inputText">
+      <input type="text" value="{{param.roadSigns}}" data-index="roadSigns" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <view class="icon01" data-index="roadSigns" bindtap="clear">
+        <icon class='clear' size='20' type="clear" />
+      </view>
+    </view>
+  </view>
+  <view class="input">
+    <view class="inputTitle">邮政编码</view>
+    <view class="inputText">
+      <input type="number" value="{{param.postalCode}}" data-index="postalCode" maxlength="6" bindinput="onBindinput" placeholder="必填" class="{{box.show?'hide':''}}"></input>
+      <view class="icon01" data-index="postalCode" bindtap="clear">
+        <icon class='clear' size='20' type="clear" />
+      </view>
+    </view>
+  </view>
+</view>
+<button class="but btn " bindtap="submit">下一步</button>
+
+<view class="box" wx:if="{{box.show}}">
+  <view class="boxMain">
+    <view class="boxTitle">缴纳定金规则</view>
+    <view class="boxText">
+      <article words="{{details.deposit}}" />
+    </view>
+    <!-- <view class="boxBut" bindtap="jump">我已阅读</view> -->
+    <view class="boxBut" bindtap="pay">缴纳定金</view>
+  </view>
+</view>

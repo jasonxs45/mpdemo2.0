@@ -1,0 +1,8 @@
+<view class="list" wx:for="{{list}}" wx:key="{{index}}">
+  <view class="info" bindtap="onlist" data-index="{{index}}">
+    <view class="item1">{{item.projName}}<text class="{{item.state=='认筹成功'?'status4':'status3'}}">{{item.state}}</text></view>
+    <view class="item2">{{item.addTime}}</view>
+  </view>
+  <view class="contact" wx:if="{{item.adviser_list.length>0}}" data-reply-phone="{{item.adviser_list[0].tel}}" bindtap="calling">跟办顾问：{{item.adviser_list[0].name}}<view><text>{{item.adviser_list[0].tel}}</text><x-icon type='tel-fill' /></view></view>
+</view>
+<view class="latest" wx:if="{{latest}}">暂无最新数据</view>

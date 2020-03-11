@@ -1,0 +1,7 @@
+<navigator class='location' url='/pages/city-page/index'>
+  <x-icon type='position-fill' />
+  <text hidden="{{loading}}">{{city.Name}}</text>
+  <view hidden="{{!loading}}" class='loading'>
+    <x-icon type='loading' />
+  </view>
+</navigator>

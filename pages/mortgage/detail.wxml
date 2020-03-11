@@ -1,0 +1,157 @@
+<tab-group line barStyle='background-color:rgba(149,109,55, 1)' class="tabs" data-attr='activeIndex' bindchange="onChange" current="{{activeIndex}}">
+  <tab-item wx:for="{{tabs}}" wx:key="index" label='{{item}}' class="tab-item" />
+</tab-group>
+<view class='panel'>
+  <view class='tip'>*结果仅供参考，不保障绝对准确。</view>
+  <view class="item flex">
+    <view class="label">贷款总额</view>
+    <view class="value">￥
+      <text>{{loanTotal}}</text>
+    </view>
+  </view>
+  <view class="item flex">
+    <view class="label">还款总额</view>
+    <view class="value">￥
+      <text hidden="{{activeIndex != 0}}">{{totalRepayAi}}</text>
+      <text hidden="{{activeIndex != 1}}">{{totalRepayPriceAp}}</text>
+      <text hidden="{{activeIndex != 2}}">{{totalRepayAi+" / "+totalRepayPriceAp}}</text>
+    </view>
+  </view>
+  <view class="item flex">
+    <view class="label">总利息</view>
+    <view class="value">￥
+      <text hidden="{{activeIndex != 0}}">{{totalInterestAi}}</text>
+      <text hidden="{{activeIndex != 1}}">{{totalInterestAp}}</text>
+      <text hidden="{{activeIndex != 2}}">{{totalInterestAi+" / "+totalInterestAp}}</text>
+    </view>
+  </view>
+  <view class="item flex">
+    <view class="label">月供</view>
+    <view class="value">
+      <text hidden="{{activeIndex != 0}}">{{repayPerMouAi}}</text>
+      <text hidden="{{activeIndex != 1}}">首期还 {{repayPerMouthAp}} 元，之后每月递减 {{decreasePerMouAp}} 元</text>
+      <text hidden="{{activeIndex != 2}}">{{repayPerMouAi}} / 首期还 {{repayPerMouthAp}} 元，之后每期递减 {{decreasePerMouAp}} 元</text>
+    </view>
+  </view>
+</view>
+<view class="show-detail {{hiddenDetail?'':'active'}}" bindtap="showDetail">{{hiddenDetail? "明细": "收起"}}</view>
+<view class='table' hidden="{{hiddenDetail}}">
+  <view class="tr thead">
+    <view class="td">
+      <view class="placeholder">期数</view>
+    </view>
+    <view class="td">
+      <view class="placeholder">
+        <text hidden="{{activeIndex == 2}}">月供</text>
+        <text hidden="{{activeIndex != 2}}">已还本息</text>
+      </view>
+    </view>
+    <view class="td">
+      <view class="placeholder">
+        <text hidden="{{activeIndex == 2}}">本金</text>
+        <text hidden="{{activeIndex != 2}}">待还本金</text>
+      </view>
+    </view>
+    <view class="td">
+      <view class="placeholder">
+        <text hidden="{{activeIndex == 2}}">利息</text>
+        <text hidden="{{activeIndex != 2}}">提前还款实付</text>
+      </view>
+    </view>
+    <view hidden="{{activeIndex == 2}}" class="td">
+      <view class="placeholder">待还本金</view>
+    </view>
+  </view>
+  <view wx:for="{{currentLength}}" wx:key="*this" class="tr tbody">
+    <view class="td">
+      <view class="placeholder">{{index+1}}</view>
+    </view>
+    <view class="td">
+      <view class="placeholder">
+        <text hidden="{{activeIndex != 0}}">{{repayPerMouAi}}</text>
+        <text hidden="{{activeIndex != 1}}">{{repayPerMouObjAp.repayPerMouPriceArrAp[index]}}</text>
+        <text hidden="{{activeIndex != 2}}">{{repayPerMouObjAi.totalRepaidArrAi[index] + " /\n" + repayPerMouObjAp.totalRepaidArrAp[index]}}</text>
+      </view>
+    </view>
+    <view class="td">
+      <view class="placeholder">
+        <text hidden="{{activeIndex != 0}}">{{repayPerMouObjAi.repayPrincipalPerMouArrAi[index]}}</text>
+        <text hidden="{{activeIndex != 1}}">{{repayPrincipalPerMouAp}}</text>
+        <text hidden="{{activeIndex != 2}}">{{repayPerMouObjAi.balanceArrAi[index] + " /\n" + repayPerMouObjAp.balanceArrAp[index]}}</text>
+      </view>
+    </view>
+    <view class="td">
+      <view class="placeholder">
+        <text hidden="{{activeIndex != 0}}">{{repayPerMouObjAi.repayInterestPerMouArrAi[index]}}</text>
+        <text hidden="{{activeIndex != 1}}">{{repayPerMouObjAp.repayInterestPerMouArrAp[index]}}</text>
+        <text hidden="{{activeIndex != 2}}">{{repayPerMouObjAi.totalRepayPerMouArrAi[index] + " /\n" + repayPerMouObjAp.totalRepayPerMouArrAp[index]}}</text>
+      </view>
+    </view>
+    <view class="td">
+      <view class="placeholder">
+        <text hidden="{{activeIndex != 0}}">{{repayPerMouObjAi.balanceArrAi[index]}}</text>
+        <text hidden="{{activeIndex != 1}}">{{repayPerMouObjAp.balanceArrAp[index]}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content" hidden="{{activeIndex != 0}}">
+  <!--<block wx:for="{{repayPerMouObjAi.balanceArrAi}}" wx:key="*this">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="placeholder">{{index+1}}</view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">{{repayPerMouAi}}</view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">{{repayPerMouObjAi.repayPrincipalPerMouArrAi[index]}}</view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">{{repayPerMouObjAi.repayInterestPerMouArrAi[index]}}</view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">{{repayPerMouObjAi.balanceArrAi[index]}}</view>
+          </view>
+        </view>
+      </block> -->
+</view>
+<view class="content" hidden="{{activeIndex != 1}}">
+  <!-- <block wx:for="{{repayPerMouObjAp.balanceArrAp}}" wx:key="*this">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="placeholder">{{index+1}}</view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">{{repayPerMouObjAp.repayPerMouPriceArrAp[index]}}</view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">{{repayPrincipalPerMouAp}}</view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">{{repayPerMouObjAp.repayInterestPerMouArrAp[index]}}</view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">{{repayPerMouObjAp.balanceArrAp[index]}}</view>
+          </view>
+        </view>
+      </block> -->
+</view>
+<view class="content" hidden="{{activeIndex != 2}}">
+  <!--<block wx:for="{{repayPerMouObjAp.balanceArrAp}}" wx:key="*this">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="placeholder">{{index+1}}</view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">{{repayPerMouObjAi.totalRepaidArrAi[index] + " / " + repayPerMouObjAp.totalRepaidArrAp[index]}}</view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">{{repayPerMouObjAi.balanceArrAi[index] + " / " + repayPerMouObjAp.balanceArrAp[index]}}</view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="placeholder">{{repayPerMouObjAi.totalRepayPerMouArrAi[index] + " / " + repayPerMouObjAp.totalRepayPerMouArrAp[index]}}</view>
+          </view>
+        </view>
+      </block> -->
+</view>

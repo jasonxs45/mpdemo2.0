@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "积分商城",
+  "backgroundColorTop": "#fff",
+  "backgroundColorBottom": "#f2f2f2",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "list-container": "/components/list-container/index",
+    "location": "/components/location/index",
+    "x-input": "/components/x-input/index",
+    "x-picker": "/components/x-picker/index",
+    "x-icon": "/components/x-icon/index",
+    "flex": "/components/flex/index",
+    "img": "/components/img/index"
+  }
+}

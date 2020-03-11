@@ -1,0 +1,10 @@
+{
+  "name": "shaoxingMp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "mobx-miniprogram": "^4.13.2",
+    "mobx-miniprogram-bindings": "^1.0.0"
+  }
+}

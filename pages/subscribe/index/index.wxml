@@ -1,0 +1,19 @@
+<!--pages/index/list.wxml-->
+<view class="top">
+  <view class="topTitle">
+    <picker class="place" bindchange="bindPickerChange" value="{{index}}" range="{{place}}">
+      <view>
+        {{place[index]}} <x-icon class="icon1" type='caret-down' />
+      </view>
+    </picker>
+  </view>
+</view>
+<view class="list" wx:for="{{list}}" wx:key="projId" data-projid="{{item.projId}}" data-projname="{{item.projName}}" bindtap="listBut">
+  <view class="listImg" wx:if="{{!item.thumbnail}}">暂无图片</view>
+  <image src="{{item.thumbnail}}" wx:if="{{item.thumbnail}}" class="listImg" mode="widthFix"></image>
+  <view class="listText">
+    <view class="item1">{{item.projName}}<view><text>{{item.price}}</text></view></view>
+    <view class="item2">{{item.address}}</view>
+  </view>
+</view>
+<view class="latest" wx:if="{{latest}}">暂无最新数据</view>

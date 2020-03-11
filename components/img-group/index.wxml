@@ -1,0 +1,15 @@
+<container>
+  <row>
+    <view class='img-row'>
+      <view wx:for='{{value}}' wx:key='img-{{index}}' wx:if='{{index < count}}' class='img-wrapper' data-index='{{index}}'>
+        <img round preview class='img' data-index='{{index}}' mode='aspectFill' src='{{item}}' group='{{value}}' binderror='onError' />
+        <icon wx:if='{{!readOnly}}' class='clear' type='clear' color='#f00' data-index='{{index}}' bindtap='clear' />
+      </view>
+      <view wx:if='{{!readOnly}}' class='img-wrapper'>
+        <button class='plus-btn' bindtap='chooseImg'>
+          <x-icon type='plus' />
+        </button>
+      </view>
+    </view>
+  </row>
+</container>

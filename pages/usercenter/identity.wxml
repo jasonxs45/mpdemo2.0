@@ -1,0 +1,31 @@
+<img wx:if='{{detail.Project.length}}' preview class='card' src='{{detail.Project.length > 3 ? cardImgs[2]:cardImgs[detail.Project.length - 1]}}' />
+<view class='content'>
+  <view class='p flex'>
+    <view class='ph'>
+      <image class='icon' mode='aspectFit' src='./i1.png' />
+      <text space="emsp" class='txt'>姓 名：</text>
+    </view>
+    <view class='pb'>{{detail.Fans.BindName}}</view>
+  </view>
+  <view class='p flex'>
+    <view class='ph'>
+      <image class='icon' mode='aspectFit' src='./i2.png' />
+      <text space="emsp" class='txt'>电 话：</text>
+    </view>
+    <view class='pb'>{{detail.Fans.BindTel}}</view>
+  </view>
+  <view class='p flex'>
+    <view class='ph'>
+      <image class='icon' mode='aspectFit' src='./i3.png' />
+      <text space="emsp" class='txt'>身份证：</text>
+    </view>
+    <view class='pb'>{{detail.Fans.idcard}}</view>
+  </view>
+  <view wx:for='{{detail.Project}}' wx:key='index' class='p flex'>
+    <view class='ph'>
+      <image class='icon' mode='aspectFit' src='./i4.png' />
+      <text space="emsp" class='txt'>项 目：</text>
+    </view>
+    <view class='pb'>{{item.ProjectName}}</view>
+  </view>
+</view>

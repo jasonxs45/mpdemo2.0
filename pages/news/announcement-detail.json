@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "详情",
+  "backgroundColorTop": "#fff",
+  "backgroundColorBottom": "#f2f2f2",
+  "usingComponents": {
+    "article": "/components/article/index",
+    "x-icon": "/components/x-icon/index"
+  }
+}

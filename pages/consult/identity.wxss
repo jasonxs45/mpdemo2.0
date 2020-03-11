@@ -1,0 +1,236 @@
+@import '/templates/project-item/index.wxss';
+page{
+  box-sizing: border-box;
+  background: #f2f2f2;
+  padding: 30rpx;
+  padding-bottom: calc(30rpx + constant(safe-area-inset-bottom));
+  padding-bottom: calc(30rpx + env(safe-area-inset-bottom));
+}
+.top{
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 300rpx;
+  top: 0;
+  left: 0;
+  background: rgba(149,109,55, 1);
+  border-radius: 0 0 50% 50%/0 0 75rpx 75rpx;
+}
+.section{
+  width: 100%;
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.id-card{
+  padding: 30rpx;
+  align-content: center;
+}
+.id-card .info{
+  padding-left: 30rpx;
+  flex: 1;
+}
+.id-card .avatar{
+  width: 220rpx;
+  height: 220rpx;
+}
+.id-card .split{
+  margin-top: 15rpx;
+}
+.name-tag{
+  font-size: 0;
+  margin-top: 25rpx;
+}
+.name-tag .name,
+.name-tag .tag{
+  display: inline-block;
+  vertical-align: top;
+}
+.name-tag .name{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.name-tag .tag{
+  font-size: 20rpx;
+  color: rgba(149,109,55, 1);
+  background: rgba(149,109,55, .2);
+  line-height: 30rpx;
+  padding: 0 10rpx;
+  border-radius: 40rpx;
+  margin-top: 3rpx;
+  margin-left: 10rpx;
+}
+.id-card .telnum{
+  margin-top: 26rpx;
+  color: rgba(51, 51, 51, 1);
+  font-size: 26rpx;
+}
+.id-card .telnum .iconfont{
+  color: rgba(149,109,55, 1);
+}
+.id-card .btns{
+  margin-top: 30rpx;
+}
+.id-card .btn{
+  display: inline-block;
+  width: 160rpx;
+  height: 50rpx;
+  margin: 0;
+  padding: 0;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #fff;
+  vertical-align: top;
+  margin-left: 20rpx;
+}
+.id-card .btn:first-child{
+  margin-left: 0;
+}
+.customers {
+  margin: 15rpx 0;
+  padding: 30rpx;
+}
+.customers .flex{
+  align-items: center;
+}
+.customers .title{
+  color: rgba(149,109,55, 1);
+  font-size: 32rpx;
+  font-weight: bold;
+  flex: 0 0 180rpx;
+}
+.customers .title .iconfont{
+  vertical-align: top;
+  font-size: 120%;
+}
+.customers .num{
+  flex: 1;
+  width: 0;
+  font-size:26rpx;
+  color: rgba(153, 153, 153, 1);
+  padding: 0 15rpx;
+  text-align: center;
+}
+.customers .num .txt{
+  color: rgba(149,109,55, 1);
+  font-weight: 500;
+  margin: 0 5rpx;
+}
+.customers .imgs{
+  flex:0 0 210rpx;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.customers .img{
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block;
+  border-radius: 50%;
+  margin-left: -40rpx;
+  border:1rpx solid #fff;
+  box-shadow: 0 0 8rpx 0 rgba(0,0,0,.2);
+}
+.customers .img:first-child{
+  margin-left: 0;
+}
+.line-title{
+  font-size: 36rpx;
+  font-weight: bold;
+  position: relative;
+  padding-left: 30rpx;
+}
+.line-title:before{
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: rgba(149,109,55, 1);
+  height: 36rpx;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.projects{
+  padding: 30rpx 0;
+  margin: 15rpx 0;
+}
+.projects .nav{
+  margin: 30rpx;
+}
+.intro{
+  padding: 30rpx 0;
+  margin: 15rpx 0;
+}
+.btns .auth,
+.btns .tel-com{
+  display: inline-block;
+  vertical-align: top;
+}
+.btns .tel-com{
+  margin-left: 20rpx;
+}
+.btns .tel-com .iconfont{
+  color: #fff !important;
+}
+.bg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background: rgba(0, 0, 0, .6);
+}
+.qr-code-wrapper{
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 670rpx;
+  background: #f9f9f9;
+  border-radius: 10rpx;
+  text-align: center;
+  padding: 30rpx;
+}
+.qr-code-wrapper .name{
+  font-size:64rpx;
+  font-weight:bold;
+  margin: 30rpx 0;
+}
+.qr-code-wrapper .tag{
+  display: inline-block;
+  font-size: 20rpx;
+  color: rgba(149,109,55, 1);
+  background: rgba(149,109,55, .2);
+  line-height: 30rpx;
+  padding: 0 10rpx;
+  border-radius: 40rpx;
+}
+.qr-code-wrapper .telline{
+  margin-top: 30rpx;
+  color: rgba(51, 51, 51, 1);
+  font-size: 26rpx;
+}
+.qr-code-wrapper .tel .iconfont{
+  color: rgba(149,109,55, 1);
+}
+.qr-img{
+  display: block;
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 50%;
+  border: 1px solid rgba(149,109,55, 1);
+  padding: 50rpx;
+  margin: 30rpx auto;
+  background: #fff;
+}
+.qr-code-wrapper .btn{
+  margin: 30rpx auto;
+  font-size: 28rpx;
+  font-weight: 400;
+  border: 1px solid rgba(149,109,55, 1);
+  height: 80rpx !important;
+  line-height: 80rpx !important;
+  padding: 0;
+}

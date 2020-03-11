@@ -1,0 +1,51 @@
+<tab-group line barStyle='background-color:rgba(149,109,55, 1)' class="tabs" data-attr='activeIndex' bindchange="onChange" current="{{activeIndex}}">
+  <tab-item wx:for="{{tabs}}" wx:key="index" label='{{item}}' class="tab-item" />
+</tab-group>
+<view class="panel">
+  <view class="picker-section flex" hidden="{{activeIndex == 1}}">
+    <view class="title">商业贷利率：</view>
+    <view class="cell">
+      <x-picker class='picker' data-attr='rateIndex0' range='{{ratesName[0]}}' initValue='{{rateIndex0}}' bindchange='onChange' />
+    </view>
+  </view>
+  <view class="picker-section flex" hidden="{{activeIndex == 0}}">
+    <view class="title">公积金利率：</view>
+    <view class="cell">
+      <x-picker class='picker' data-attr='rateIndex1' range='{{ratesName[1]}}' initValue='{{rateIndex1}}' bindchange='onChange' />
+    </view>
+  </view>
+  <view class="picker-section flex">
+    <view class="title">贷款年限：</view>
+    <view class="cell">
+      <x-picker class='picker' data-attr='yearIndex' range='{{years}}' initValue='{{yearIndex}}' bindchange='onChange' />
+    </view>
+  </view>
+  <view class="picker-section flex" hidden="{{activeIndex == 2}}">
+    <view class="title">计算方式：</view>
+    <view class="cell">
+      <x-picker class='picker' data-attr='loanIndex' range='{{loansType}}' initValue='{{loanIndex}}' bindchange='onChange' />
+    </view>
+  </view>
+  <view class="picker-section flex" hidden="{{loanIndex != 0 || activeIndex == 2}}">
+    <view class="title">贷款比例：</view>
+    <view class="cell">
+      <x-picker class='picker' data-attr='percentIndex' range='{{percentArr}}' initValue='{{percentIndex}}' bindchange='onChange' />
+    </view>
+  </view>
+  <view class="input-section flex" hidden="{{activeIndex == 1}}">
+    <view class="title">商业总额：</view>
+    <view class="cell">
+      <x-input class="input" type="digit" data-attr='commercialTotal' placeholder="请输入总额" name="data0" initValue="{{showCommercial}}" bindinput="onInput" bindblur='onBlur' />
+    </view>
+  </view>
+  <view class="input-section flex" hidden="{{activeIndex == 0}}">
+    <view class="title">公积金总额：</view>
+    <view class="cell">
+      <x-input class="input" type="digit" data-attr='gjjTotal' placeholder="请输入总额" name="data1" initValue="{{showGjj}}" bindinput="onInput" bindblur='onBlur' />
+    </view>
+  </view>
+</view>
+<view class="btn-area">
+  <button class='btn main-theme' bindtap="showDetail" disabled="{{activeIndex==2?!(commercialTotal&&gjjTotal): (activeIndex==1?!gjjTotal: !commercialTotal)}}">计算</button>
+  <view class='tip'>*结果仅供参考，不保障绝对准确。</view>
+</view>

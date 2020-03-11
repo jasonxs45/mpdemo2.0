@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "container": "/components/container/index",
+    "row": "/components/row/index",
+    "img": "/components/img/index",
+    "x-icon": "/components/x-icon/index"
+  }
+}

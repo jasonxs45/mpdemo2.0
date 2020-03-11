@@ -1,0 +1,4 @@
+<view
+  class='split {{vertical?"vertical-split":""}} custom-class'
+  style='width:{{width}};height:{{height}};background-color:{{color}}'
+/>

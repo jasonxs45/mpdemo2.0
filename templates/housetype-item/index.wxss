@@ -1,0 +1,67 @@
+
+.housetype-item {
+  margin: 30rpx 0;
+}
+
+.housetype-item .thumbnail {
+  width: 300rpx;
+  flex: 0 0 300rpx;
+  height: 230rpx;
+  border-radius: 8rpx;
+}
+
+.housetype-item .contents {
+  flex: 0 0 390rpx;
+  width: 390rpx;
+  padding-left: 30rpx;
+}
+
+.housetype-item .price,
+.housetype-item .area,
+.housetype-item .focus-num,
+.housetype-item .tel,
+.housetype-item .address {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #888;
+  font-weight: 300;
+}
+.housetype-item .area .txt,
+.housetype-item .tel .txt,
+.housetype-item .address .txt {
+  font-size: 24rpx;
+  font-weight: 400;
+}
+
+.housetype-item .address {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.housetype-item .name {
+  font-weight: 500;
+  font-size: 32rpx;
+}
+.housetype-item .name .tag{
+  margin: 0 10rpx;
+}
+.housetype-item .huxing {
+  font-size: 26rpx;
+  color: rgba(153, 153, 153, 1);
+  line-height: 30rpx;
+  margin: 10rpx 0 0;
+}
+
+.housetype-item .price {
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  line-height: 30rpx;
+  margin: 10rpx 0 0;
+}
+
+.housetype-item .price .num {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: rgba(149,109,55, 1);
+}

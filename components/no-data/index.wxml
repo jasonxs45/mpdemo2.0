@@ -1,0 +1,9 @@
+<view class="no-data">
+  <image class='img' src="./nodata.png" />
+  <view>
+    <text wx:if='{{text}}'>
+      {{text}}
+    </text>
+    <text wx:else>暂无内容</text>
+  </view>
+</view>

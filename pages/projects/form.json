@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "预约",
+  "usingComponents": {
+    "x-input": "/components/x-input/index",
+    "x-icon": "/components/x-icon/index",
+    "container": "/components/container/index",
+    "split": "/components/split/index",
+    "x-picker": "/components/x-picker/index"
+  }
+}

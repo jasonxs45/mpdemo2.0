@@ -1,0 +1,34 @@
+<list-container length='{{list.length}}' loading='{{loading}}' finished='{{finished}}'>
+  <view wx:for='{{showList}}' wx:key='index' class='card'>
+    <view class='body flex'>
+      <img class='thumbnail' mode='aspectFill' src='{{item.TitleImg}}' />
+      <view class='content'>
+        <view class='flex p'>
+          <view class='ph'>项目名称：</view>
+          <view class='pb'>
+            <navigator url='/pages/projects/detail?id={{item.ProjectID}}' class='project'>{{item.ProjectName}}</navigator>
+          </view>
+        </view>
+        <view class='flex p'>
+          <view class='ph'>项目地址：</view>
+          <view class='pb'>
+            <address coordinate='{{item.coordinate}}' name='{{item.ProjectName}}' address='{{item.ProjectAddress}}' label='{{item.ProjectAddress}}' />
+          </view>
+        </view>
+        <view class='flex p'>
+          <view class='ph'>置业顾问：</view>
+          <view class='pb'>
+            <view class='nav' bindtap='goChat' data-index='{{index}}'>
+              <x-icon class='icon' type='chat' />{{item.AccountName}}
+            </view>
+            <tel class='tel' icon phoneNumber='{{item.Phone}}' />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='foot flex'>
+      <view class='date'>预约时间：{{item.AppointTime}}</view>
+      <view class='tag {{item.State === "已预约"?"red":""}}'>{{item.State}}</view>
+    </view>
+  </view>
+</list-container>

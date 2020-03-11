@@ -1,0 +1,10 @@
+<view class='custom-class'>
+  <view class='collapse-head {{shadow && _shadow ?"shadow":""}} {{active?"active-class":""}}' bindtap='onTap'>
+    <slot name='head' />
+  </view>
+  <view class='collapse-body {{expand?"active-class":""}} {{transition?"transition":""}}' style="height: {{ contentHeight }};" bindtransitionend="onTransitionEnd">
+    <view class='collapse-body-wrapper'>
+      <slot name='body' />
+    </view>
+  </view>
+</view>

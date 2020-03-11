@@ -1,0 +1,16 @@
+<view class='section'>
+  <container>
+    <view class='title'>姓名</view>
+    <view class='input-line'>
+      <x-input data-attr='name' placeholder='请填写姓名' bindinput='onInput' />
+    </view>
+    <view class='title'>身份证</view>
+    <view class='input-line'>
+      <x-input maxlength='6' type='idcard' data-attr='idcard' placeholder='请填写身份证后六位' bindinput='onInput' />
+    </view>
+    <view class='tip'>*请如实填写您的业主信息，提交成功后可获得阳光荟·金卡的业主身份并享受相关优惠权益。</view>
+  </container>
+</view>
+<view class='btns'>
+  <button class='btn main-theme {{name && idcard ? "" : "opac"}}' bindtap='submit'>提交</button>
+</view>

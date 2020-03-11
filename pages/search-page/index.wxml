@@ -1,0 +1,16 @@
+<view class='search-bar'>
+  <view class='search-input'>
+    <x-icon class='icon' type='search-fill' />
+    <x-input class='input' focus value='{{value}}' placeholder='查找我的意向楼盘' bindinput='onInput' bindclear='onClear' />
+  </view>
+  <view class='btn' bindtap='confirm'>搜索</view>
+</view>
+<view hidden="{{value}}" class='latest'>
+  <view class='flex title'>
+    <view class='tit'>最近搜索</view>
+    <view class='clear' bindtap='clear'>清空</view>
+  </view>
+  <view class='tags'>
+    <view wx:for='{{latest_keywords}}' wx:key='*this' class='tag' data-val='{{item}}' bindtap='onTap'>{{item}}</view>
+  </view>
+</view>

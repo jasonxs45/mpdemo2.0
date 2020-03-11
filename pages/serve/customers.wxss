@@ -1,0 +1,99 @@
+/* rgba(149,109,55, 1) */
+.list-container{
+  padding-top: 0 !important;
+}
+.menber_box {
+  background-color: #fff;
+  margin: 15rpx 0;
+  padding: 30rpx; 
+}
+.menber_box .body{
+  align-items: center;
+}
+
+.menber_head {
+  width: 94rpx;
+  height: 94rpx;
+  border-radius: 50%;
+}
+
+.menber_text {
+  width: 400rpx;
+  margin-left: 20rpx;
+  flex: 1;
+  color: #333;
+}
+
+.menber_name {
+  width: auto;
+  max-width: 400rpx;
+  height: 40rpx;
+  overflow: hidden;
+  line-height: 40rpx;
+  margin-top: 5rpx;
+  display: block;
+  font-size: 32rpx;
+}
+
+.menber_identity {
+  line-height: 28rpx;
+  display: block;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #666;
+}
+
+.tel_ico {
+  display: block;
+  border-radius: 50%;
+  background: rgba(149,109,55,1);
+  width: 58rpx;
+  height: 58rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 58rpx;
+  font-size: 40rpx;
+}
+
+.mes_ico {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  background: #333;
+  width: 58rpx;
+  height: 58rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 58rpx;
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+
+.menber_text2 {
+  border-top: 1rpx solid #f8f8f8;
+  margin-top: 20rpx;
+  margin-left: 114rpx;
+  font-size: 24rpx;
+  align-items: center;
+  padding: 20rpx 0 0 0;
+  justify-content: space-between;
+}
+
+button.arrive_btn {
+  font-size: 24rpx;
+  width: 130rpx;
+  margin: 0;
+  padding: 0;
+  color: rgba(149,109,55,1);
+  border: 1rpx solid rgba(149,109,55,1);
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+button[disabled].arrive_btn {
+  border-color: #ddd;
+}
+.menber_time {
+  width: 400rpx;
+}

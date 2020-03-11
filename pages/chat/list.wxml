@@ -1,0 +1,19 @@
+<list-container length='{{list.length}}' finished loading='{{false}}'>
+  <view class='act_list'>
+    <view class='menber_box flex' wx:for="{{list}}" wx:key="index">
+      <image src='{{item.AccountUrl}}' class="menber_head" />
+      <view class="menber_text">
+        <text class='menber_name'>{{item.AccountName}}</text>
+        <text class="menber_identity">所属项目：{{item.ProjectName}}</text>
+      </view>
+      <view class="mes_ico" data-index='{{index}}' bindtap='goChat'>
+        <x-icon type='chat-fill' />
+        <view wx:if='{{item.NotReadCount}}' class='red-dot' />
+      </view>
+      <tel class="tel_ico" custom phoneNumber='{{item.StaffTel}}'>
+        <x-icon type='tel-fill' />
+      </tel>
+      <!-- <x-icon class='arrow' type='arrow-right' /> -->
+    </view>
+  </view>
+</list-container>

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "房贷计算",
+  "usingComponents": {
+    "tab-group": "/components/tabs/tab-group",
+    "tab-item": "/components/tabs/tab-item",
+    "x-picker": "/components/x-picker/index",
+    "x-input": "/components/x-input/index"
+  }
+}

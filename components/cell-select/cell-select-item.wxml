@@ -1,0 +1,6 @@
+<view class='custom-class cell-select-item {{disabled?"disabled":""}} {{checked?"cell-select-checked":""}}' bindtap='onTap'>
+  <view wx:if='{{label}}' class='label custom-class {{round?"round":""}} {{checked?"cell-select-active cell-select-active-class": ""}}'>
+    {{label}}
+  </view>
+  <slot wx:else />
+</view>

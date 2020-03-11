@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "查找楼盘",
+  "backgroundColor": "#ffffff",
+  "usingComponents": {
+    "x-input": "/components/x-input/index",
+    "x-icon": "/components/x-icon/index"
+  }
+}

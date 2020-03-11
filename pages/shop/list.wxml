@@ -1,0 +1,18 @@
+<import src="/templates/shop-item/index.wxml" />
+<view class='top'>
+  <view class='flex nav-bar'>
+    <view class='search-bar flex'>
+      <x-picker wx:if='{{projects.length}}' placeholder='选择项目筛选' range='{{projects}}' range-key='ProjectName' initValue='{{current}}' class='search-input' bindchange='onChange' />
+    </view>
+    <location bindinited='onInit' />
+  </view>
+</view>
+<scroll-view class='main-scroll-view' scroll-y enable-back-to-top bindscrolltolower='onReachLower'>
+  <list-container length='{{list.length}}' finished='{{finished}}' loading='{{loading}}' noDataText=''>
+    <view class='list'>
+      <navigator wx:for='{{showList}}' wx:key='ID' url='./detail?id={{item.ID}}' class='nav'>
+        <template is='shop-item' data='{{...item}}' />
+      </navigator>
+    </view>
+  </list-container>
+</scroll-view>

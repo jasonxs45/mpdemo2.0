@@ -1,0 +1,12 @@
+<template name='news-item-line'>
+  <view class='news-item line'>
+    <view class='title'>{{Title}}</view>
+    <img lazy round mode='aspectFill' class='thumbnail' src='{{Img}}' />
+  </view>
+</template>
+<template name='news-item-card'>
+  <view class='news-item card'>
+    <img lazy round class='thumbnail' mode='aspectFill' src='{{Img}}' />
+    <view class='title'>{{Title}}</view>
+  </view>
+</template>

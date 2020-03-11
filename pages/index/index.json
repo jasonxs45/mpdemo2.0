@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "首页",
+  "backgroundColor": "#000",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "split": "/components/split/index",
+    "img": "/components/img/index",
+    "x-icon": "/components/x-icon/index",
+    "media": "/components/media/index",
+    "auth-btn": "/components/auth-btn/index",
+    "mp-tabbar": "/components/tabbar/tabbar"
+  }
+}

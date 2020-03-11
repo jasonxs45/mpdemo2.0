@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "线上认购",
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "x-icon": "/components/x-icon/index"
+  }
+}

@@ -1,0 +1,20 @@
+<list-container length='{{list.length}}' finished='{{finished}}' loading='{{loading}}'>
+  <view class='act_list'>
+    <view class='menber_box' wx:for="{{showList}}" wx:key="{{index}}" data-consultantid="{{item.ConsultantID}}" data-tofansid="{{item.FansID}}">
+      <view class='body flex'>
+        <image src='{{item.HeadImgUrl}}' class="menber_head" />
+        <view class="menber_text">
+          <text class='menber_name'>{{item.NickName}}</text>
+          <!-- <text class="menber_identity">所属项目：{{item.ProjectName}}</text> -->
+        </view>
+        <navigator url='./dialog?consultantID={{member.ConsultantID}}&userUnionID={{item.UnionID}}&fromUnionID={{uid}}&toUnionID={{item.UnionID}}' class="mes_ico">
+          <x-icon type='chat-fill' />
+          <view wx:if='{{item.NotReadCount}}' class='red-dot' />
+        </navigator>
+        <!-- <tel class="tel_ico" custom phoneNumber='{{item.Tel}}'>
+          <x-icon type='tel-fill' />
+        </tel> -->
+      </view>
+    </view>
+  </view>
+</list-container>

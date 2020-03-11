@@ -1,0 +1,50 @@
+<!--pages/subscribe/mine/details.wxml-->
+<view class="main">
+  <view class="info">
+    <view class="item1" wx:for="{{list}}" wx:key="index" data-reply-phone="{{item.tel}}" bindtap="calling">
+      <view>{{item.ownerName}}<text>{{item.state}}</text></view>
+      <view>{{item.tel}}</view>
+    </view>
+  </view>
+  <view class="info2">
+    <view class="item3">认筹信息：</view>
+    <view class="item4">预定时间：{{details.addTime}}</view>
+    <view class="item5">{{project.projName}}</view>
+  </view>
+</view>
+ <!-- wx:if="{{logList.length>0}}" -->
+<view class="main details" wx:if="{{journal.length>0}}">
+  <view class="title">跟办日志<view bindtap="wayExpand">{{expand?'收起':'展开'}}<x-icon class="icon" type="{{expand?'arrow-top':'arrow-bottom'}}" /></view></view>
+  <view wx:if="{{expand}}">
+    <view wx:for="{{journal}}" wx:key="{{index}}">
+      <view class="item2">日志更新时间：{{item.addTime}}</view>
+      <view class="item2">跟办状态：{{item.desc}}</view>
+      <view class="item2">描述：{{item.content}}</view>
+      <view class="xian" wx:if="{{index<journal.length-1}}"></view>
+    </view>
+  </view>
+</view>
+<button class="but btn " bindtap="wayBox">更新状态</button>
+<view class="box" wx:if="{{boxShow}}">
+  <view class="boxBg" bindtap="wayBox"></view>
+  <view class="boxMain">
+    <view class="boxForm">
+      <view class="picker">
+        <view class="item1">状态：</view>
+        <view class="item2">
+          <picker bindchange="bindRegionChange" value="{{index}}" range="{{statusList}}">
+            {{statusList[statusIndex]}}
+            <x-icon class="icon" type='caret-down' />
+          </picker>
+        </view>
+      </view>
+      <view class="picker">
+        <view class="item1">说明：</view>
+        <view class="item3">
+          <textarea value="{{paramSubmit.desc}}" data-index="desc" bindinput="onBindinput" maxlength="" placeholder-class="place-holder" auto-height placeholder="请填写说明" class="{{box.show?'hide':''}}" />
+        </view>
+      </view>
+    </view>
+    <view class="boxBut" bindtap="submit">提交</view>
+  </view>
+</view>

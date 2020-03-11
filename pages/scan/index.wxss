@@ -1,0 +1,14 @@
+page{
+  background: #fff;
+}
+.logo{
+  width: 400rpx;
+  display: block;
+  margin: 150px auto;
+}
+.btn{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100px;
+}

@@ -1,0 +1,4 @@
+<!--components/step/index.wxml-->
+<view class="step">
+  <view wx:for="{{list}}" wx:key="index" class="{{index<current?'on':''}}"><text>{{index+1}}</text>{{item}}</view>
+</view>

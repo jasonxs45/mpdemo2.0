@@ -1,0 +1,208 @@
+/* pages/subscribe/mine/schedule.wxss */
+@import "../index.wxss";
+page{
+  background: #F2F2F2;
+  padding-bottom: 180rpx;
+}
+
+.main{
+  background: #fff;
+  padding:30rpx 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.info{
+  padding: 30rpx 0 0 0;
+  position: relative;
+  text-align: center;
+}
+.info .item1{
+  display: inline-block;
+  text-align: left;
+  margin: 0 10rpx 50rpx 10rpx;
+  vertical-align: middle;
+  width: 210rpx;
+  padding: 10rpx 30rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #ccc;
+  line-height: 60rpx;
+  box-sizing: content-box;
+}
+.info .item1 view{
+  line-height: 60rpx;
+}
+.info .item1 text{
+  float: right;
+  color: #ccc;
+  line-height: 60rpx;
+}
+
+.info2{
+  padding-bottom: 18rpx;
+}
+.info2 .item3{
+  font-size:24rpx;
+  font-family:PingFangSC-Medium,PingFangSC;
+  font-weight:600;
+  color:rgba(0,0,0,1);
+  line-height:34rpx;
+  margin-bottom: 30rpx;
+}
+.info2 .item4{
+  font-size:22rpx;
+  font-family:PingFangSC-Regular,PingFangSC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:32rpx;
+  margin-bottom: 20rpx;
+}
+.info2 .item4 text{
+  float: right;
+}
+.info2 .item5{
+  background:rgba(229,1,19,0.05);
+  border-radius:4rpx;
+  margin-bottom: 20rpx;
+  font-size:32rpx;
+  font-family:PingFangSC-Medium,PingFangSC;
+  font-weight:500;
+  color:rgba(229,1,19,1);
+  line-height:90rpx;
+  height:90rpx;
+  padding: 0 30rpx;
+}
+
+.details{
+  padding-bottom: 30rpx;
+}
+
+.details .title{
+  font-size:24rpx;
+  font-family:PingFangSC;
+  font-weight:600;
+  color:rgba(0,0,0,1);
+  line-height:34rpx;
+  margin-bottom: 30rpx;
+  padding-top: 10rpx;
+  position: relative;
+}
+.details .title view{
+  float: right;
+  font-weight: 500;
+  color: rgba(102,102,102,1);
+  display: block;
+}
+.details .title view .icon{
+  margin-left: 10rpx;
+}
+.details .item2{
+  font-size:22rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:32rpx;
+  margin-bottom: 20rpx;
+}
+.details .item2 text{
+  float: right;
+}
+
+.but{
+  width:630rpx;
+  height:88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background:rgba(149,109,55, 1);
+  box-shadow:0px 16rpx 28rpx 0px rgba(149,109,55, 0.3);
+  border-radius:4rpx;
+  font-size:36rpx;
+  font-weight:600;
+  color:rgba(255,255,255,1);
+  letter-spacing:1rpx;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 80rpx;
+}
+.xian{
+  height: 2rpx;
+  background: #EEEEEE;
+  margin: 38rpx 0 38rpx;
+}
+.box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+}
+.boxBg{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.boxMain{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700rpx;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 50rpx 40rpx;
+}
+.picker{
+  display: flex;
+  /* align-items:center; */
+  margin-bottom: 20rpx;
+}
+.picker .item1{
+  line-height: 88rpx;
+}
+.picker .item2{
+  height: 88rpx;
+  line-height: 88rpx;
+  background:rgba(248,248,248,1);
+  padding: 0 20rpx;
+  flex:1;
+}
+.picker .item2 .icon{
+  float: right;
+}
+.picker .item3{
+  min-height:176rpx;
+  background:rgba(248,248,248,1);
+  border-radius:4rpx;
+  padding: 1rpx;
+  margin-bottom: 30rpx;
+  flex:1;
+}
+.picker .item3 textarea{
+  display: block;
+  width: 100%;
+  min-height:146rpx;
+  margin: 24rpx 0;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size:24rpx;
+  font-weight:400;
+  color:#000;
+  line-height:34rpx;
+}
+
+.boxBut{
+  width:430rpx;
+  height:88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background:rgba(149,109,55, 1);
+  box-shadow:0px 16rpx 28rpx 0px rgba(149,109,55, 0.3);
+  border-radius:4rpx;
+  font-size:36rpx;
+  font-weight:600;
+  color:rgba(255,255,255,1);
+  letter-spacing:1rpx;
+  margin: 0 auto;
+}
+

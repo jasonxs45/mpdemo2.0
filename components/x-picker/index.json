@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "flex": "/components/flex/index",
+    "x-icon": "/components/x-icon/index"
+  }
+}

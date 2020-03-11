@@ -1,0 +1,42 @@
+<button wx:if='{{!member}}' class='auth-btn' capture-catch:tap='open'>
+  <slot />
+</button>
+<block wx:else>
+  <button wx:if='{{openType}}' open-type='{{openType}}' class='auth-btn'>
+    <slot />
+  </button>
+  <button wx:else class='auth-btn'>
+    <slot />
+  </button>
+</block>
+<view hidden='{{!show}}' class='bg' bindtap='close' />
+<view hidden='{{!show}}' class='auth-box'>
+  <view class='tit'>为您提供一站式的专属购房服务</view>
+  <view class='sub-tit'>让您省时、省心、省钱</view>
+  <view class='flex ads'>
+    <view class='item'>
+      <image class='img' mode='aspectFit' src='./1.png' />
+      <view class='txt'>优选新房</view>
+    </view>
+    <view class='item'>
+      <image class='img' mode='aspectFit' src='./2.png' />
+      <view class='txt'>优惠活动</view>
+    </view>
+    <view class='item'>
+      <image class='img' mode='aspectFit' src='./3.png' />
+      <view class='txt'>专属服务</view>
+    </view>
+  </view>
+  <view class='rule'>
+    <label class='label' bindtap='toggle'>
+      <view class='checkbox {{agree?"active":""}}' />
+      <text class='text'>我已阅读并同意</text>
+    </label>
+    <navigator class='nav' url='/pages/news/announcement-detail?code=hygz'>《会员规则》</navigator>
+  </view>
+  <view class='btns flex'>
+    <button class='cancel' bindtap='close'>拒绝</button>
+    <button hidden='{{!agree}}' open-type='getUserInfo' class='confirm' bindgetuserinfo='onGetWXUserInfo'>登录</button>
+    <button hidden='{{agree}}' class='confirm unable' bindtap='showTip'>登录</button>
+  </view>
+</view>

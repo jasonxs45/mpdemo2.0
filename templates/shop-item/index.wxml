@@ -1,0 +1,24 @@
+<template name='shop-item'>
+  <view class='shop-item'>
+    <view class='pic'>
+      <img lazy class='img' mode='aspectFill' src='{{Img}}' />
+    </view>
+    <view class='text-wrapper'>
+      <view class='name'>{{Title}}</view>
+      <view class='project'>所属项目：{{ProjectName}}</view>
+      <view class='cost'>兑换积分：{{PointPrice}}</view>
+    </view>
+  </view>
+</template>
+<template name='shop-item-line'>
+  <view class='shop-item flex line'>
+    <view class='pic'>
+      <img lazy round class='img' mode='aspectFill' src='{{Img}}' />
+    </view>
+    <view class='text-wrapper'>
+      <view class='name'>{{Title}}</view>
+      <!-- <view class='project'>所属项目：{{ProjectName}}</view> -->
+      <view class='cost'>兑换积分：{{PointPrice}}</view>
+    </view>
+  </view>
+</template>

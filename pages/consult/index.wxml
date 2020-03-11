@@ -1,0 +1,33 @@
+<view class='result'>
+  <img circle mode='aspectFill' src='{{consultInfo.AccountUrl}}' class='avatar' />
+  <view class='name'>{{consultInfo.AccountName}}</view>
+  <!-- <view class='tel'>{{consultInfo.StaffTel}}
+    <tel label='12345678910' phoneNumber='12345678910' />
+  </view> -->
+  <!-- <view class='flex p'>
+    <view class='ph'></view>
+    <view class='pb'></view>
+  </view> -->
+  <view class='project'>负责项目：
+    <text>{{consultInfo.ProjectName}}</text>
+  </view>
+  <view class='btns flex'>
+    <view wx:if='{{!tel}}' class='go-chat'>
+      <button class='btn main-theme' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber'>
+        <x-icon type='chat' />在线联系</button>
+    </view>
+    <block wx:else>
+      <view wx:if='{{consultInfo}}' class='go-chat' bindtap='goChat'>
+        <button class='btn main-theme'>
+          <x-icon type='chat' />在线联系</button>
+      </view>
+      <navigator wx:else class='go-chat'>
+        <button disabled='{{!consultInfo}}' class='btn main-theme'>
+          <x-icon type='chat' />在线联系</button>
+      </navigator>
+    </block>
+    <tel wx:if='{{consultInfo.StaffTel}}' class='func-btn' custom phoneNumber='{{consultInfo.StaffTel}}'>
+      <button class='btn main-theme'><x-icon type='tel-fill' />一键拨号</button>
+    </tel>
+  </view>
+</view>

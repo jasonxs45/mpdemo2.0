@@ -1,0 +1,146 @@
+/* pages/index/login.wxss */
+@import "../index.wxss";
+
+page {
+  background: #fff;
+  padding: 30rpx 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+button {
+  padding: 0;
+}
+
+button::after {
+  display: none;
+}
+
+button::before {
+  display: none;
+}
+
+button:not([size='mini']) {
+  min-height: auto;
+  width: auto;
+}
+
+.icon20 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.logo {
+  display: block;
+  width: 456rpx;
+  height: 130rpx;
+  margin: 140rpx auto 152rpx;
+}
+
+.top {
+  width: 630rpx;
+  margin: 0 auto 80rpx;
+}
+
+.top view {
+  display: inline-block;
+  width: 160rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: rgba(242, 242, 242, 1);
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+  letter-spacing: 1rpx;
+  margin-right: 40rpx;
+}
+
+.top view.on {
+  background: #e50113;
+  color: #fff;
+}
+
+.inputBg {
+  background: #f2f2f2;
+}
+
+.input {
+  width: 630rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 0 auto 40rpx;
+}
+
+.inputPhon {
+  line-height: 88rpx;
+  text-align: center;
+  position: relative;
+}
+
+.inputPhon button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.input input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 88rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+}
+
+.input2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input2 input {
+  width: 320rpx;
+}
+
+.input2 view {
+  width: 260rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 4rpx;
+  border: 2rpx solid rgba(149,109,55, 1);
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 26rpx;
+}
+
+.formBut {
+  width: 630rpx;
+  margin: 78rpx auto 120rpx;
+}
+
+.formBut view, .formBut navigator, .formBut button {
+  display: block;
+  width: 100%;
+  height:88rpx !important;
+  line-height: 88rpx !important;
+  padding: 0 !important;
+  text-align: center;
+  background: rgba(149,109,55, 1);
+  box-shadow: 0px 16rpx 28rpx 0px rgba(149,109,55, 0.3);
+  border-radius: 4rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 1rpx;
+}
+
+.formBut view.bg, .formBut navigator.bg, .formBut button.bg {
+  background: rgba(149,109,55, 1);
+  box-shadow: 0px 16rpx 28rpx 0px rgba(149,109,55, 0.3);
+}

@@ -1,0 +1,18 @@
+<list-container length='{{list.length}}' finished='{{true}}' noDataText='此项目暂无置业顾问'>
+  <view wx:for='{{list}}' wx:key='ID' class='item flex' data-index='{{index}}' bindtap='goChat'>
+    <img class='avatar' mode='aspectFill' circle src='{{item.AccountUrl}}' />
+    <view class='info'>
+      <view class='name'>{{item.AccountName}}</view>
+      <view class='belongs'>
+        <text class='tit'>负责：</text>{{item.ProjectName}}</view>
+    </view>
+    <!-- <view class='contact'>
+      <button wx:if='{{!tel}}' class='btn main-theme' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber'>
+        <x-icon type='chat' />
+      </button>
+      <button wx:else class='btn main-theme' data-index='{{index}}' bindtap='goChat'>
+        <x-icon type='chat' />
+      </button>
+    </view> -->
+  </view>
+</list-container>

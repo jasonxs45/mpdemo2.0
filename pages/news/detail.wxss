@@ -1,0 +1,60 @@
+page{
+  background: #f2f2f2;
+}
+.body{
+  padding-bottom: 100rpx;
+}
+.main{
+  background: #fff;
+}
+.title{
+  padding: 20px 15px;
+  font-size: 22px;
+  line-height: 1.4;
+  background: #fff;
+}
+.date{
+  font-size: 24rpx;
+  color: #888;
+  padding: 0 15px;
+}
+.read{
+  padding: 20px 15px;
+  text-align: right;
+  font-size: 24rpx;
+  color: #888;
+}
+.footer{
+  height: 98rpx;
+  background: #fff;
+  box-shadow: 0 -3rpx 2rpx -2rpx rgba(0, 0, 0, .2);
+}
+.func-btn{
+  display: block;
+  flex: 1;
+  padding: 0;
+  line-height: 1;
+  height: 100%;
+  background: #fff;
+}
+.func-btn .btn{
+  width: 100%;
+}
+.func-btn .icon{
+  display: block;
+  color: #f3a536;
+  width: 48rpx;
+  height: 48rpx;
+  font-size: 48rpx;
+  margin: 0 auto;
+  line-height: 1;
+}
+.func-btn image.icon{
+  padding: 5rpx;
+}
+.func-btn .txt{
+  display: block;
+  font-size:20rpx;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}

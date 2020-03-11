@@ -1,0 +1,25 @@
+@import '/templates/news-item/index.wxss';
+/* rgba(149,109,55, 1) */
+.tabs{
+  display: block;
+  background: #fff;
+}
+.tab-item.active{
+  background: #fff;
+  font-weight:bold;
+  color:rgba(149,109,55, 1);
+}
+.main{
+  width: 100%;
+  height: calc(100vh - 100rpx);
+}
+.scroll-view{
+  width: 100%;
+  height: 100%;
+}
+.list-container{
+  padding-top: 0 !important;
+}
+.nav:last-child .news-item.line:after {
+  display: none;
+}

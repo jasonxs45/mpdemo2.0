@@ -1,0 +1,21 @@
+<import src="/templates/coupon-item/index.wxml" />
+<view class='top'>
+  <view class='nav-bar'>
+    <view class='search-bar flex'>
+      <x-input class='search-input' bindinput='onInput' />
+      <view class='search-btn' bindtap='init'>
+        <x-icon type='search-fill' />
+      </view>
+    </view>
+    <location bindinited='onInit' />
+  </view>
+</view>
+<view class='main'>
+  <scroll-view enable-back-to-top scroll-y class='scroll-view' bindscrolltolower='onReachLower'>
+    <list-container length='{{showList.length}}' finished='{{finish}}' loading='{{loading}}'>
+      <navigator wx:for='{{showList}}' wx:key='ID' url='./detail?id={{item.ID}}' class='nav'>
+        <template is='coupon-item' data='{{...item}}' />
+      </navigator>
+    </list-container>
+  </scroll-view>
+</view>

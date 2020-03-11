@@ -1,0 +1,28 @@
+<!--pages/subscribe/attest.wxml-->
+<view class="step">
+  <step current="{{stepCurrent}}"></step>
+</view>
+<view class="title" wx:if="{{order.state=='签署协议'}}">注：请按顺序签署！</view>
+<view class="title" wx:else>为确保签署合规性，请完成人脸识别</view>
+<view class="client">
+  <view class="clientM" wx:for="{{details}}" wx:key="index">
+    <view style="margin-bottom:20rpx;" wx:if="{{order.state=='签署协议'}}">签署顺位{{index+1}}</view>
+    <view class="item1">
+      <view>{{item.ownerName}}<text>{{item.state}}</text></view>
+      <view>{{item.tel}}</view>
+    </view>
+    <view class="item2 {{item.isSign?'on':''}}" wx:if="{{order.state=='签署协议'}}" data-index="{{index}}" bindtap="{{item.isSign?'':'waySign'}}">{{item.isSign?'已签署':'签署协议'}}</view>
+    <view wx:else class="item2 {{item.state=='已认证'?'on':''}}" data-index="{{index}}" bindtap="{{item.state=='已认证'?'':'wayBoxShow'}}">{{item.state=='已认证'?'已认证':'点击认证'}}</view>
+  </view>
+</view>
+<button class="but btn " bindtap="submit" wx:if="{{stepCurrent==4}}">下一步</button>
+<view class="box" wx:if="{{box.show}}">
+  <view class="boxMain">
+    <!-- <view class="boxTitle">支付规则</view> -->
+    <view class="boxText">
+      <article words="{{order.deposit}}" />
+    </view>
+    <!-- <view class="boxBut" bindtap="jump">我已阅读</view> -->
+    <view class="boxBut" bindtap="pay">支付</view>
+  </view>
+</view>
