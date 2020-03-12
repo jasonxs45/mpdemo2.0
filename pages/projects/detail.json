@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "详情",
   "navigationStyle": "custom",
+  "backgroundColor": "#000000",
   "usingComponents": {
     "fixed-footer-container": "/components/fixed-footer-container/index",
     "container": "/components/container/index",

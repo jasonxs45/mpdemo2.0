@@ -69,7 +69,7 @@
 					"id": 1,
 					"name": "项目介绍-详情",
 					"pathName": "pages/projects/detail",
-					"query": "id=1",
+					"query": "id=46",
 					"scene": null
 				},
 				{

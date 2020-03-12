@@ -1,24 +1,16 @@
-<mp-navigation-bar back="{{backShow}}"></mp-navigation-bar>
+<mp-navigation-bar class='nav-bar' color='#000' back="{{backShow}}"></mp-navigation-bar>
 <import src="/templates/project-item/index.wxml" />
 <import src="/templates/news-item/index.wxml" />
 <import src="/templates/shop-item/index.wxml" />
-<swiper duration='300' current='{{swiperIndex}}' class='swiper'>
+<swiper indicator-dots duration='300' current='{{swiperIndex}}' class='swiper'>
   <swiper-item wx:for='{{swipers}}' wx:key='index'>
-    <media class='swiper-img' type='{{item.ResourceType}}' src='{{item.Image}}' />
+    <media class='swiper-img' type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' />
   </swiper-item>
 </swiper>
-<view class='page-num'>{{swiperIndex + 1}}/{{swipers.length}}</view>
 <fixed-footer-container>
   <view slot='content' class='main-scroll-view'>
-    <view class='transparent-block'>
-      <swiper duration='300' class='fake-swiper' bindchange='swiperChange'>
-        <swiper-item wx:for='{{swipers}}' wx:key='index'>
-          <media class='fake-swiper-img' type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' />
-        </swiper-item>
-      </swiper>
-    </view>
     <view class='main-wrapper'>
-      <view class='p-info'>
+      <view class='p-info section'>
         <container>
           <view class='flex'>
             <view class='p-name'>{{project.ProjectName}}</view>
@@ -29,292 +21,237 @@
               </button>
             </auth-btn>
           </view>
-          <view class='p-desc'>
-            <article words='{{project.Instruction}}' />
-          </view>
           <view class='tags'>
             <view wx:for='{{project.tags}}' wx:key='*this' class='tag'>{{item}}</view>
           </view>
+          <view class='flex pri'>
+            <view class='ph'>参考价格：</view>
+            <view class='pb'>
+              <block wx:if='{{project.ShowPriceType === "UnitPrice"}}'>
+                <block wx:if='{{project.UnitPriceStr}}'>
+                  约
+                  <text class='txt'>{{project.UnitPriceStr}}</text>元/平
+                  <text wx:if='{{project.MaxUnitPrice === -1}}'> 起</text>
+                </block>
+                <block wx:else>价格待定</block>
+              </block>
+              <block wx:elif='{{project.ShowPriceType === "TotalPrice"}}'>
+                <block wx:if='{{project.TotalPriceStr}}'>
+                  约
+                  <text class='txt'>{{project.TotalPriceStr}}</text>万元/套
+                  <text wx:if='{{project.MaxTotalPrice === -1}}'> 起</text>
+                </block>
+                <block wx:else>价格待定</block>
+              </block>
+              <block wx:else>价格待定</block>
+            </view>
+          </view>
+          <view class='flex addr'>
+            <view class='ph'>楼盘地址：</view>
+            <address class='pb' coordinate='{{project.pcoordinate}}' custom name='楼盘地址' address='{{project.ProjectAddress}}'>
+              <view class='txt'>{{project.ProjectAddress}}</view>
+              <x-icon class='icon' type='position-fill' />
+            </address>
+          </view>
         </container>
       </view>
-      <view class='wbg'>
-        <scroll-view scroll-x class='type-scroll-view'>
-          <view wx:for='{{detail.ProjectType}}' wx:key='index' class='type-item'>
-            <view class='flex p'>
-              <view class='ph'>
-                <text>业态类型：</text>
-              </view>
-              <view class='pb'>
-                <text>{{item.ProjectType || '暂无'}}</text>
-              </view>
-            </view>
-            <view class='flex p'>
-              <view class='ph'>
-                <text>参考价格：</text>
-              </view>
-              <view class='pb'>
-                <block wx:if='{{item.ShowPriceType === "UnitPrice"}}'>
-                  <block wx:if='{{item.UnitPriceStr}}'>
-                    约
-                    <text class='price'>{{item.UnitPriceStr}}</text>元/平
-                    <text wx:if='{{item.MaxUnitPrice === -1}}'>起</text>
-                  </block>
-                  <block wx:else>待定</block>
-                </block>
-                <block wx:elif='{{item.ShowPriceType === "TotalPrice"}}'>
-                  <block wx:if='{{item.TotalPriceStr}}'>
-                    约
-                    <text class='price'>{{item.TotalPriceStr}}</text>万元/套
-                    <text wx:if='{{item.MaxTotalPrice === -1}}'>起</text>
-                  </block>
-                  <block wx:else>待定</block>
-                </block>
-              </view>
-            </view>
-            <view class='flex p'>
-              <view class='ph'>
-                <text space='emsp'>产  权：</text>
-              </view>
-              <view class='pb'>
-                <text>{{item.PropertyRight || '暂无'}}</text>
-              </view>
-            </view>
-            <view class='flex p'>
-              <view class='ph'>
-                <text space='emsp'>装  修：</text>
-              </view>
-              <view class='pb'>
-                <text>{{item.DecorationStandard || '暂无'}}</text>
-              </view>
-            </view>
-            <view class='tag'>{{item.SaleState}}</view>
-            <navigator class='to-calc' url='/pages/mortgage/mortgage'>
-              <x-icon type='wallet-fill' class='icon' />
-              <text class='txt'>房贷计算</text>
-            </navigator>
-          </view>
-        </scroll-view>
-        <view class='address-info'>
-          <container>
-            <view class='flex p'>
-              <view class='ph'>最新开盘：</view>
-              <view class='pb'>{{project.NewOpen || '暂无'}}</view>
-            </view>
-            <view class='flex p'>
-              <view class='ph'>楼盘地址：</view>
-              <view class='pb'>
-                <address coordinate='{{project.pcoordinate}}' icon label='{{project.ProjectAddress}}' name='楼盘地址' address='{{project.ProjectAddress}}' />
-              </view>
-            </view>
-            <view class='flex p'>
-              <view class='ph'>售楼地址：</view>
-              <view class='pb'>
-                <address coordinate='{{project.scoordinate}}' icon label='{{project.SaleAddress}}' name='售楼地址' address='{{project.SaleAddress}}' />
-              </view>
-            </view>
-          </container>
-        </view>
-        <view class='focus-info flex'>
-          <view class='focus-num'>
-            <view class='num'>{{project.ViewCount}}</view>
-            <view class='txt'>人已关注</view>
-          </view>
-          <view class='v-line' />
-          <view class='share-num'>
-            <view class='num'>{{shareCount}}</view>
-            <view class='txt'>我的分享</view>
-          </view>
+      <view class='flex reactions'>
+        <view class='people'>
           <view class='avatars'>
             <image lazy-load wx:for='{{detail.HeadImgUrlList}}' wx:key='HeadImgUrl' mode='aspectFill' class='avatar' src='{{item.HeadImgUrl}}' />
           </view>
+          <view class='focus-num'>
+            <text class='num'>{{project.ViewCount}}</text>
+            <text class='txt'>人已关注</text>
+          </view>
         </view>
-        <navigator class='to-list' url='./more-detail?id={{id}}'>更多楼盘信息</navigator>
-        <split height='10rpx' />
-        <!-- 广告位 -->
-        <block wx:if='{{project.ADList.length}}'>
-          <swiper duration='200' autoplay interval="4000" indicator-dots class='ad'>
-            <swiper-item wx:for='{{project.ADList}}' wx:key='Title'>
-              <navigator class='nav' url='{{item.LinkUrl}}'>
-                <image lazy-load class='img' mode='aspectFill' src='{{item.Image}}' />
-              </navigator>
-            </swiper-item>
-          </swiper>
-        </block>
-        <!-- 户型鉴赏 -->
-        <split height='10rpx' />
-        <view wx:if='{{projectTypeImgs.length}}' class='section house-type-info'>
-          <container>
-            <view class='title'>户型鉴赏</view>
-            <view wx:if='{{projectTypeImgs.length > 1}}' class='tabs'>
-              <view wx:for='{{projectTypeImgs}}' wx:key='index' data-index='{{index}}' class='tab {{houseTypeIndex === index ? "active":""}}' bindtap='onTabTap'>{{item.ProjectType}}</view>
+        <view class='v-line' />
+        <navigator class='go-calc' url='/pages/mortgage/mortgage'>
+          <x-icon class='icon' type='calc' />
+          <text class='txt'>房贷计算</text>
+        </navigator>
+      </view>
+      <navigator class='to-list' url='./more-detail?id={{id}}'>更多楼盘信息</navigator>
+      <!-- 相册 -->
+      <view class='photoes'>
+        <view class='up flex'>
+          <navigator class='photo' url='./photoes?id={{id}}'>
+            <img class='img' mode='aspectFill' lazy src='{{detail.Project.ImgList1[0]}}' />
+            <view class='flex txt'>
+              <view>效果图</view>
+              <view>({{detail.Project.ImgList1.length}})</view>
             </view>
-            <scroll-view scroll-x class='house-type-scroll-view'>
-              <view wx:for='{{projectTypeImgs}}' wx:key='index' hidden='{{index !== houseTypeIndex}}' class='content'>
-                <navigator wx:for='{{item.ProjectHuXing}}' wx:for-item='type' wx:key='ID' url='./housetype-detail?id={{type.ID}}' class='house-type-item'>
-                  <view class='tag {{type.SaleState === "售罄"? "unable" :""}}'>{{type.SaleState}}</view>
-                  <image lazy-load class='thumbnail' mode='aspectFill' src='{{type.Img}}' />
-                  <view class='name'>{{type.Name}}</view>
-                  <view class='type-struc'>
-                    <text wx:if='{{type.Room}}'>{{type.Room}}室</text>
-                    <text wx:if='{{type.Hall}}'>{{type.Hall}}厅</text>
-                    <text wx:if='{{type.Kitchen}}'>{{type.Kitchen}}厨</text>
-                    <text wx:if='{{type.Toilet}}'>{{type.Toilet}}卫</text>
-                  </view>
-                  <view wx:if='{{type.InsideArea}}' class='area'>建面约{{type.InsideArea}}㎡</view>
-                  <view class='price'>
-                    总价:
-                    <block wx:if='{{type.TotalPriceStr}}'>
-                      约
-                      <text class='num'>{{type.TotalPriceStr}}</text>{{TOTAL_UNIT}}
-                      <text wx:if='{{type.MaxTotalPrice === -1}}'>起</text>
-                    </block>
-                    <block wx:else>待定</block>
-                  </view>
-                  <view class='price'>
-                    单价:
-                    <block wx:if='{{type.UnitPriceStr}}'>
-                      约
-                      <text class='num'>{{type.UnitPriceStr}}</text>{{UNIT}}
-                      <text wx:if='{{type.MaxUnitPrice === -1}}'>起</text>
-                    </block>
-                    <block wx:else>待定</block>
-                  </view>
-                </navigator>
-              </view>
-            </scroll-view>
-          </container>
-        </view>
-        <!-- 楼盘相册 -->
-        <split height='10rpx' />
-        <view class='section house-album'>
-          <container>
-            <view class='title'>楼盘相册</view>
-            <scroll-view scroll-x class='house-album-scroll-view'>
-              <navigator wx:for='{{albums}}' wx:key='index' url='./photoes?id={{id}}' class='album-item'>
-                <view class='thumbnail'>
-                  <image lazy-load class='img' mode='aspectFill' src='{{item.img}}' />
-                  <view wx:if='{{item.length > 1}}' class='count'>{{item.length + '张'}}</view>
-                </view>
-                <view class='name'>{{item.title}}</view>
-              </navigator>
-            </scroll-view>
-          </container>
-        </view>
-        <!-- 视频中心 -->
-        <split height='10rpx' />
-        <view wx:if='{{project.VideoList.length}}' class='section house-album video-album'>
-          <container>
-            <view class='title'>视频中心</view>
-            <scroll-view scroll-x class='house-album-scroll-view'>
-              <navigator wx:for='{{project.VideoList}}' wx:key='index' class='album-item'>
-                <view class='thumbnail'>
-                  <media class='img' type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' />
-                </view>
-              </navigator>
-            </scroll-view>
-          </container>
-        </view>
-        <!-- VR看房 -->
-        <split height='10rpx' />
-        <view wx:if='{{panos.length}}' class='section house-album video-album'>
-          <container>
-            <view class='title'>VR看房</view>
-            <scroll-view scroll-x class='house-album-scroll-view'>
-              <navigator wx:for='{{panos}}' wx:key='index' class='album-item'>
-                <view class='thumbnail'>
-                  <media class='img' type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' />
-                </view>
-              </navigator>
-            </scroll-view>
-          </container>
-        </view>
-        <split height='10rpx' />
-        <view class='section surrounding-info'>
-          <container>
-            <view class='title'>周边配套</view>
-            <view wx:if='{{surrounding.length}}' class='surrounding-scroll-view flex'>
-              <navigator wx:for='{{surrounding}}' wx:key='index' url='./surrounding?id={{id}}&type={{item.SupportType}}' class='surrounding-item'>
-                <image lazy-load class='img' src='{{cate[item.SupportType]||"/images/other.png"}}' />
-                <view class='txt'>{{item.SupportType}}</view>
-              </navigator>
+          </navigator>
+          <navigator class='photo' url='./photoes?id={{id}}'>
+            <img class='img' mode='aspectFill' lazy src='{{detail.Project.ImgList2[0]}}' />
+            <view class='flex txt'>
+              <view>实景图</view>
+              <view>({{detail.Project.ImgList2.length}})</view>
             </view>
-            <view class='map-sample'>
-              <map id='map' longitude='{{project.pcoordinate.longitude}}' latitude='{{project.pcoordinate.latitude}}' markers='{{markers}}' enable-scroll='{{false}}' enable-rotate='{{false}}' enable-zoom='{{false}}' bindtap='goSurround' />
+          </navigator>
+        </view>
+        <view class='down'>
+          <navigator class='photo' url='./photoes?id={{id}}'>
+            <img class='img' mode='aspectFill' lazy src='{{detail.Project.ImgList3[0]}}' />
+            <view class='flex txt'>
+              <view>规划图</view>
+              <view>({{detail.Project.ImgList3.length}})</view>
             </view>
-            <view class='intro'>
-              <block wx:for='{{surrounding}}' wx:key='index'>
-                <view class='tit'>{{item.SupportType}}</view>
-                <view class='desc'>
-                  <text>{{item.Remark}}</text>
-                </view>
+          </navigator>
+        </view>
+      </view>
+      <!-- 广告位 -->
+      <swiper wx:if='{{project.ADList.length}}' duration='200' autoplay interval="4000" indicator-dots class='ad'>
+        <swiper-item wx:for='{{project.ADList}}' wx:key='Title'>
+          <navigator class='nav' url='{{item.LinkUrl}}'>
+            <image lazy-load class='img' mode='aspectFill' src='{{item.Image}}' />
+          </navigator>
+        </swiper-item>
+      </swiper>
+      <!-- 户型鉴赏 -->
+      <view wx:if='{{detail.ProjectHuXing.length}}' class='section house-type-info'>
+        <view class='title'>户型鉴赏</view>
+        <view class='house-type flex'>
+          <navigator wx:for='{{detail.ProjectHuXing}}' wx:for-item='type' wx:key='ID' url='./housetype-detail?id={{type.ID}}' class='house-type-item'>
+            <view class='tag {{type.SaleState === "售罄"? "unable" :""}}'>{{type.SaleState}}</view>
+            <image lazy-load class='thumbnail' mode='aspectFill' src='{{type.Img}}' />
+            <view class='name'>{{type.Name}}</view>
+            <view class='type-struc'>
+              <text wx:if='{{type.Room}}'>{{type.Room}}室</text>
+              <text wx:if='{{type.Hall}}'>{{type.Hall}}厅</text>
+              <text wx:if='{{type.Kitchen}}'>{{type.Kitchen}}厨</text>
+              <text wx:if='{{type.Toilet}}'>{{type.Toilet}}卫</text>
+            </view>
+            <view wx:if='{{type.InsideArea}}' class='area'>建面约{{type.InsideArea}}㎡</view>
+            <view class='price'>
+              总价:
+              <block wx:if='{{type.TotalPriceStr}}'>
+                约
+                <text class='num'>{{type.TotalPriceStr}}</text>{{TOTAL_UNIT}}
+                <text wx:if='{{type.MaxTotalPrice === -1}}'>起</text>
               </block>
+              <block wx:else>待定</block>
             </view>
-          </container>
+            <view class='price'>
+              单价:
+              <block wx:if='{{type.UnitPriceStr}}'>
+                约
+                <text class='num'>{{type.UnitPriceStr}}</text>{{UNIT}}
+                <text wx:if='{{type.MaxUnitPrice === -1}}'>起</text>
+              </block>
+              <block wx:else>待定</block>
+            </view>
+          </navigator>
         </view>
-        <!-- 礼品兑换 -->
-        <block wx:if='{{goods.length}}'>
-          <split height='10rpx' />
-          <view class='section'>
-            <container>
-              <view class='flex newstit'>
-                <view class='title'>礼品兑换</view>
-                <navigator class='more' url='/pages/shop/list?name={{project.ProjectName}}'>更多
-                  <x-icon type='arrow-right' />
-                </navigator>
+      </view>
+      <!-- 视频中心 -->
+      <view wx:if='{{project.VideoList.length}}' class='section house-album video-album'>
+        <container>
+          <view class='title'>视频中心</view>
+          <scroll-view scroll-x class='house-album-scroll-view'>
+            <navigator wx:for='{{project.VideoList}}' wx:key='index' class='album-item'>
+              <view class='thumbnail'>
+                <media class='img' type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' />
               </view>
-            </container>
-            <view>
-              <navigator wx:for='{{goods}}' wx:key='ID' url='/pages/shop/detail?id={{item.ID}}' class='news-nav'>
-                <template is='shop-item-line' data='{{...item}}' />
-              </navigator>
-            </view>
-          </view>
-        </block>
-        <!-- 楼盘资讯 -->
-        <block wx:if='{{news.length}}'>
-          <split height='10rpx' />
-          <view class='section'>
-            <container>
-              <view class='flex newstit'>
-                <view class='title'>楼盘资讯</view>
-                <navigator class='more' open-type='switchTab' url='/pages/news/list'>更多
-                  <x-icon type='arrow-right' />
-                </navigator>
+            </navigator>
+          </scroll-view>
+        </container>
+      </view>
+      <!-- VR看房 -->
+      <view wx:if='{{panos.length}}' class='section house-album video-album'>
+        <container>
+          <view class='title'>VR看房</view>
+          <scroll-view scroll-x class='house-album-scroll-view'>
+            <navigator wx:for='{{panos}}' wx:key='index' class='album-item'>
+              <view class='thumbnail'>
+                <media class='img' type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' />
               </view>
-            </container>
-            <view>
-              <navigator wx:for='{{news}}' wx:key='ID' url='/pages/news/detail?id={{item.ID}}' class='news-nav'>
-                <template is='news-item-line' data='{{...item}}' />
-              </navigator>
-            </view>
+            </navigator>
+          </scroll-view>
+        </container>
+      </view>
+      <!-- 周边配套 -->
+      <view class='section surrounding-info'>
+        <container>
+          <view class='title'>周边配套</view>
+          <view wx:if='{{surrounding.length}}' class='surrounding-scroll-view flex'>
+            <navigator wx:for='{{surrounding}}' wx:key='index' url='./surrounding?id={{id}}&type={{item.SupportType}}' class='surrounding-item'>
+              <image lazy-load class='img' src='{{cate[item.SupportType]||"/images/other.png"}}' />
+              <view class='txt'>{{item.SupportType}}</view>
+            </navigator>
           </view>
-        </block>
-        <block wx:if='{{relations.length}}'>
-          <split height='10rpx' />
-          <view class='section relations'>
-            <container>
-              <view class='title'>猜你喜欢</view>
-            </container>
-            <view>
-              <navigator open-type='redirectTo' wx:for='{{relations}}' wx:key='ID' url='./detail?id={{item.ID}}' class='nav'>
-                <template is='project-item' data='{{...item}}' />
-              </navigator>
-            </view>
+          <view class='map-sample'>
+            <map id='map' longitude='{{project.pcoordinate.longitude}}' latitude='{{project.pcoordinate.latitude}}' markers='{{markers}}' enable-scroll='{{false}}' enable-rotate='{{false}}' enable-zoom='{{false}}' bindtap='goSurround' />
           </view>
-        </block>
+          <view class='intro'>
+            <block wx:for='{{surrounding}}' wx:key='index'>
+              <view class='tit'>{{item.SupportType}}</view>
+              <view class='desc'>
+                <text>{{item.Remark}}</text>
+              </view>
+            </block>
+          </view>
+        </container>
+      </view>
+      <!-- 详细图文 -->
+      <view class='p-desc section'>
+        <article words='{{project.Instruction}}' />
+      </view>
+      <!-- 礼品兑换 -->
+      <view wx:if='{{goods.length}}' class='section'>
+        <container>
+          <view class='flex newstit'>
+            <view class='title'>礼品兑换</view>
+            <navigator class='more' url='/pages/shop/list?name={{project.ProjectName}}'>更多
+              <x-icon type='arrow-right' />
+            </navigator>
+          </view>
+        </container>
+        <view>
+          <navigator wx:for='{{goods}}' wx:key='ID' url='/pages/shop/detail?id={{item.ID}}' class='news-nav'>
+            <template is='shop-item-line' data='{{...item}}' />
+          </navigator>
+        </view>
+      </view>
+      <!-- 楼盘资讯 -->
+      <view wx:if='{{news.length}}' class='section'>
+        <container>
+          <view class='flex newstit'>
+            <view class='title'>楼盘资讯</view>
+            <navigator class='more' open-type='switchTab' url='/pages/news/list'>更多
+              <x-icon type='arrow-right' />
+            </navigator>
+          </view>
+        </container>
+        <view>
+          <navigator wx:for='{{news}}' wx:key='ID' url='/pages/news/detail?id={{item.ID}}' class='news-nav'>
+            <template is='news-item-line' data='{{...item}}' />
+          </navigator>
+        </view>
+      </view>
+      <!-- 猜你喜欢 -->
+      <view wx:if='{{relations.length}}' class='section relations'>
+        <container>
+          <view class='title'>猜你喜欢</view>
+        </container>
+        <view>
+          <navigator open-type='redirectTo' wx:for='{{relations}}' wx:key='ID' url='./detail?id={{item.ID}}' class='nav'>
+            <template is='project-item' data='{{...item}}' />
+          </navigator>
+        </view>
       </view>
     </view>
   </view>
   <view slot='bottom' class='footer flex'>
     <auth-btn openType='share' class='func-btn' bindsuccess='addShare'>
       <button class='btn'>
-        <image class='icon' src='/images/wechat.png' />
+        <x-icon class='icon' type='share-fill' />
         <text class='txt'>转发</text>
       </button>
     </auth-btn>
     <auth-btn class='func-btn' bindsuccess='addShare'>
       <button class='btn' bindtap='shareTimeline'>
-        <image class='icon' src='/images/timeline.png' />
+        <x-icon class='icon' type='timeline' />
         <text class='txt'>分享</text>
       </button>
     </auth-btn>

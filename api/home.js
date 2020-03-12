@@ -7,7 +7,7 @@ export const _projects = ({ CityID = '' }) => fetch({
   CityID
 })
 export const _bannber = ({ CityID = '' }) => fetch({
-  action: 'GetBannerList',
+  action: 'GetHomeBanner',
   CityID
 })
 export const _ads = ({ CityID = '' }) => fetch({

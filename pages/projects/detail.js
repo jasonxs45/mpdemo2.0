@@ -164,6 +164,7 @@ MComponent({
             data
           } = res.data
           if (code === 0) {
+            data.HeadImgUrlList = data.HeadImgUrlList.slice(0, 14)
             this.set({
               detail: data,
               news: data.NewsList,
