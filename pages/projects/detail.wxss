@@ -123,8 +123,8 @@ page {
 }
 
 .addr .ph, .pri .ph {
-  flex: 0 0 140rpx;
-  width: 140rpx;
+  flex: 0 0 150rpx;
+  width: 150rpx;
   font-size: 28rpx;
   color: rgba(153, 153, 153, 1);
 }
