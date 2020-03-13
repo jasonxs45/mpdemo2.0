@@ -119,22 +119,22 @@
         </navigator>
       </container>
     </view>
-    <view class='tips'>免责条款：本资料为要约邀请，不作为要约或承诺；买卖双方的权利义务以双方签订的《商品房买卖合同》及其补充协议、附件等书面文件为准。</view>
+    <view class='tips'>免责条款：本资料为要约邀请，不作为要约或承诺；买卖双方的权利义务以双方签订的买卖合同及其补充协议、附件等书面文件为准。</view>
   </view>
   <view slot='bottom' class='footer flex'>
     <auth-btn openType='share' class='func-btn' bindsuccess='addShare'>
       <button class='btn'>
-        <image class='icon' src='/images/wechat.png' />
+        <x-icon class='icon' type='share-fill' />
         <text class='txt'>转发</text>
       </button>
     </auth-btn>
     <auth-btn class='func-btn' bindsuccess='addShare'>
       <button class='btn' bindtap='shareTimeline'>
-        <image class='icon' src='/images/timeline.png' />
+        <x-icon class='icon' type='timeline' />
         <text class='txt'>分享</text>
       </button>
     </auth-btn>
-    <auth-btn class='func-btn' bindsuccess='addShare'>
+    <auth-btn class='func-btn large' bindsuccess='addShare'>
       <button class='go-form' bindtap='goForm'>{{member ? '预约看房' : '授权注册'}}</button>
     </auth-btn>
   </view>

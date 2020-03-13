@@ -69,7 +69,7 @@
 					"id": 1,
 					"name": "项目介绍-详情",
 					"pathName": "pages/projects/detail",
-					"query": "id=46",
+					"query": "id=1",
 					"scene": null
 				},
 				{
@@ -504,6 +504,13 @@
 					"name": "认筹-认筹认证",
 					"pathName": "pages/plan/subscribe/attest",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "户型列表",
+					"pathName": "pages/projects/housetypelist",
+					"query": "id=1",
 					"scene": null
 				}
 			]

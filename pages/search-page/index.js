@@ -18,7 +18,12 @@ MComponent({
     confirm () {
       store.updateKeyword(this.data.value)
       wx.switchTab({
-        url: '/pages/projects/list'
+        url: '/pages/projects/list',
+        fail: err => {
+          wx.redirectTo({
+            url: '/pages/projects/list'
+          })
+        }
       })
     },
     clear () {

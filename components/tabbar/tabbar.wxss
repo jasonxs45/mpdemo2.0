@@ -59,15 +59,19 @@
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%);
-  padding: 4px;
+  font-size: 28px;
+  color: #fff;
+  transition: transform .2s;
 }
-.weui-tabbar__item.weui-bar__item_on .weui-tabbar__img{
+.weui-tabbar__item .weui-tabbar__img.active{
   background: rgba(149,109,55, 1);
   width: 102rpx;
   height: 102rpx;
-  padding: 30rpx;
+  line-height: 102rpx;
   border-radius: 50%;
   top: 0;
+  color: #fff;
+  font-size: 30px;
 }
 
 i.weui-tabbar__icon, .weui-tabbar__icon>i {

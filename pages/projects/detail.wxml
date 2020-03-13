@@ -1,7 +1,7 @@
-<mp-navigation-bar class='nav-bar' color='#000' back="{{backShow}}"></mp-navigation-bar>
 <import src="/templates/project-item/index.wxml" />
 <import src="/templates/news-item/index.wxml" />
 <import src="/templates/shop-item/index.wxml" />
+<mp-navigation-bar class='nav-bar' color='#000' back="{{backShow}}"></mp-navigation-bar>
 <swiper indicator-dots duration='300' current='{{swiperIndex}}' class='swiper'>
   <swiper-item wx:for='{{swipers}}' wx:key='index'>
     <media class='swiper-img' type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' />
@@ -90,7 +90,7 @@
             </view>
           </navigator>
         </view>
-        <view class='down'>
+        <view wx:if='{{detail.Project.ImgList3.length}}' class='down'>
           <navigator class='photo' url='./photoes?id={{id}}'>
             <img class='img' mode='aspectFill' lazy src='{{detail.Project.ImgList3[0]}}' />
             <view class='flex txt'>
@@ -108,13 +108,71 @@
           </navigator>
         </swiper-item>
       </swiper>
+      <!-- 置业顾问 -->
+      <view wx:if='{{list.length && !myConsult}}' class='section consult-container'>
+        <container>
+          <view class='flex newstit'>
+            <view class='title'>销售顾问</view>
+            <navigator class='more' url='/pages/consult/list?pid={{id}}'>更多
+              <x-icon type='arrow-right' />
+            </navigator>
+          </view>
+          <scroll-view scroll-x class='consult-scroll-view'>
+            <view wx:for='{{list}}' wx:key='index' class='consult-item'>
+              <view class='flex'>
+                <img lazy mode='aspectFill' class='consult-img' circle src='{{item.AccountUrl}}' />
+                <view class='info'>
+                  <view class='name'>{{item.AccountName}}</view>
+                  <tel custom class='bar tel' phoneNumber='{{item.StaffTel}}'>
+                    <x-icon type='tel-fill' />{{item.StaffTel}}
+                  </tel>
+                  <auth-btn class='bar chat' bindsuccess='addShare'>
+                    <view class='tochat' data-index='{{index}}' bindtap='bindConsult'>
+                      <x-icon type='chat-fill' />咨询销售顾问
+                    </view>
+                  </auth-btn>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </container>
+      </view>
+      <!-- 我的置业顾问 -->
+      <view wx:if='{{myConsult}}' class='section consult-container'>
+        <container>
+          <view class='title'>我的销售顾问</view>
+          <view class='consult-scroll-view'>
+            <view class='consult-item my-consult'>
+              <view class='flex'>
+                <img mode='aspectFill' lazy class='consult-img' circle src='{{myConsult.AccountUrl}}' />
+                <view class='info'>
+                  <view class='name'>{{myConsult.AccountName}}</view>
+                  <tel custom class='bar tel' phoneNumber='{{myConsult.StaffTel}}'>
+                    <x-icon type='tel-fill' />{{myConsult.StaffTel}}
+                  </tel>
+                  <auth-btn class='bar chat' bindsuccess='addShare'>
+                    <navigator class='tochat' url='/pages/consult/index?consultid={{myConsult.ID}}'>
+                      <x-icon type='chat-fill' />咨询销售顾问
+                    </navigator>
+                  </auth-btn>
+                </view>
+              </view>
+            </view>
+          </view>
+        </container>
+      </view>
       <!-- 户型鉴赏 -->
       <view wx:if='{{detail.ProjectHuXing.length}}' class='section house-type-info'>
-        <view class='title'>户型鉴赏</view>
+        <view class='flex newstit'>
+          <view class='title'>户型鉴赏</view>
+          <navigator class='more' url='/pages/projects/housetypelist?id={{id}}'>更多
+            <x-icon type='arrow-right' />
+          </navigator>
+        </view>
         <view class='house-type flex'>
           <navigator wx:for='{{detail.ProjectHuXing}}' wx:for-item='type' wx:key='ID' url='./housetype-detail?id={{type.ID}}' class='house-type-item'>
-            <view class='tag {{type.SaleState === "售罄"? "unable" :""}}'>{{type.SaleState}}</view>
-            <image lazy-load class='thumbnail' mode='aspectFill' src='{{type.Img}}' />
+            <!-- <view class='tag {{type.SaleState === "售罄"? "unable" :""}}'>{{type.SaleState}}</view> -->
+            <image lazy-load class='thumbnail' mode='aspectFit' src='{{type.Img}}' />
             <view class='name'>{{type.Name}}</view>
             <view class='type-struc'>
               <text wx:if='{{type.Room}}'>{{type.Room}}室</text>
@@ -194,11 +252,11 @@
         </container>
       </view>
       <!-- 详细图文 -->
-      <view class='p-desc section'>
+      <view wx:if='{{false}}' class='p-desc section'>
         <article words='{{project.Instruction}}' />
       </view>
       <!-- 礼品兑换 -->
-      <view wx:if='{{goods.length}}' class='section'>
+      <view wx:if='{{goods.length}}' class='section goods-container'>
         <container>
           <view class='flex newstit'>
             <view class='title'>礼品兑换</view>
@@ -214,17 +272,17 @@
         </view>
       </view>
       <!-- 楼盘资讯 -->
-      <view wx:if='{{news.length}}' class='section'>
+      <view wx:if='{{news.length}}' class='section news-container'>
         <container>
           <view class='flex newstit'>
             <view class='title'>楼盘资讯</view>
-            <navigator class='more' open-type='switchTab' url='/pages/news/list'>更多
+            <navigator class='more' url='/pages/news/list'>更多
               <x-icon type='arrow-right' />
             </navigator>
           </view>
         </container>
         <view>
-          <navigator wx:for='{{news}}' wx:key='ID' url='/pages/news/detail?id={{item.ID}}' class='news-nav'>
+          <navigator wx:for='{{news}}' wx:key='ID' url='/pages/news/detail?id={{item.ID}}' class='news-nav flex'>
             <template is='news-item-line' data='{{...item}}' />
           </navigator>
         </view>
@@ -255,17 +313,9 @@
         <text class='txt'>分享</text>
       </button>
     </auth-btn>
-    <auth-btn class='func-btn' bindsuccess='addShare'>
+    <auth-btn class='func-btn large' bindsuccess='addShare'>
       <button class='go-form' bindtap='goForm'>{{member ? '预约看房' : '授权注册'}}</button>
     </auth-btn>
-    <view class='chat-banner'>
-      <auth-btn class='chat-nav' bindsuccess='addShare'>
-        <button class='tochat' bindtap='goConsult'>
-          <x-icon type='chat' />
-        </button>
-        <view class='tochat-text'>专属顾问</view>
-      </auth-btn>
-    </view>
   </view>
 </fixed-footer-container>
 <view hidden='{{!posterShow}}' class='poster-bg' bindtap='closePoster' />

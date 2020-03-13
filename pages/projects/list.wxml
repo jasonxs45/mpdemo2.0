@@ -1,14 +1,14 @@
 <view style='top:{{fixedTop?fixedTop + "px":""}}' class='control-group {{fixed?"fixed":""}}' catchtouchmove='{{filterShow?"stop":""}}'>
-  <view class='cover'>
-    <image class='img' src='http://shimaohxnew.1juke.cn/Upload/EditorUpload//世茂云著/列表主图.jpg' />
+  <view class='cover {{bg?"high":"low"}}'>
+    <image class='img' src='{{bg}}' />
     <view class='gradient' />
   </view>
   <view id='top' class='top-bar flex'>
     <top class='op' bindinited='onInit' />
-    <navigator class='map-nav'>
+    <!-- <navigator class='map-nav'>
       <text>地图\n找房</text>
       <x-icon type='position-fill' />
-    </navigator>
+    </navigator> -->
   </view>
   <view class='filter-bar'>
     <view class='bar flex'>

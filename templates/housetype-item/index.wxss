@@ -8,6 +8,7 @@
   flex: 0 0 300rpx;
   height: 230rpx;
   border-radius: 8rpx;
+  border: 1px solid #ddd;
 }
 
 .housetype-item .contents {
@@ -51,6 +52,9 @@
   color: rgba(153, 153, 153, 1);
   line-height: 30rpx;
   margin: 10rpx 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .housetype-item .price {

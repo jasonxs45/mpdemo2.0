@@ -3,9 +3,9 @@
     <image lazy-load src='{{TitleImg}}' mode='aspectFill' class='thumbnail' />
     <view class='contents'>
       <view class='name'>{{ProjectName}}</view>
-      <view class='flex center'>
+      <!-- <view class='flex center'>
         <view class='focus-num'>{{ViewCount}}人关注</view>
-      </view>
+      </view> -->
       <view class='price'>
         <block wx:if='{{ShowPriceType === "UnitPrice"}}'>
           <block wx:if='{{UnitPriceStr}}'>
@@ -23,13 +23,13 @@
         </block>
         <block wx:else>价格待定</block>
       </view>
-      <view class='area'>
+      <!-- <view class='area'>
         <block wx:if='{{FloorAreaStr}}'>
           约<text class='txt'>{{FloorAreaStr}}</text>㎡
           <text wx:if='{{MaxFloorArea === -1}}'>起</text>
         </block>
         <block wx:else>面积暂无</block>
-      </view>
+      </view> -->
       <view class='tags'>
         <view wx:for='{{tags}}' wx:key='index' class='tag'>{{item}}</view>
       </view>

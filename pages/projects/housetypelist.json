@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "户型鉴赏",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "list-container": "/components/list-container/index",
+    "img": "/components/img/index"
+  }
+}

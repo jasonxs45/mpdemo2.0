@@ -1,7 +1,6 @@
 .project-item .thumbnail {
-  width: 300rpx;
-  flex: 1;
-  height: 230rpx;
+  width: 160rpx;
+  height: 160rpx;
   border-radius: 8rpx;
 }
 
@@ -31,8 +30,8 @@
 }
 
 .project-item .price .txt {
-  color: rgba(149,109,55, 1);
-  font-size: 26rpx;
+  color: rgba(222, 42, 42, 1);
+  font-size: 36rpx;
   font-weight: bold;
 }
 
@@ -72,8 +71,8 @@
   background: rgba(149,109,55, 0.1);
   font-weight: 500;
   color: rgba(149,109,55, 1);
+  height: 36rpx;
   line-height: 36rpx;
   padding: 0 10rpx;
-  border-radius: 4rpx;
   margin:0 10rpx;
 }

@@ -1,6 +1,8 @@
 @import '/templates/project-item/index.wxss';
 @import '/templates/housetype-item/index.wxss';
+
 /* rgba(149,109,55,1) */
+
 .main-scroll-view {
   padding-bottom: 100rpx;
 }
@@ -21,9 +23,9 @@
   display: inline-block;
   vertical-align: top;
   font-size: 20rpx;
-  background: rgba(149,109,55, 0.1);
+  background: rgba(149, 109, 55, 0.1);
   font-weight: 500;
-  color: rgba(149,109,55, 1);
+  color: rgba(149, 109, 55, 1);
   line-height: 36rpx;
   padding: 0 10rpx;
   border-radius: 4rpx;
@@ -59,9 +61,9 @@
 }
 
 .go-form {
-  flex: 0 0 280rpx;
-  width: 280rpx;
-  background: rgba(149,109,55, 1);
+  flex: 0 0 320rpx;
+  width: 320rpx;
+  background: rgba(149, 109, 55, 1);
   font-size: 36rpx;
   border-radius: 0;
   color: #fff;
@@ -87,9 +89,18 @@
   background: #fff;
 }
 
+.func-btn.large {
+  width: 460rpx;
+  flex: 0 0 460rpx;
+}
+
+.func-btn.large .go-form {
+  width: 100%;
+}
+
 .func-btn .icon {
   display: block;
-  color: #f3a536;
+  color: rgba(150, 109, 50, 1);
   width: 48rpx;
   height: 48rpx;
   font-size: 48rpx;
@@ -128,28 +139,34 @@
   line-height: 50rpx;
   flex: 1;
 }
+
 .price .num {
   /* font-size: 30rpx; */
   font-weight: bold;
-  color: rgba(149,109,55, 1);
+  color: rgba(149, 109, 55, 1);
 }
-.like-btn{
+
+.like-btn {
   width: 100rpx;
   flex: 0 0 100rpx !important;
   background: none !important;
 }
-.like-btn .btn{
+
+.like-btn .btn {
   background: none !important;
 }
-.like-btn .btn .icon{
-  margin-top:0 !important;
+
+.like-btn .btn .icon {
+  margin-top: 0 !important;
 }
+
 .title {
   font-size: 28rpx;
   font-weight: 600;
   color: rgba(51, 51, 51, 1);
   line-height: 40rpx;
 }
+
 .spec-info-container {
   width: 100%;
   overflow: hidden;
@@ -184,6 +201,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 /* 
 .tags {
   font-size: 0;
@@ -210,65 +228,79 @@
   color: rgba(153, 153, 153, 1);
   line-height: 34rpx;
 }
-.poster-bg{
+
+.poster-bg {
   position: fixed;
   width: 100%;
   height: 100%;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: 99;
-  background: rgba(0, 0, 0, .8);
+  background: rgba(0, 0, 0, 0.8);
 }
-.poster-wrapper{
+
+.poster-wrapper {
   position: fixed;
   z-index: 100;
   width: 600rpx;
   height: 800rpx;
   background: #fff;
   left: 50%;
-  top:50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 8rpx;
 }
-.poster-wrapper .title{
+
+.poster-wrapper .title {
   padding: 30rpx;
   text-align: center;
 }
-.poster{
+
+.poster {
   display: block;
   margin: 0 auto;
   width: 500rpx;
   height: 500rpx;
   background: #f2f2f2;
 }
-.poster-wrapper .btns{
+
+.poster-wrapper .btns {
   margin: 60rpx 0 30rpx;
 }
-.huxing{
+
+.huxing {
   margin-top: 15rpx;
 }
-.cl{
+
+.cl {
   align-items: flex-end;
   justify-content: space-between;
 }
+
 .brief-info .price {
   margin-top: 15rpx;
 }
-.brief-info .price .p{
+
+.brief-info .price .p {
   padding-right: 30rpx;
-  margin-top:15rpx;
+  margin-top: 15rpx;
 }
-.brief-info .price .p .ph{
+
+.brief-info .price .p .ph {
   flex: 0 0 80rpx;
 }
-.to-calc{}
-.to-calc .icon{
+
+.to-calc {
+}
+
+.to-calc .icon {
   font-size: 42rpx;
   line-height: 42rpx;
-  color:rgba(149,109,55, 1);
-  vertical-align: middle; 
+  color: rgba(149, 109, 55, 1);
+  vertical-align: middle;
 }
-.to-calc .txt{
+
+.to-calc .txt {
   font-size: 28rpx;
   color: #666;
   line-height: 42rpx;

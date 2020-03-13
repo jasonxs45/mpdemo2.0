@@ -1,7 +1,6 @@
 @import '/templates/project-item/index.wxss';
 @import '/templates/news-item/index.wxss';
 @import '/templates/shop-item/index.wxss';
-
 page {
   background: #000;
 }
@@ -10,7 +9,9 @@ page {
   position: fixed;
   z-index: 9999;
 }
-
+.nav-bar .weui-navigation-bar__btn_goback{
+  color: #fff;
+}
 .swiper {
   width: 100%;
   height: 452rpx;
@@ -88,8 +89,8 @@ page {
 
 
 .like-btn {
-  width: 100rpx;
-  flex: 0 0 100rpx !important;
+  width: 80rpx;
+  flex: 0 0 80rpx !important;
   background: none !important;
 }
 
@@ -307,7 +308,7 @@ page {
 .house-type-item .thumbnail {
   width: 270rpx;
   height: 270rpx;
-  border: 1rpx solid #ddd;
+  border: 1px solid rgba(153, 153, 153, 1);
 }
 
 .house-type-item .tag {
@@ -338,9 +339,10 @@ page {
 }
 
 .house-type-item .price .num {
-  color: rgba(149, 109, 55, 1);
+  color: rgba(221, 41, 41, 1);
   font-weight: 500;
   padding: 0 8rpx;
+  font-size: 140%;
 }
 
 .house-album-scroll-view, .surrounding-scroll-view {
@@ -426,7 +428,7 @@ page {
 }
 
 .surrounding-item .txt {
-  color: #666;
+  color:rgba(160,160,160,1);
   font-size: 24rpx;
   text-align: center;
   margin-top: 15rpx;
@@ -434,8 +436,10 @@ page {
 
 .map-sample {
   margin: 15rpx auto;
-  height: 400rpx;
+  height: 370rpx;
   background: #f2f2f2;
+  border-radius: 8rpx;
+  overflow: hidden;
 }
 
 #map {
@@ -470,7 +474,14 @@ page {
   height: 100%;
   background: #fff;
 }
+.func-btn.large{
+  width: 460rpx;
+  flex: 0 0 460rpx;
+}
 
+.func-btn.large .go-form{
+  width: 100%;
+}
 .func-btn .icon {
   display: block;
   color: rgba(150, 109, 50, 1);
@@ -492,11 +503,14 @@ page {
   color: rgba(153, 153, 153, 1);
 }
 
-.card .name {
+.project-item .name {
   font-weight: 500;
   font-size: 32rpx;
+  color: #fff !important;
 }
-
+.relations{
+  padding: 40rpx 0;
+}
 .relations .nav {
   padding: 30rpx;
 }
@@ -560,27 +574,6 @@ button.tochat {
   line-height: 110rpx;
 }
 
-.chat-banner, .chat-nav {
-  position: fixed;
-  z-index: 999;
-  width: 110rpx;
-  right: 30rpx;
-  bottom: 170rpx;
-}
-
-.tochat-text {
-  text-align: center;
-  font-size: 24rpx;
-  font-weight: 500;
-  line-height: 2;
-  color: rgba(149, 109, 55, 1);
-  text-shadow: 0 0 3rpx rgba(0, 0, 0, 0.2);
-}
-
-.chat-img {
-  width: 100%;
-}
-
 .intro .tit {
   font-size: 28rpx;
   font-weight: 500;
@@ -595,11 +588,6 @@ button.tochat {
   color:rgba(153,153,153,1);
   line-height:40rpx;
 }
-
-.news-nav:last-child .news-item.line:after {
-  display: none;
-}
-
 .newstit {
   align-items: center;
   justify-content: space-between;
@@ -644,4 +632,100 @@ button.tochat {
   width: 100%;
   height: 100%;
   border-radius: 8rpx;
+}
+.news-container,
+.goods-container{
+  padding: 40rpx 0;
+}
+.shop-item{
+  background: none;
+}
+.news-item{
+  background: none;
+}
+.news-nav .title{
+  color: #fff !important;
+}
+.shop-item .name{
+  color: #fff !important;
+}
+.consult-container{
+  padding: 40rpx 0 0;
+}
+.consult-scroll-view{
+  padding: 0;
+  height: 280rpx;
+  white-space: nowrap;
+}
+.consult-item {
+  display: inline-block;
+  width: 460rpx;
+  height: 220rpx;
+  box-shadow: 0 5rpx 15rpx 0 rgba(0, 0, 0, 0.1);
+  padding: 30rpx;
+  margin: 30rpx 0 30rpx 30rpx;
+  background: rgba(12, 12, 11, 1);
+}
+.consult-item.my-consult{
+  display: block;
+  width: 600rpx;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.consult-item:first-child{
+  margin-left: 15rpx;
+}
+.consult-item:last-child{
+  margin-right: 15rpx;
+}
+.consult-item .flex{
+  align-items: center;
+}
+.consult-item .info{
+  flex: 1;
+  width: 0;
+  padding-left: 30rpx;
+}
+
+.consult-img {
+  display: block;
+  flex: 0 0 160rpx;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.consult-item .name {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 34rpx;
+  font-weight: bold;
+  color:rgba(255,255,255,1);
+}
+
+.consult-item .bar {
+  display: block;
+  width: 200rpx;
+  height: 45rpx;
+  background: rgba(235, 162, 70, 0.6);
+  border-radius: 6rpx;
+  font-size: 20rpx;
+  text-align: center;
+  color: #fff;
+  white-space: nowrap;
+  line-height: 45rpx;
+  margin: 15rpx 0;
+}
+.consult-item .bar .iconfont{
+  font-size: 120%;
+}
+.consult-item .bar.chat{
+  background: rgba(172, 205, 245, 1);
+}
+.tochat {
+  width:100%;
+  height:100%;
+  line-height: 45rpx;
+  color: #fff;
 }

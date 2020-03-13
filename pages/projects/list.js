@@ -1,5 +1,5 @@
 import MComponent from '../../common/MComponent'
-import { _arealist, _filterlist, _projectlist } from '../../api/projects'
+import { _plheadimg, _arealist, _filterlist, _projectlist } from '../../api/projects'
 import { storeBindingsBehavior } from 'mobx-miniprogram-bindings'
 import { store } from '../../store/index'
 const app = getApp()
@@ -13,6 +13,7 @@ MComponent({
     }
   },
   data: {
+    bg: '',
     rect: null,
     topHeight: 0,
     fixed: false,
@@ -58,6 +59,32 @@ MComponent({
   methods: {
     // 阻止滚动
     stop () {},
+    // 获取头图
+    getTopImg (cityid) {
+      _plheadimg({ CityID: cityid })
+        .then(res => {
+          const { code, msg, data } = res.data
+          if (code === 0) {
+            console.log(data)
+            this.set({
+              bg: data.Image
+            })
+            wx.createSelectorQuery().select('#top').boundingClientRect(rect => {
+              this.set({
+                topHeight: rect.top
+              })
+            }).exec()
+          }
+        })
+        .catch(err => {
+          console.log(err)
+          wx.createSelectorQuery().select('#top').boundingClientRect(rect => {
+            this.set({
+              topHeight: rect.top
+            })
+          }).exec()
+        })
+    },
     // 筛选区域
     closeFilter() {
       let { selectedValues, filterIndex: index, filterOpts } = this.data
@@ -184,6 +211,7 @@ MComponent({
       const { city } = this.data
       if (city) {
         app.loading('加载中')
+        this.getTopImg(city.ID)
         this.set({
           selectedValues: [[], [], [], []],
           pageIndex: 1
@@ -229,7 +257,7 @@ MComponent({
     getList() {
       app.loading('加载中')
       const { pageIndex: PageIndex, city } = this.data
-      const PageSize = 10
+      const PageSize = 5
       wx.showNavigationBarLoading()
       this.set({
         loading: true
@@ -242,7 +270,7 @@ MComponent({
       const keyword = store.keyword
       const ProjectName = [keyword]
       const CityID = city.ID ? [city.ID] : []
-      _projectlist({ CityID, PageIndex, PageSize, ProjectName, AreaID, ProjectTypeList, TotalPrice, TagList, PageSize: 5 })
+      _projectlist({ CityID, PageIndex, PageSize, ProjectName, AreaID, ProjectTypeList, TotalPrice, TagList })
         .then(res => {
           wx.hideLoading()
           wx.hideNavigationBarLoading()

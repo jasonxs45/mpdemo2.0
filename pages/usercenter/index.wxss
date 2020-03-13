@@ -2,20 +2,46 @@
   padding: 30rpx;
   background: #fff;
 }
-
+.top{
+  position: relative;
+}
+.top .bgimg{
+  width: 100%;
+  height: 634rpx;
+}
+.top-wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-top: 100rpx;
+}
+.shape{
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .avatar {
   width: 140rpx;
   height: 140rpx;
   border-radius: 50%;
-  margin-right: 30rpx;
+  margin: 110rpx auto 0;
+  border:1px solid #fff;
 }
 
 .nickname {
-  display: inline-block;
-  font-size: 28rpx;
-  font-weight: 600;
-  color: rgba(51, 51, 51, 1);
-  line-height: 40rpx;
+  text-align: center;
+  padding: 15rpx 40rpx;
+}
+.nickname .txt{
+  font-size:36rpx;
+  color:rgba(255,255,255,1);
+  line-height:47rpx;
+  text-shadow: 1px 1px 10rpx rgba(0,0,0,.4);
 }
 .to-score{
   font-size: 24rpx;
@@ -33,7 +59,25 @@
 .to-score text{
   text-align: center;
 }
-
+.main-wrapper{
+  position: relative;
+  margin-top: -88rpx;
+  z-index: 2;
+  padding-bottom: calc(152rpx + constant(safe-area-inset-bottom));
+  padding-bottom: calc(152rpx + env(safe-area-inset-bottom));
+}
+.key{
+  display: block;
+  width: 202rpx;
+  margin: 180rpx auto 0;
+}
+.no-auth-txt{
+  text-align: center;
+  font-size:26rpx;
+  color:rgba(170,170,170,1);
+  line-height:27rpx;
+  margin: 20rpx 0;
+}
 .info {
   align-items: center;
 }
@@ -78,9 +122,9 @@
 }
 
 .cell .txt {
-  font-size: 28rpx;
-  color: rgba(51, 51, 51, 1);
+  font-size: 24rpx;
   line-height: 40rpx;
+  color: rgba(102,102,102,1);
 }
 .top .nav{
   justify-content: space-around;
@@ -118,11 +162,13 @@
   line-height:34rpx;
 }
 button.authbtn{
-  width: 140rpx;
-  height: 88rpx;
   line-height: 88rpx;
-  font-size: 24rpx;
   padding: 0 15rpx;
+  height:88rpx;
+  background:rgba(242,224,198,1);
+  border-radius:10rpx;
+  font-size:34rpx;
+  color:rgba(196,157,99,1);
 }
 .bg{
   position: fixed;
@@ -131,10 +177,11 @@ button.authbtn{
   top:0;
   left: 0;
   background: rgba(0, 0, 0, .6);
+  z-index: 97;
 }
 .qr-code-wrapper{
   position: fixed;
-  z-index: 1;
+  z-index: 98;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -180,4 +227,35 @@ button.authbtn{
   background: #f2f2f2;
   width: 100%;
   margin: 30rpx 0;
+}
+.usercenter-tab{
+  z-index: 99 !important;
+}
+.usercenter-tab .weui-tabbar__img,
+.usercenter-tab .weui-tabbar__label{
+  color:rgba(85,85,85,1) !important;
+}
+
+.usercenter-tab .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label{
+  color: rgba(149,109,55, 1) !important;
+}
+.usercenter-tab .weui-tabbar__item.weui-bar__item_on .weui-tabbar__img{
+  color: #fff !important;
+}
+.navs1{
+  width: 670rpx;
+  margin: 0 auto;
+  background: #fff;
+  justify-content: space-around;
+  border-radius: 8rpx;
+  margin-bottom: 10rpx;
+}
+.navs1 .nav-item{
+  margin: 20rpx 0;
+}
+.group{
+  width: 670rpx;
+  margin: 10rpx auto;
+  border-radius: 8rpx;
+  overflow: hidden;
 }

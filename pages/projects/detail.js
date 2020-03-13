@@ -5,9 +5,8 @@ import {
   _addshare,
   _checkConsult
 } from '../../api/projects'
-import {
-  _like
-} from '../../api/like'
+import { _list, _dispatch } from '../../api/consult'
+import { _like } from '../../api/like'
 import { _memberextinfo } from '../../api/member'
 const app = getApp()
 import { USER_DIALOG, USER_DATE } from '../../config/tmplIds'
@@ -41,7 +40,9 @@ MComponent({
     TOTAL_UNIT: app.TOTAL_UNIT,
     UNIT: app.UNIT,
     alreadyBinded: '',
-    backShow: true
+    backShow: true,
+    list: [],
+    myConsult: null
   },
   computed: {
     project() {
@@ -165,6 +166,7 @@ MComponent({
           } = res.data
           if (code === 0) {
             data.HeadImgUrlList = data.HeadImgUrlList.slice(0, 14)
+            data.ProjectHuXing = data.ProjectHuXing.slice(0, 2)
             this.set({
               detail: data,
               news: data.NewsList,
@@ -472,62 +474,97 @@ MComponent({
           })
       })
     },
-    // 分配置业顾问
-    _goConsult(alreadyBinded) {
-      const { detail } = this.data
-      if (detail) {
-        const { id: ProjectID } = this.data
-        const { AssignConsultantType } = detail.Project
-        if (AssignConsultantType === 'System') {
-          console.log('随机分配置业顾问')
-          wx.navigateTo({
-            url: `/pages/consult/index?pid=${ProjectID}`
-          })
-        } else {
-          console.log('用户自己选择置业顾问')
-          if (alreadyBinded) {
-            wx.navigateTo({
-              url: `/pages/consult/index?pid=${ProjectID}`
+    // 获取置业顾问列表
+    getList() {
+      const { id } = this.data
+      if (id === '') return
+      app.loading('加载中')
+      _list({ ProjectID: id })
+        .then(res => {
+          wx.hideLoading()
+          console.log(res)
+          const { code, msg, data } = res.data
+          if (code === 0) {
+            this.set({
+              list: data.slice(0, 5)
             })
           } else {
-            wx.navigateTo({
-              url: `/pages/consult/list?pid=${ProjectID}`
-            })
-          }
-        }
-      }
-    },
-    goConsult() {
-      app.getReddit(tmplIds, () => {
-        app.loading('加载中')
-        this.checkConsult()
-          .then(res => {
-            wx.hideLoading()
-            const {
-              code,
-              msg,
-              data
-            } = res.data
-            if (code === 0) {
-              const alreadyBinded = data.IsBindFriendOnProject
-              this._goConsult(alreadyBinded)
-            } else {
-              wx.showModal({
-                title: '温馨提示',
-                content: msg,
-                showCancel: false
-              })
-            }
-          })
-          .catch(err => {
-            wx.hideLoading()
             wx.showModal({
-              title: '对不起',
-              content: JSON.stringify(err),
+              title: '温馨提示',
+              content: msg,
               showCancel: false
             })
+          }
+        })
+        .catch(err => {
+          wx.hideLoading()
+          console.log(err)
+          wx.showModal({
+            title: '对不起',
+            content: JSON.stringify(err),
+            showCancel: false
           })
-      })
+        })
+    },
+    // 绑定置业顾问
+    bindConsult(e) {
+      const { index } = e.currentTarget.dataset
+      const { list, member, id } = this.data
+      const consultInfo = list[index]
+      if (consultInfo) {
+        wx.showModal({
+          title: '温馨提示',
+          content: '每个楼盘仅可绑定一位置业顾问，请确认您的选择！',
+          success: r => {
+            if (r.confirm) {
+              const UnionID = member.UnionID
+              const ProjectID = id
+              const ConsultantID = consultInfo.ID
+              app.loading('加载中')
+              _dispatch({ UnionID, ProjectID, ConsultantID })
+                .then(res => {
+                  wx.hideLoading()
+                  const { code, msg, data } = res.data
+                  if (code === 0) {
+                    wx.redirectTo({
+                      url: `/pages/consult/index?consultid=${ConsultantID}`
+                    })
+                  } else {
+                    wx.showModal({
+                      title: '温馨提示',
+                      content: msg,
+                      showCancel: false
+                    })
+                  }
+                })
+                .catch(err => {
+                  wx.hideLoading()
+                  wx.showModal({
+                    title: '对不起',
+                    content: JSON.stringify(err),
+                    showCancel: false
+                  })
+                })
+            }
+          }
+        })
+      }
+    },
+    // 查询我绑定的置业顾问
+    getMyConsult() {
+      this.checkConsult()
+        .then(res => {
+          console.log(res)
+          const { code, msg, data } = res.data
+          if (code === 0) {
+            this.set({
+              myConsult: data.IsBindFriendOnProject ? data.Consultant : null
+            })
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        })
     },
     onLoad(options) {
       console.log(options, options.scene)
@@ -562,6 +599,8 @@ MComponent({
         console.log('scan', id)
       }
       this.getDetail()
+      this.getList()
+      // 分享相关
       const { id } = this.data
       const type = 'Project'
       app.addShare({ id, type })
@@ -584,6 +623,7 @@ MComponent({
             member: memberInfo
           })
           this.checkLike()
+          this.getMyConsult()
           // if (this.data.fromId) {
           //   this.addShare()
           // }

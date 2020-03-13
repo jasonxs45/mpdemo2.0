@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "mp-badge": "../badge/badge"
+    "mp-badge": "../badge/badge",
+    "x-icon": "/components/x-icon/index"
   }
 }

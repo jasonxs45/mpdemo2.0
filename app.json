@@ -70,7 +70,8 @@
     "pages/plan/mine/list",
     "pages/plan/mine/pdf",
     "pages/plan/mine/schedule",
-    "pages/plan/mine/details"
+    "pages/plan/mine/details",
+    "pages/projects/housetypelist"
   ],
   "permission": {
     "scope.userLocation": {

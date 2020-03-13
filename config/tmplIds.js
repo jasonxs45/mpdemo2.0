@@ -1,2 +1,2 @@
-export const USER_DIALOG = 'd9VnGVTwYq6eSzo-4oHrH0_C7_W8YX1cOY50acKhses'
-export const USER_DATE = 'hMiDf2qomF4QTPxjBhtndY84ZQGZwiIXT3KKVYYwlUE'
+export const USER_DIALOG = 'TkDsnGi9zqeLTR6KgxWDSTV78_5jCJYBlCdO9JeKpNc'
+export const USER_DATE = 'x9yLuYzd2BakGjIUeml9U3GseR7fjY4xtpUorxo1Xpg'

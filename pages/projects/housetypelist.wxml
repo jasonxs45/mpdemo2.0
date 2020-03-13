@@ -1,0 +1,35 @@
+<list-container length='{{list.length}}' finished='{{finished}}' loading='{{loading}}' noDataText='暂无户型'>
+  <view class='nav-items'>
+    <navigator class='nav-item' wx:for='{{list}}' wx:key='ID' url='/pages/projects/housetype-detail?id={{item.ID}}'>
+      <img lazy class='thumbnail' mode='aspectFit' src='{{item.Img}}' />
+      <view class='content'>
+        <view class='name'>{{item.Name}}</view>
+        <view class='type-struc'>
+          <text wx:if='{{item.Room}}'>{{item.Room}}室</text>
+          <text wx:if='{{item.Hall}}'>{{item.Hall}}厅</text>
+          <text wx:if='{{item.Kitchen}}'>{{item.Kitchen}}厨</text>
+          <text wx:if='{{item.Toilet}}'>{{item.Toilet}}卫</text>
+        </view>
+        <view wx:if='{{item.InsideArea}}' class='area'>建面约{{item.InsideArea}}㎡</view>
+        <view class='price'>
+          总价:
+          <block wx:if='{{item.TotalPriceStr}}'>
+            约
+            <text class='num'>{{item.TotalPriceStr}}</text>{{TOTAL_UNIT}}
+            <text wx:if='{{item.MaxTotalPrice === -1}}'>起</text>
+          </block>
+          <block wx:else>待定</block>
+        </view>
+        <view class='price'>
+          单价:
+          <block wx:if='{{item.UnitPriceStr}}'>
+            约
+            <text class='num'>{{item.UnitPriceStr}}</text>{{UNIT}}
+            <text wx:if='{{item.MaxUnitPrice === -1}}'>起</text>
+          </block>
+          <block wx:else>待定</block>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</list-container>

@@ -1,7 +1,11 @@
 <template name='news-item-line'>
   <view class='news-item line'>
-    <view class='title'>{{Title}}</view>
     <img lazy round mode='aspectFill' class='thumbnail' src='{{Img}}' />
+    <view class='content'>
+      <view class='title'>{{Title}}</view>
+      <view class='date'>{{AddTime}}</view>
+    </view>
+    
   </view>
 </template>
 <template name='news-item-card'>

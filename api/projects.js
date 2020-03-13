@@ -108,3 +108,13 @@ export const _addshare = ({
   ObjectID,
   Type
 })
+// 户型列表
+export const _housetypeist = ({ ProjectID }) => fetch({
+  action: 'GetProjectHuXingByProjectID',
+  ProjectID
+})
+//  列表页面头图
+export const _plheadimg = ({ CityID = '' }) => fetch({
+  action: 'GetProjectBanner',
+  CityID
+})

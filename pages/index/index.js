@@ -16,6 +16,8 @@ MComponent({
     serveListShow: false
   },
   methods: {
+    // 阻止滚定穿透
+    stop () {},
     getAd() {
       const { max } = this.data
       const lasttime = wx.getStorageSync('lasttime')
