@@ -69,19 +69,23 @@ MComponent({
             this.set({
               bg: data.Image
             })
-            wx.createSelectorQuery().select('#top').boundingClientRect(rect => {
-              this.set({
-                topHeight: rect.top
-              })
+            wx.createSelectorQuery().select('#cover').boundingClientRect(rect1 => {
+              wx.createSelectorQuery().select('#top').boundingClientRect(rect2 => {
+                this.set({
+                  topHeight: rect2.top - rect1.top
+                })
+              }).exec()
             }).exec()
           }
         })
         .catch(err => {
           console.log(err)
-          wx.createSelectorQuery().select('#top').boundingClientRect(rect => {
-            this.set({
-              topHeight: rect.top
-            })
+          wx.createSelectorQuery().select('#cover').boundingClientRect(rect1 => {
+            wx.createSelectorQuery().select('#top').boundingClientRect(rect2 => {
+              this.set({
+                topHeight: rect2.top - rect1.top
+              })
+            }).exec()
           }).exec()
         })
     },
@@ -373,10 +377,12 @@ MComponent({
         })
     },
     onReady () {
-      wx.createSelectorQuery().select('#top').boundingClientRect(rect => {
-        this.set({
-          topHeight: rect.top
-        })
+      wx.createSelectorQuery().select('#cover').boundingClientRect(rect1 => {
+        wx.createSelectorQuery().select('#top').boundingClientRect(rect2 => {
+          this.set({
+            topHeight: rect2.top - rect1.top
+          })
+        }).exec()
       }).exec()
       this.set({
         rect: wx.getMenuButtonBoundingClientRect()
@@ -397,7 +403,6 @@ MComponent({
       }
       // 避免频繁调用setData，只在关键变量发生变化后调用
       if (fixed !== this.data.fixed) {
-        console.log(1)
         this.set({
           fixed: this.data.fixed,
           fixedTop: this.data.fixedTop

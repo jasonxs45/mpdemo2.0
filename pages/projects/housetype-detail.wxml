@@ -54,7 +54,7 @@
           </view>
           <navigator class='to-calc' url='/pages/mortgage/mortgage'>
             <!-- <image class='icon' src='./1.png' /> -->
-            <x-icon type='wallet-fill' class='icon' />
+            <x-icon type='calc' class='icon' />
             <text class='txt'>房贷计算</text>
           </navigator>
         </view>

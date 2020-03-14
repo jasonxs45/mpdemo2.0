@@ -1,5 +1,5 @@
 <view style='top:{{fixedTop?fixedTop + "px":""}}' class='control-group {{fixed?"fixed":""}}' catchtouchmove='{{filterShow?"stop":""}}'>
-  <view class='cover {{bg?"high":"low"}}'>
+  <view id='cover' class='cover {{bg?"high":"low"}}'>
     <image class='img' src='{{bg}}' />
     <view class='gradient' />
   </view>
