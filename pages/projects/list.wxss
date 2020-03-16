@@ -125,7 +125,7 @@ page {
 }
 
 .filter-item.active {
-  color: rgba(149, 109, 55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }
 
 .filter-item .text {
@@ -135,7 +135,7 @@ page {
 }
 
 .filter-item .text.active {
-  color: rgba(149, 109, 55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }
 
 .filter-item .icon {
@@ -145,7 +145,7 @@ page {
 }
 
 .filter-item.active .icon {
-  color: rgba(149, 109, 55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   transform: rotate(180deg);
 }
 
@@ -177,8 +177,8 @@ page {
 }
 .filter-detail-wrapper .btn.reset{
   background: none;
-  border: 1px solid rgba(149, 109, 55, 1);
-  color: rgba(149, 109, 55, 1);
+  border: 1px solid rgba(var(--r), var(--g), var(--b), 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }
 
 .filter-detail-scroll-view {
@@ -211,7 +211,7 @@ page {
 }
 
 .brief-info .desc .txt {
-  color: rgba(149, 109, 55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }
 
 .brief-info .clear {
@@ -250,7 +250,7 @@ page {
   position: absolute;
   width: 6rpx;
   height: 100rpx;
-  background-color: rgba(149, 109, 55, 1);
+  background-color: rgba(var(--r), var(--g), var(--b), 1);
   left: 0;
   top:30rpx;
 }
@@ -276,9 +276,9 @@ page {
   display: inline-block;
   vertical-align: top;
   margin: 8rpx;
-  border:1px solid rgba(149, 109, 55, 1);
+  border:1px solid rgba(var(--r), var(--g), var(--b), 1);
   font-size:18rpx;
-  color:rgba(149, 109, 55, 1);
+  color:rgba(var(--r), var(--g), var(--b), 1);
   line-height:30rpx;
   padding: 5rpx 10rpx;
 }
@@ -369,8 +369,8 @@ page {
 }
 
 .select-tar.active {
-  color: rgba(149, 109, 55, 1);
-  background: rgba(149, 109, 55, 0.05);
+  color: rgba(var(--r), var(--g), var(--b), 1);
+  background: rgba(var(--r), var(--g), var(--b), 0.05);
   font-weight: 600;
 }
 

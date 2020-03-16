@@ -51,7 +51,7 @@
   padding: 10rpx 0
 }
 .to-score .num{
-  color:rgba(149,109,55, 1);
+  color:rgba(var(--r), var(--g), var(--b), 1);
   font-size: 32rpx;
   font-weight: 600;
   line-height: 1.5;
@@ -86,7 +86,7 @@
 .qr-code {
   margin-left: 30rpx;
   font-size: 60rpx;
-  color: rgba(149,109,55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }
 
 .cell {
@@ -100,7 +100,7 @@
 }
 
 .cell .icon {
-  color: rgba(149,109,55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   font-size: 50rpx;
   width: 50rpx;
   height: 50rpx;
@@ -155,7 +155,7 @@
   margin: 15rpx auto;
   position: relative;
   overflow: initial;
-  color: rgba(149,109,55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }
 .nav-item .txt{
   font-size:24rpx;
@@ -207,7 +207,7 @@ button.authbtn{
   color: #fff;
 }
 .id-tag.main-theme{
-  background: rgba(149,109,55, 1);
+  background: rgba(var(--r), var(--g), var(--b), 1);
   color: #fff;
 }
 .form{
@@ -221,7 +221,7 @@ button.authbtn{
   padding: 30rpx;
 }
 .form-body .tit{
-  color: rgba(149,109,55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   margin-top: 30rpx;
 }
 .form-body .input{
@@ -238,7 +238,7 @@ button.authbtn{
 }
 
 .usercenter-tab .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label{
-  color: rgba(149,109,55, 1) !important;
+  color: rgba(var(--r), var(--g), var(--b), 1) !important;
 }
 .usercenter-tab .weui-tabbar__item.weui-bar__item_on .weui-tabbar__img{
   color: #fff !important;

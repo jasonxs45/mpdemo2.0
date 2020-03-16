@@ -67,5 +67,5 @@
 .housetype-item .price .num {
   font-size: 24rpx;
   font-weight: bold;
-  color: rgba(149,109,55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }

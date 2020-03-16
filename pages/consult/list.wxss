@@ -1,3 +1,6 @@
+.list-container{
+  padding-top: 0 !important;
+}
 .item{
   background: #fff;
   padding: 30rpx;
@@ -37,7 +40,7 @@
 }
 .contact .btn{
   display: inline-block;
-  background: rgba(149,109,55, 1);
+  background: rgba(var(--r), var(--g), var(--b), 1);
   width: 80rpx;
   height: 80rpx;
   padding:0;

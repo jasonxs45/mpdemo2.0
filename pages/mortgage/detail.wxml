@@ -1,4 +1,4 @@
-<tab-group line barStyle='background-color:rgba(149,109,55, 1)' class="tabs" data-attr='activeIndex' bindchange="onChange" current="{{activeIndex}}">
+<tab-group line barStyle='background-color:rgba(var(--r), var(--g), var(--b), 1)' class="tabs" data-attr='activeIndex' bindchange="onChange" current="{{activeIndex}}">
   <tab-item wx:for="{{tabs}}" wx:key="index" label='{{item}}' class="tab-item" />
 </tab-group>
 <view class='panel'>

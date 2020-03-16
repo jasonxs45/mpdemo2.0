@@ -1,4 +1,4 @@
-/* rgba(149,109,55, 1) */
+/* rgba(var(--r), var(--g), var(--b), 1) */
 page {
   background: #fff;
 }
@@ -67,12 +67,14 @@ page {
 .btns .go-chat,
 .btns .func-btn{
   display: block;
-  width: 260rpx;
-  margin: 15rpx;
+  width: 250rpx;
+  margin: 10rpx;
+  font-weight: normal;
 }
 .btns .go-chat  button,
 .btns .func-btn button{
   width: 100% !important;
+  font-size: 28rpx;
 }
 .btns .func-btn .tel{
   display: block;

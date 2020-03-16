@@ -114,9 +114,9 @@ page {
   display: inline-block;
   vertical-align: top;
   font-size: 26rpx;
-  border: 1px solid rgba(149, 109, 55, 1);
+  border: 1px solid rgba(var(--r), var(--g), var(--b), 1);
   font-weight: 500;
-  color: rgba(149, 109, 55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   line-height: 36rpx;
   padding: 0 10rpx;
   margin: 10rpx;
@@ -164,7 +164,7 @@ page {
 }
 
 .price {
-  color: rgba(149, 109, 55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }
 
 .reactions {
@@ -174,7 +174,7 @@ page {
 .reactions .v-line{
   width: 1px;
   height: 40rpx;
-  background: rgba(149, 109, 55, 1);
+  background: rgba(var(--r), var(--g), var(--b), 1);
   margin-right: 20rpx;
 }
 .people{
@@ -209,7 +209,7 @@ page {
 
 .focus-num .num {
   font-size: 26rpx;
-  color: rgba(149, 109, 55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }
 
 .focus-num .txt {
@@ -225,7 +225,7 @@ page {
 .go-calc .icon {
   display: block;
   font-size: 56rpx;
-  color: rgba(149, 109, 55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   margin: 0 auto 5rpx;
   text-align: center;
 }
@@ -240,7 +240,7 @@ page {
 .to-list {
   width: 670rpx;
   height: 80rpx;
-  background: rgba(149, 109, 55, 1);
+  background: rgba(var(--r), var(--g), var(--b), 1);
   border-radius: 4rpx;
   color: #fff;
   margin: 30rpx auto;
@@ -457,7 +457,7 @@ page {
 .go-form {
   flex: 0 0 320rpx;
   width: 320rpx;
-  background: rgba(149, 109, 55, 1);
+  background: rgba(var(--r), var(--g), var(--b), 1);
   font-size: 36rpx;
   border-radius: 0;
   color: #fff;
@@ -484,7 +484,7 @@ page {
 }
 .func-btn .icon {
   display: block;
-  color: rgba(150, 109, 50, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   width: 48rpx;
   height: 48rpx;
   font-size: 48rpx;
@@ -566,7 +566,7 @@ button.tochat {
   width: 110rpx !important;
   height: 110rpx;
   border-radius: 50%;
-  background: rgba(149, 109, 55, 0.9);
+  background: rgba(var(--r), var(--g), var(--b), 0.9);
   color: #fff;
   font-size: 70rpx;
   padding: 0;
@@ -620,7 +620,7 @@ button.tochat {
 }
 
 .ad .wx-swiper-dot-active {
-  background: rgba(149, 109, 55, 1) !important;
+  background: rgba(var(--r), var(--g), var(--b), 1) !important;
 }
 
 .ad .nav {

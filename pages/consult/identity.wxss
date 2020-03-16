@@ -13,7 +13,7 @@ page{
   height: 300rpx;
   top: 0;
   left: 0;
-  background: rgba(149,109,55, 1);
+  background: rgba(var(--r), var(--g), var(--b), 1);
   border-radius: 0 0 50% 50%/0 0 75rpx 75rpx;
 }
 .section{
@@ -52,8 +52,8 @@ page{
 }
 .name-tag .tag{
   font-size: 20rpx;
-  color: rgba(149,109,55, 1);
-  background: rgba(149,109,55, .2);
+  color: rgba(var(--r), var(--g), var(--b), 1);
+  background: rgba(var(--r), var(--g), var(--b), .2);
   line-height: 30rpx;
   padding: 0 10rpx;
   border-radius: 40rpx;
@@ -66,7 +66,7 @@ page{
   font-size: 26rpx;
 }
 .id-card .telnum .iconfont{
-  color: rgba(149,109,55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }
 .id-card .btns{
   margin-top: 30rpx;
@@ -95,7 +95,7 @@ page{
   align-items: center;
 }
 .customers .title{
-  color: rgba(149,109,55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   font-size: 32rpx;
   font-weight: bold;
   flex: 0 0 180rpx;
@@ -113,7 +113,7 @@ page{
   text-align: center;
 }
 .customers .num .txt{
-  color: rgba(149,109,55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   font-weight: 500;
   margin: 0 5rpx;
 }
@@ -145,7 +145,7 @@ page{
   content: '';
   position: absolute;
   width: 2px;
-  background: rgba(149,109,55, 1);
+  background: rgba(var(--r), var(--g), var(--b), 1);
   height: 36rpx;
   left: 0;
   top: 50%;
@@ -201,8 +201,8 @@ page{
 .qr-code-wrapper .tag{
   display: inline-block;
   font-size: 20rpx;
-  color: rgba(149,109,55, 1);
-  background: rgba(149,109,55, .2);
+  color: rgba(var(--r), var(--g), var(--b), 1);
+  background: rgba(var(--r), var(--g), var(--b), .2);
   line-height: 30rpx;
   padding: 0 10rpx;
   border-radius: 40rpx;
@@ -213,14 +213,14 @@ page{
   font-size: 26rpx;
 }
 .qr-code-wrapper .tel .iconfont{
-  color: rgba(149,109,55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }
 .qr-img{
   display: block;
   width: 500rpx;
   height: 500rpx;
   border-radius: 50%;
-  border: 1px solid rgba(149,109,55, 1);
+  border: 1px solid rgba(var(--r), var(--g), var(--b), 1);
   padding: 50rpx;
   margin: 30rpx auto;
   background: #fff;
@@ -229,7 +229,7 @@ page{
   margin: 30rpx auto;
   font-size: 28rpx;
   font-weight: 400;
-  border: 1px solid rgba(149,109,55, 1);
+  border: 1px solid rgba(var(--r), var(--g), var(--b), 1);
   height: 80rpx !important;
   line-height: 80rpx !important;
   padding: 0;

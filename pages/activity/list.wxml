@@ -2,7 +2,7 @@
 <view class='top'>
   <view class='nav-bar'>
     <view class='search-bar'>
-      <tab-group wx:if='{{tabs.length}}' line barStyle='background-color:rgba(149,109,55, 1)' class="tabs" bindchange="onChange" current="{{currentIndex}}">
+      <tab-group wx:if='{{tabs.length}}' line barStyle='background-color:rgba(var(--r), var(--g), var(--b), 1)' class="tabs" bindchange="onChange" current="{{currentIndex}}">
         <tab-item wx:for="{{tabs}}" wx:key="index" label='{{item.text}}' class="tab-item" />
       </tab-group>
     </view>

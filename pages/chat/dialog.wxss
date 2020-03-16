@@ -1,4 +1,4 @@
-/* rgba(149,109,55, 1) */
+/* rgba(var(--r), var(--g), var(--b), 1) */
 .page{
   display:block;
   width: 100%;
@@ -181,7 +181,7 @@
   max-width: 460rpx;
   min-height: 94rpx;
   border-radius: 8rpx;
-  background-color:rgba(149,109,55, .5);
+  background-color:rgba(var(--r), var(--g), var(--b), .5);
   font-size: 28rpx;
   color: #fff;
   margin: 0 0 0 20rpx;
@@ -198,17 +198,17 @@
   height: 0;
   border-width: 10rpx;
   border-style: solid;
-  border-color: transparent rgba(149,109,55, .5) transparent transparent;
+  border-color: transparent rgba(var(--r), var(--g), var(--b), .5) transparent transparent;
 }
 .dialog-item.right{
   flex-direction:row-reverse;
 }
 .dialog-item.right .content{
-  background-color: rgba(149,109,55, 1);
+  background-color: rgba(var(--r), var(--g), var(--b), 1);
   margin: 0 20rpx 0 0;
 }
 .dialog-item.right .content:after{
-  border-color: transparent transparent transparent rgba(149,109,55, 1);
+  border-color: transparent transparent transparent rgba(var(--r), var(--g), var(--b), 1);
   left: auto;
   right: -18rpx;
 }
@@ -248,7 +248,7 @@
 
 button.btn {
   align-self: flex-end;
-  background-color: rgba(149,109,55, 1) !important;
+  background-color: rgba(var(--r), var(--g), var(--b), 1) !important;
   color: #fff;
   width: 120rpx;
   margin: 0;
@@ -258,10 +258,10 @@ button.btn {
 }
 button.btn[disabled]{
   opacity: .6;
-  background-color: rgba(149,109,55, 1);
+  background-color: rgba(var(--r), var(--g), var(--b), 1);
   color: #fff;
 }
 .button-hover[type='primary']{
-  background-color: rgba(149,109,55, 1);
+  background-color: rgba(var(--r), var(--g), var(--b), 1);
   opacity: .7;
 }

@@ -53,7 +53,7 @@ page{
   line-height: 40rpx;
   padding: 20rpx 0;
   margin: 50rpx auto;
-  background:rgba(149,109,55, 1);
+  background:rgba(var(--r), var(--g), var(--b), 1);
   border-radius: 10rpx;
   color: #fff;
   box-sizing: content-box;
@@ -72,8 +72,8 @@ page{
   line-height: 88rpx !important;
   padding: 0 !important;
   text-align: center;
-  background:rgba(149,109,55, 1);
-  box-shadow:0px 16rpx 28rpx 0px rgba(149,109,55, 0.3);
+  background:rgba(var(--r), var(--g), var(--b), 1);
+  box-shadow:0px 16rpx 28rpx 0px rgba(var(--r), var(--g), var(--b), 0.3);
   border-radius:4rpx;
   font-size:36rpx;
   font-weight:600;
@@ -115,8 +115,8 @@ page{
   height:88rpx;
   line-height: 88rpx;
   text-align: center;
-  background:rgba(149,109,55, 1);
-  box-shadow:0px 16rpx 28rpx 0px rgba(149,109,55, 0.3);
+  background:rgba(var(--r), var(--g), var(--b), 1);
+  box-shadow:0px 16rpx 28rpx 0px rgba(var(--r), var(--g), var(--b), 0.3);
   border-radius:4rpx;
   font-size:36rpx;
   font-weight:600;

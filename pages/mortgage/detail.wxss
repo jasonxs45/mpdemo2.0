@@ -2,7 +2,7 @@
   background: #fff;
 }
 .tab-item.active{
-  color: rgba(149,109,55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   background: #fff;
 }
 .panel{
@@ -35,7 +35,7 @@
   font-size: 28rpx;
 }
 .show-detail.active{
-  background: rgba(149,109,55, .08);
+  background: rgba(var(--r), var(--g), var(--b), .08);
 }
 .table{
   display: table;
@@ -45,7 +45,7 @@
   display: table-row;
 }
 .thead .td{
-  background: rgba(149,109,55, .08);
+  background: rgba(var(--r), var(--g), var(--b), .08);
   font-weight: 500;
 }
 .td{
@@ -64,10 +64,10 @@
   color: #666;
 }
 .tbody:nth-child(2n+1) .td {
-  background: rgba(149,109,55, .08);
+  background: rgba(var(--r), var(--g), var(--b), .08);
 }
 .tip{
   font-size: 24rpx;
   padding:15rpx 30rpx;
-  color:rgba(149,109,55, 1);
+  color:rgba(var(--r), var(--g), var(--b), 1);
 }

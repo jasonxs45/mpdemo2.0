@@ -66,7 +66,7 @@ page{
   color:#999;
 }
 .listText .item1 view text{
-  color:rgba(149,109,55, 1);
+  color:rgba(var(--r), var(--g), var(--b), 1);
   padding-right: 10rpx;
 }
 .listText .item2{

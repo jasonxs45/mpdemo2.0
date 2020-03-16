@@ -42,12 +42,13 @@ page{
 }
 .func-btn .icon{
   display: block;
-  color: #f3a536;
+  color: rgba(var(--r), var(--g), var(--b), 1);
   width: 48rpx;
   height: 48rpx;
   font-size: 48rpx;
   margin: 0 auto;
   line-height: 1;
+  font-weight: 200;
 }
 .func-btn image.icon{
   padding: 5rpx;

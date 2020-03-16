@@ -1,4 +1,4 @@
-/* rgba(149,109,55, 1) */
+/* rgba(var(--r), var(--g), var(--b), 1) */
 
 .top {
   padding: 15rpx 30rpx;
@@ -21,7 +21,7 @@
   top: 30rpx;
   font-size: 20rpx;
   background: #f9e8e7;
-  color: rgba(149,109,55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   height: 40rpx;
   line-height: 40rpx;
   padding: 0 15rpx;
@@ -100,7 +100,7 @@
   content: "";
   width: 8rpx;
   height: 28rpx;
-  background: rgba(149,109,55, 1);
+  background: rgba(var(--r), var(--g), var(--b), 1);
   position: absolute;
   left:30rpx;
   top: 50%;

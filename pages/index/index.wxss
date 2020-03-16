@@ -78,7 +78,7 @@ page {
 }
 
 .color-block {
-  background: rgba(149, 109, 55, 0.9);
+  background: rgba(var(--r), var(--g), var(--b), 0.9);
   border-radius: 6rpx;
   padding: 20rpx;
 }

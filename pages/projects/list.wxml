@@ -25,7 +25,7 @@
               <view class='flex select-tar {{item.checked ? "active":""}}' data-index='{{index1}}' data-value='{{index}}' bindtap='onCheckTap'>
                 <view>{{item.Name}}</view>
                 <view class='icon'>
-                  <icon color='rgba(149,109,55, 1)' type='success_no_circle' />
+                  <icon color='rgba(var(--r), var(--g), var(--b), 1)' type='success_no_circle' />
                 </view>
               </view>
             </label>

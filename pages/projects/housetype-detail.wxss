@@ -1,7 +1,7 @@
 @import '/templates/project-item/index.wxss';
 @import '/templates/housetype-item/index.wxss';
 
-/* rgba(149,109,55,1) */
+/* rgba(var(--r), var(--g), var(--b),1) */
 
 .main-scroll-view {
   padding-bottom: 100rpx;
@@ -23,9 +23,9 @@
   display: inline-block;
   vertical-align: top;
   font-size: 20rpx;
-  background: rgba(149, 109, 55, 0.1);
+  background: rgba(var(--r), var(--g), var(--b), 0.1);
   font-weight: 500;
-  color: rgba(149, 109, 55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   line-height: 36rpx;
   padding: 0 10rpx;
   border-radius: 4rpx;
@@ -63,7 +63,7 @@
 .go-form {
   flex: 0 0 320rpx;
   width: 320rpx;
-  background: rgba(149, 109, 55, 1);
+  background: rgba(var(--r), var(--g), var(--b), 1);
   font-size: 36rpx;
   border-radius: 0;
   color: #fff;
@@ -100,12 +100,13 @@
 
 .func-btn .icon {
   display: block;
-  color: rgba(150, 109, 50, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   width: 48rpx;
   height: 48rpx;
   font-size: 48rpx;
   margin: 15rpx auto 0;
   line-height: 1;
+  font-weight: 200;
 }
 
 .func-btn image.icon {
@@ -125,11 +126,8 @@
 }
 
 .brief-info {
-  border-radius: 40rpx 40rpx 0 0;
-  margin-top: -30rpx;
   position: relative;
   z-index: 1;
-  box-shadow: 0 -3rpx 4rpx -2rpx rgba(0, 0, 0, 0.1);
 }
 
 .brief-info .name {
@@ -143,7 +141,7 @@
 .price .num {
   /* font-size: 30rpx; */
   font-weight: bold;
-  color: rgba(149, 109, 55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
 }
 
 .like-btn {
@@ -296,7 +294,7 @@
 .to-calc .icon {
   font-size: 42rpx;
   line-height: 42rpx;
-  color: rgba(149, 109, 55, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   vertical-align: middle;
 }
 
