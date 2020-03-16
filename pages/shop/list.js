@@ -1,5 +1,5 @@
 import MComponent from '../../common/MComponent'
-import { _list } from '../../api/goods'
+import { _bg, _list } from '../../api/goods'
 import { _projectlist } from '../../api/projects'
 import { storeBindingsBehavior } from 'mobx-miniprogram-bindings'
 import { store } from '../../store/index'
@@ -13,6 +13,12 @@ MComponent({
     }
   },
   data: {
+    bg: '',
+    fixed: false,
+    rect: null,
+    topHeight: '',
+    fixedTop: 0,
+    paddingBottom: '',
     name: '',
     projects: [],
     list: [],
@@ -37,6 +43,30 @@ MComponent({
     onInit (e) {
       this.data.city = e.detail.value
       this.init()
+    },
+    getBg () {
+      _bg()
+        .then(res => {
+          const { code, msg, data } = res.data
+          if (code === 0) {
+            this.set({
+              bg: data.Image
+            })
+            if (data.Image) {
+              wx.createSelectorQuery().select('#cover').boundingClientRect(rect1 => {
+                wx.createSelectorQuery().select('#top').boundingClientRect(rect2 => {
+                  this.set({
+                    topHeight: rect2.top - rect1.top,
+                    paddingBottom: (rect2.bottom - rect1.bottom) + 'px'
+                  })
+                }).exec()
+              }).exec()
+            }
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        })
     },
     // 输入框
     onInput(e) {
@@ -215,12 +245,26 @@ MComponent({
         })
     },
     onLoad(options) {
+      this.getBg()
       const { name } = options
       if (name) {
         this.set({
           name
         })
       }
+    },
+    onReady () {
+      wx.createSelectorQuery().select('#cover').boundingClientRect(rect1 => {
+        wx.createSelectorQuery().select('#top').boundingClientRect(rect2 => {
+          this.set({
+            topHeight: rect2.top - rect1.top,
+            paddingBottom: (rect2.bottom - rect1.bottom) + 'px'
+          })
+        }).exec()
+      }).exec()
+      this.set({
+        rect: wx.getMenuButtonBoundingClientRect()
+      })
     },
     onShow() {
       app.loading('加载中')
@@ -251,6 +295,23 @@ MComponent({
             }
           })
         })
+    },
+    onPageScroll(e) {
+      const { rect, topHeight, fixed, fixedTop } = this.data
+      if (e.scrollTop >= topHeight - rect.bottom - 10) {
+        this.data.fixed = true
+        this.data.fixedTop = -(topHeight - rect.bottom - 10)
+      } else {
+        this.data.fixed = false
+        this.data.fixedTop = ''
+      }
+      // 避免频繁调用setData，只在关键变量发生变化后调用
+      if (fixed !== this.data.fixed) {
+        this.set({
+          fixed: this.data.fixed,
+          fixedTop: this.data.fixedTop
+        })
+      }
     },
     onPullDownRefresh() {
       this.set({

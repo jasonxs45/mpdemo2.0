@@ -24,7 +24,7 @@
 .finished:after{
   content: '';
   display: block;
-  background: #ddd;
+  background: #888;
   height: 1px;
   width: 20%;
   margin: 0 30rpx;

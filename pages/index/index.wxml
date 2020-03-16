@@ -1,6 +1,6 @@
 <view class='bg'>
   <video wx:if='{{bg.ResourceType === "Video"}}' autoplay loop muted direction='0' object-fit='fill' class='bgimg' poster='{{bg.Image}}' src='{{bg.LinkUrl}}' />
-  <image wx:else class='bgimg' src='{{bg.Image}}' />
+  <image wx:else src='{{bg.Image}}' mode='aspectFill' class='bgimg' />
   <view class='gradient'/>
 </view>
 <view class='main'>

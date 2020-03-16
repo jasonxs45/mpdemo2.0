@@ -155,7 +155,7 @@ MComponent({
     },
     onShow() {
       this.getBg()
-      this.getBanner()
+      // this.getBanner()
       this.getAd()
       wx.hideNavigationBarLoading()
       app.checkAuth()

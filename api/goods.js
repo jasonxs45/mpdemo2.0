@@ -35,3 +35,7 @@ export const _mydetail = ({ ID, UnionID }) => fetch({
   ID,
   UnionID
 })
+// 礼品列表背景图
+export const _bg = () => fetch({
+  action: 'GetGoodsBackgroundImg'
+})
