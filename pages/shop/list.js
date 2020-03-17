@@ -40,6 +40,17 @@ MComponent({
     }
   },
   methods: {
+    // 获取顶部浮动数据
+    calcRect () {
+      wx.createSelectorQuery().select('#cover').boundingClientRect(rect1 => {
+        wx.createSelectorQuery().select('#top').boundingClientRect(rect2 => {
+          this.set({
+            topHeight: rect2.top - rect1.top,
+            paddingBottom: rect2.bottom + 'px'
+          })
+        }).exec()
+      }).exec()
+    },
     onInit (e) {
       this.data.city = e.detail.value
       this.init()
@@ -50,22 +61,15 @@ MComponent({
           const { code, msg, data } = res.data
           if (code === 0) {
             this.set({
-              bg: data.Image
+              // bg: data.Image
+              bg: ''
             })
-            if (data.Image) {
-              wx.createSelectorQuery().select('#cover').boundingClientRect(rect1 => {
-                wx.createSelectorQuery().select('#top').boundingClientRect(rect2 => {
-                  this.set({
-                    topHeight: rect2.top - rect1.top,
-                    paddingBottom: (rect2.bottom - rect1.bottom) + 'px'
-                  })
-                }).exec()
-              }).exec()
-            }
+            this.calcRect()
           }
         })
         .catch(err => {
           console.log(err)
+          this.calcRect()
         })
     },
     // 输入框
@@ -254,14 +258,7 @@ MComponent({
       }
     },
     onReady () {
-      wx.createSelectorQuery().select('#cover').boundingClientRect(rect1 => {
-        wx.createSelectorQuery().select('#top').boundingClientRect(rect2 => {
-          this.set({
-            topHeight: rect2.top - rect1.top,
-            paddingBottom: (rect2.bottom - rect1.bottom) + 'px'
-          })
-        }).exec()
-      }).exec()
+      this.calcRect()
       this.set({
         rect: wx.getMenuButtonBoundingClientRect()
       })

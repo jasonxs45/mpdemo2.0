@@ -311,10 +311,10 @@
 					"scene": null
 				},
 				{
-					"id": 32,
+					"id": 36,
 					"name": "商城-详情",
 					"pathName": "pages/shop/detail",
-					"query": "id=1",
+					"query": "id=4",
 					"scene": null
 				},
 				{

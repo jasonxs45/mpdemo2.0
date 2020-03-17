@@ -2,7 +2,7 @@
   width: 330rpx;
   margin: 0 auto;
   background: #fff;
-  box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 0 2rpx 0 rgba(0, 0, 0, .1);
 }
 .shop-item.line{
   width: 100%;

@@ -64,6 +64,7 @@ page {
 
 .weui-navigation-bar__inner .weui-navigation-bar__center {
   font-size: 17px;
+  font-weight: bold;
   text-align: center;
   position: relative;
   flex: 1;

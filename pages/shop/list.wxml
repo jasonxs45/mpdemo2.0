@@ -1,8 +1,8 @@
 <import src="/templates/shop-item/index.wxml" />
 <image hidden='{{!bg}}' mode='aspectFill' src='{{bg}}'  class='bg'/>
 <mp-navigation-bar class='nav-bar {{bg?"":"black"}} {{fixed?"fixed":""}}' title='积分礼品' />
-<view id='cover' class='top {{fixed?"fixed":""}}' style='top:{{fixedTop?fixedTop + "px":""}};background-image:url({{fixed?bg:""}})'>
-  <view hidden='{{!bg}}' class='block' />
+<view id='cover' class='top {{bg?"":"wbg"}} {{fixed?"fixed":""}}' style='top:{{fixedTop?fixedTop + "px":""}};background-image:url({{fixed?bg:""}})'>
+  <view class='block {{bg?"high":"low"}}' />
   <view id='top' class='flex top-bar'>
     <location bindinited='onInit' />
     <view class='search-bar flex'>
@@ -10,6 +10,7 @@
     </view>
   </view>
 </view>
+ <!-- style='padding-top:{{fixed?paddingBottom: ""}}' -->
 <view style='padding-top:{{fixed?paddingBottom: ""}}' class='main-scroll-view'>
   <list-container length='{{showList.length}}' finished='{{finished}}' loading='{{loading}}' noDataText=''>
     <view class='list'>
