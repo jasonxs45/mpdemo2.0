@@ -33,10 +33,10 @@
   <article words='{{words}}' />
 </view>
 <split height='1px' />
-<view class='detail'>
+<view class='detail {{myInfo?"":"pad"}}'>
   <view class='line-title'>兑换说明</view>
   <article words='{{detail.ExchangeInstruction}}' />
 </view>
-<view class='bottom'>
-  <button wx:if='{{!myInfo}}' class='btn main-theme exchange-btn' bindtap='submit'>我要兑换</button>
+<view wx:if='{{!myInfo}}' class='bottom'>
+  <button class='btn main-theme exchange-btn' bindtap='submit'>我要兑换</button>
 </view>

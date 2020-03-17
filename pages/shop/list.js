@@ -61,8 +61,8 @@ MComponent({
           const { code, msg, data } = res.data
           if (code === 0) {
             this.set({
-              // bg: data.Image
-              bg: ''
+              bg: data.Image
+              // bg: ''
             })
             this.calcRect()
           }
@@ -94,8 +94,6 @@ MComponent({
     init() {
       this.set({
         name: this.data.name || '',
-        projects: [],
-        list: [],
         loading: false,
         pageIndex: 1,
         totalCount: 0,
@@ -285,7 +283,7 @@ MComponent({
             showCancel: false,
             success: r => {
               if (r.confirm) {
-                wx.switchTab({
+                wx.redirectTo({
                   url: '/pages/usercenter/index'
                 })
               }
