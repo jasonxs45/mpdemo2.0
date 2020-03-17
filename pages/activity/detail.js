@@ -132,7 +132,7 @@ MComponent({
                   })
                 }
                 if (r.cancel) {
-                  wx.switchTab({
+                  wx.redirectTo({
                     url: '/pages/activity/list'
                   })
                 }
@@ -157,6 +157,7 @@ MComponent({
         })
     },
     onLoad(opt) {
+      app.login()
       this.data.id = opt.id
       this.getDetail()
     },

@@ -1,5 +1,19 @@
 <import src="/templates/activity-item/index.wxml" />
-<view class='top'>
+<image hidden='{{!bg}}' mode='aspectFill' src='{{bg}}'  class='bg'/>
+<mp-navigation-bar class='nav-bar {{bg?"":"black"}} {{fixed?"fixed":""}}' title='活动推荐' />
+<view id='cover' class='top {{bg?"":"wbg"}} {{fixed?"fixed":""}}' style='top:{{fixedTop?fixedTop + "px":""}};background-image:url({{fixed?bg:""}})'>
+  <view class='block {{bg?"high":"low"}}' />
+  <view id='top' class='flex top-bar'>
+    <location bindinited='onInit' />
+    <view class='search-bar flex'>
+      <x-input placeholder='输入关键字查询' class='search-input' confirm-type='search' bindconfirm='initQuery' bindinput='onInput' bindclear='onClear' />
+      <button class='search-btn' bindtap='initQuery'>
+        <x-icon type='search-fill' />
+      </button>
+    </view>
+  </view>
+</view>
+<!-- <view class='top'>
   <view class='nav-bar'>
     <view class='search-bar'>
       <tab-group wx:if='{{tabs.length}}' line barStyle='background-color:rgba(var(--r), var(--g), var(--b), 1)' class="tabs" bindchange="onChange" current="{{currentIndex}}">
@@ -8,15 +22,11 @@
     </view>
     <location bindinited='onInit' />
   </view>
+</view> -->
+<view class='scroll-view'>
+  <list-container length='{{list.length}}' finished='{{finished}}' loading='{{loading}}'>
+    <navigator wx:for='{{showList}}' wx:key='ID' url='./detail?id={{item.ID}}' class=''>
+      <template is='activity-item' data='{{...item}}' />
+    </navigator>
+  </list-container>
 </view>
-<swiper current='{{currentIndex}}' bindchange='onChange' class='main' duration='500'>
-  <swiper-item wx:for='{{showLists}}' wx:key='index'>
-    <scroll-view enable-back-to-top scroll-y class='scroll-view' bindscrolltolower='onReachLower'>
-      <list-container length='{{item.length}}' finished='{{finishes[index]}}' loading='{{loading[index]}}'>
-        <navigator wx:for='{{showLists[index]}}' wx:key='ID' url='./detail?id={{item.ID}}' class=''>
-          <template is='activity-item' data='{{...item}}' />
-        </navigator>
-      </list-container>
-    </scroll-view>
-  </swiper-item>
-</swiper>

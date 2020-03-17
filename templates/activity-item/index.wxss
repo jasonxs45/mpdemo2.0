@@ -1,13 +1,15 @@
 .activity-item{
   margin: 30rpx 30rpx 0;
-  height: 240rpx;
+  /* height: 240rpx; */
   position: relative;
   background: #fff;
+  border-radius: 8rpx;
+  overflow: hidden;
 }
 .activity-item .img{
   width: 100%;
   height: 100%;
-  border-radius: 8rpx;
+  display: block;
 }
 .activity-item .title{
   position: absolute;

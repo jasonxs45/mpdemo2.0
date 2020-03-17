@@ -1,5 +1,6 @@
 import MComponent from '../../common/MComponent'
 import { _detail, _exchange as _submit, _mydetail } from '../../api/goods'
+import { _getPhoneNumber } from '../../api/getuserinfo'
 const app = getApp()
 MComponent({
   data: {
@@ -156,6 +157,7 @@ MComponent({
         })
     },
     onLoad(opt) {
+      app.login()
       this.data.id = opt.id
       this.getDetail()
     },
@@ -174,6 +176,11 @@ MComponent({
             this.getMyDetail()
             this.doTimer()
           })
+          if (memberInfo.FansTel) {
+            this.set({
+              tel: memberInfo.FansTel
+            })
+          }
         })
         .catch(err => {
           wx.hideLoading()

@@ -1,7 +1,7 @@
 <view class='list-container custom-class'>
   <no-data class='no-data' wx:if='{{length <= 0 && !loading}}' text='{{noDataText}}' />
   <slot wx:else />
-  <view wx:if='{{loading}}' class='loading'>
+  <view hidden='{{!loading}}' class='loading'>
     <x-loading text='加载中' />
   </view>
   <view wx:if='{{length > 0}}' class='bottom-tip'>

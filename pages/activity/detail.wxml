@@ -35,11 +35,11 @@
   </view>
 </block>
 <split height='10rpx' />
-<view class='detail'>
+<view class='detail {{myInfo?"":"pad"}}'>
   <view class='line-title'>活动详情</view>
   <article words='{{words}}' />
 </view>
-<view wx:if='{{!myInfo}}' class='btns'>
+<view wx:if='{{!myInfo}}' class='bottom'>
   <button wx:if='{{!tel}}' class='btn main-theme' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber'>我要报名</button>
   <button wx:else class='btn main-theme' bindtap='submit'>我要报名</button>
 </view>

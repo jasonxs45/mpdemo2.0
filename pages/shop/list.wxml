@@ -10,7 +10,6 @@
     </view>
   </view>
 </view>
- <!-- style='padding-top:{{fixed?paddingBottom: ""}}' -->
 <view style='padding-top:{{fixed?paddingBottom: ""}}' class='main-scroll-view'>
   <list-container length='{{showList.length}}' finished='{{finished}}' loading='{{loading}}' noDataText=''>
     <view class='list'>

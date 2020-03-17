@@ -8,8 +8,9 @@
   z-index: -1;
 }
 .top{
-  background-size: 100% auto;
-  background-position-y: -100%;
+  background-size: 100% 100%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
 }
 .top.wbg{
   background-color:#fff;

@@ -91,7 +91,7 @@ MComponent({
       }, () => {
         this.triggerEvent('input', { value: '' })
       })
-      this.triggerEvent('clear', '')
+      this.triggerEvent('clear', { value: '' })
     },
     inputHandler(e) {
       this.setData({

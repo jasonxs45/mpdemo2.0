@@ -1,6 +1,6 @@
 <template name='activity-item'>
   <view class='activity-item'>
-    <image lazy-load mode='aspectFill' class='img' src='{{Img}}' />
-    <view class='title'>{{Title}}</view>
+    <image lazy-load mode='widthFix' class='img' src='{{Img}}' />
+    <!-- <view class='title'>{{Title}}</view> -->
   </view>
 </template>

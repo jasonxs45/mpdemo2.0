@@ -38,5 +38,6 @@
   <article words='{{detail.ExchangeInstruction}}' />
 </view>
 <view wx:if='{{!myInfo}}' class='bottom'>
-  <button class='btn main-theme exchange-btn' bindtap='submit'>我要兑换</button>
+  <button wx:if='{{!tel}}' class='btn main-theme' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber'>我要兑换</button>
+  <button wx:else class='btn main-theme' bindtap='submit'>我要兑换</button>
 </view>

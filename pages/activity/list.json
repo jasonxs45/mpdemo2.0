@@ -1,15 +1,16 @@
 {
-  "navigationBarTitleText": "精彩活动",
-  "backgroundColor": "#f2f2f2",
+  "navigationBarTitleText": "活动推荐",
+  "navigationStyle": "custom",
   "backgroundColorTop": "#fff",
   "backgroundColorBottom": "#f2f2f2",
-  "disableScroll": true,
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
   "usingComponents": {
-    "tab-group": "/components/tabs/tab-group",
-    "tab-item": "/components/tabs/tab-item",
     "list-container": "/components/list-container/index",
     "location": "/components/location/index",
+    "x-input": "/components/x-input/index",
     "x-icon": "/components/x-icon/index",
-    "flex": "/components/flex/index"
+    "flex": "/components/flex/index",
+    "mp-navigation-bar": "/components/navigation-bar/navigation-bar"
   }
 }

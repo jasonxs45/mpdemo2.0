@@ -3,9 +3,10 @@ import { fetch, post } from './index'
  *           活动板块
  ================================*/
 //  列表
-export const _list = ({ CityID = 1, State, PageIndex, PageSize }) => fetch({
+export const _list = ({ CityID = 1, KeyWord = '', State = '进行中', PageIndex, PageSize }) => fetch({
   action: 'GetActivityPager',
   CityID,
+  KeyWord,
   State,
   PageIndex,
   PageSize
@@ -34,4 +35,8 @@ export const _mydetail = ({ ID, UnionID }) => fetch({
   action: 'GetUserActivitySignLog',
   ID,
   UnionID
+})
+// 列表背景图
+export const _bg = () => fetch({
+  action: 'GetActivityBackgroundImg'
 })
