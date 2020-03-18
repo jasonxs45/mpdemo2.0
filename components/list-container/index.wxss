@@ -15,7 +15,7 @@
   padding: 30rpx 0;
 }
 .finished{
-  color: #888;
+  color: #999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,8 +24,8 @@
 .finished:after{
   content: '';
   display: block;
-  background: #888;
-  height: 1px;
+  background: #999;
+  height: 1rpx;
   width: 20%;
   margin: 0 30rpx;
 }

@@ -46,7 +46,7 @@ MComponent({
           wx.stopPullDownRefresh()
           const totalCount = res.data.data ? res.data.data.Count : 0
           const list = res.data.data ? res.data.data.List : []
-          const total = res.data.data.TotalPoint
+          const total = res.data.data ? res.data.data.TotalPoint : 0
           this.set({
             loading: false,
             totalCount,
@@ -112,6 +112,11 @@ MComponent({
     onLoad() {
       this.init()
     },
+    onReady () {
+      this.set({
+        rect: wx.getMenuButtonBoundingClientRect()
+      })
+    },
     onShow() {
       app.loading('加载中')
       app.checkAuth()
@@ -131,7 +136,7 @@ MComponent({
             showCancel: false,
             success: r => {
               if (r.confirm) {
-                wx.switchTab({
+                wx.redirectTo({
                   url: '/pages/usercenter/index'
                 })
               }

@@ -191,7 +191,7 @@ MComponent({
             showCancel: false,
             success: r => {
               if (r.confirm) {
-                wx.switchTab({
+                wx.redirectTo({
                   url: '/pages/usercenter/index'
                 })
               }
