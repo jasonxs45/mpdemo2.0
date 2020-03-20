@@ -92,4 +92,4 @@
   </list-container>
 </view>
 <view hidden='{{!filterShow}}' class='bg' bindtap='closeFilter' catchtouchmove='stop'></view>
-<mp-tabbar current='{{0}}' extClass='plist-tab' style="position:fixed;bottom:0;width:100%;left:0;right:0;z-index:9999" />
+<mp-tabbar current='{{1}}' extClass='plist-tab' style="position:fixed;bottom:0;width:100%;left:0;right:0;z-index:9999" />

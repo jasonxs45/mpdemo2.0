@@ -385,6 +385,11 @@ page {
 .plist-tab .weui-tabbar__label{
   color: #fff;
 }
+.plist-tab .weui-tabbar__item:nth-child(2) .weui-tabbar__label{
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color:transparent !important;
+  background: linear-gradient(120deg,#c49d63 ,#fff0d9);
+}
 .no-data .img{
   opacity: .5;
 }

@@ -1,18 +1,18 @@
 import MComponent from '../../common/MComponent'
 const list = [
   {
-    text: '项目',
-    icon: 'file',
-    iconPath: '/images/project.png',
-    selectedIconPath: '/images/project.png',
-    path: '/pages/projects/list'
-  },
-  {
     text: '首页',
     icon: 'index',
     iconPath: '/images/home.png',
     selectedIconPath: '/images/home.png',
     path: '/pages/index/index'
+  },
+  {
+    text: '项目',
+    icon: 'file',
+    iconPath: '/images/project.png',
+    selectedIconPath: '/images/project.png',
+    path: '/pages/projects/list'
   },
   {
     text: '我的',

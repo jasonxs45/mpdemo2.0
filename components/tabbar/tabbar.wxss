@@ -38,7 +38,6 @@
   padding-right: constant(safe-area-inset-right);
   padding-right: env(safe-area-inset-right);
 }
-
 .weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon,
 .weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon>i,
 .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {

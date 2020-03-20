@@ -34,7 +34,7 @@
     </view>
   </view>
 </view>
-<mp-tabbar current='{{1}}' extClass='home-tab' style="position:fixed;bottom:0;width:100%;left:0;right:0;" />
+<mp-tabbar current='{{0}}' extClass='home-tab' style="position:fixed;bottom:0;width:100%;left:0;right:0;" />
 <block wx:if='{{ads.length}}'>
   <view hidden='{{!adShow}}' class='ads-wrapper'>
     <view class='bg'></view>
