@@ -36,7 +36,7 @@ page {
 .home-tab  .weui-tabbar__item:nth-child(2) .weui-tabbar__label{
   -webkit-background-clip: text !important;
   -webkit-text-fill-color:transparent !important;
-  background: linear-gradient(120deg,#c49d63 ,#fff0d9);
+  background: linear-gradient(-45deg, rgba(196, 157, 99, 1), rgba(255, 240, 217, 1));
 }
 
 .main {
