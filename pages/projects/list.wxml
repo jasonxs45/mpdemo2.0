@@ -5,10 +5,10 @@
   </view>
   <view id='top' class='top-bar flex'>
     <top class='op' bindinited='onInit' />
-    <!-- <navigator class='map-nav'>
+    <navigator class='map-nav' url="/pages/projects/map?type={{city.Name}}">
       <text>地图\n找房</text>
-      <x-icon type='position-fill' />
-    </navigator> -->
+      <x-icon size='20px' type='map' />
+    </navigator>
   </view>
   <view class='filter-bar'>
     <view class='bar flex'>

@@ -71,7 +71,8 @@
     "pages/plan/mine/pdf",
     "pages/plan/mine/schedule",
     "pages/plan/mine/details",
-    "pages/projects/housetypelist"
+    "pages/projects/housetypelist",
+    "pages/projects/map"
   ],
   "permission": {
     "scope.userLocation": {

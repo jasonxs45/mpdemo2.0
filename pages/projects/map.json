@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "楼盘地图",
+  "disableScroll": true,
+  "usingComponents": {
+    "list-container": "/components/list-container/index"
+  }
+}

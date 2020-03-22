@@ -1,0 +1,23 @@
+/* pages/projects/map.wxss */
+@import '/templates/project-item/index.wxss';
+.main{
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+.map{
+  width: 100vw;
+  height:100%;
+}
+.list{
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+  width: 100vw;
+  background: #fff;
+  padding: 30rpx 30rpx;
+  box-sizing: border-box;
+}

@@ -58,7 +58,7 @@ page {
   width: 110rpx;
   height: 70rpx;
   font-size: 24rpx;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(var(--r), var(--g), var(--b), 1);
   padding:0;
   box-sizing: border-box;
   text-align: center;

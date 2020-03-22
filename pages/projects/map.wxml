@@ -1,0 +1,11 @@
+<!--pages/projects/map.wxml-->
+<!-- <navigator url="/pages/projects/map?type={{city.Name}}">地图</navigator> -->
+<import src="/templates/project-item/index.wxml"/>
+<view class="main" style="bottom:{{projects.length>0?290:0}}rpx">
+  <map scale='{{scale}}' show-compass show-scale show-location longitude='{{center.longitude}}' latitude='{{center.latitude}}' markers='{{markers}}' class='map' id='map' bindcallouttap='openMap' bindmarkertap='openMap' bindregionchange="regionchange"></map>
+</view>
+<view class="list" wx:if="{{projects.length>0}}">
+  <navigator wx:for='{{projects}}' wx:key='index' url='/pages/projects/detail?id={{item.ID}}' class='project-nav'>
+    <template is='project-item' data='{{...item}}' />
+  </navigator>
+</view>

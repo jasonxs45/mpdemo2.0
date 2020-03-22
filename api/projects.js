@@ -118,3 +118,7 @@ export const _plheadimg = ({ CityID = '' }) => fetch({
   action: 'GetProjectBanner',
   CityID
 })
+// 地图查询
+export const _mapQuery = () => fetch({
+  action: 'GetProjectByCityGroup'
+})
