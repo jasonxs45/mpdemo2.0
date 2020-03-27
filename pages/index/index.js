@@ -13,7 +13,8 @@ MComponent({
     adShow: false,
     ignore: false,
     max: 3,
-    serveListShow: false
+    serveListShow: false,
+    link: 'https://shimaohx.1juke.cn/upload/brand/index.html'
   },
   methods: {
     // 阻止滚定穿透

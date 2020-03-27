@@ -13,13 +13,18 @@
   </view>
   <view class='menus flex'>
     <view class='half'>
-      <navigator url='/pages/activity/list' class='color-block act'>
+      <!-- <navigator url='/pages/activity/list' class='color-block act'>
         <view class='tit'>活动推荐</view>
         <text class='sub-tit'>/ Activity</text>
         <view style='margin-top: 110rpx' class='desc'>商圈购物</view>
         <view style='margin-top: 10rpx' class='desc'>
           <view><text>社区访谈 住宅升级</text></view>
         </view>
+      </navigator> -->
+      <navigator url='/pages/outlink/index?src={{link}}' class='color-block act'>
+        <view class='tit'>世茂海峡</view>
+        <text class='sub-tit'>/ Brand</text>
+        <view style='margin-top: 156rpx' class='desc'>先见城市理想</view>
       </navigator>
     </view>
     <view class='half'>
