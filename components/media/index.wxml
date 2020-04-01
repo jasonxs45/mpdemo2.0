@@ -15,7 +15,12 @@
     </view>
   </navigator>
 </block>
-<block wx:else='{{type === "Image"}}'>
+<block wx:elif='{{type === "MiniProgram"}}'>
+  <navigator target='miniProgram' app-id='{{appId}}' class='media-wrapper' path='{{link}}'>
+    <image lazy-load mode="aspectFill" src="{{src}}" class="img" />
+  </navigator>
+</block>
+<block wx:else>
   <view wx:if="{{link}}" class='media-wrapper' data-url="{{link}}" bindtap='imgLink'>
     <image lazy-load mode="aspectFill" src="{{src}}" class="img" />
   </view>

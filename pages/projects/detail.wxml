@@ -104,7 +104,7 @@
       <swiper wx:if='{{project.ADList.length}}' duration='200' autoplay interval="4000" indicator-dots class='ad'>
         <swiper-item wx:for='{{project.ADList}}' wx:key='Title'>
           <navigator class='nav' url='{{item.LinkUrl}}'>
-            <image lazy-load class='img' mode='aspectFill' src='{{item.Image}}' />
+            <media class='nav' type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' appId='{{item.AppID}}' />
           </navigator>
         </swiper-item>
       </swiper>

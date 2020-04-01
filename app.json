@@ -86,6 +86,9 @@
       "provider": "wxa75efa648b60994b"
     }
   },
+  "navigateToMiniProgramAppIdList": [
+    "wx60d176f873ca2d67"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

@@ -5,6 +5,7 @@ MComponent({
     type: String,
     src: String,
     link: String,
+    appId: String
   },
   data: {},
   methods: {

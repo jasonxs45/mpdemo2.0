@@ -1,8 +1,6 @@
-// rongchuang.1juke.cn
-// yxmh.1juke.cn
-export const rootUrl = 'https://shimaohxnew.1juke.cn'
-export const apiUrl = 'https://shimaohxnew.1juke.cn/api.aspx'
-export const uploadUrl = 'https://shimaohxnew.1juke.cn/Upload.ashx'
+export const rootUrl = 'https://shimaohx.1juke.cn'
+export const apiUrl = 'https://shimaohx.1juke.cn/api.aspx'
+export const uploadUrl = 'https://shimaohx.1juke.cn/Upload.ashx'
 // 认购功能的单独域名
 export const rengouUrl = 'https://shimaohxrengou.1juke.cn'
 export const renGouApiUrl = 'https://shimaohxrengou.1juke.cn/MiniProgram'
