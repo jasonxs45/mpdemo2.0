@@ -4,7 +4,7 @@
 <mp-navigation-bar class='nav-bar' color='#000' back="{{backShow}}"></mp-navigation-bar>
 <swiper indicator-dots duration='300' current='{{swiperIndex}}' class='swiper'>
   <swiper-item wx:for='{{swipers}}' wx:key='index'>
-    <media class='swiper-img' type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' />
+    <media class='swiper-img'  type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' appId='{{item.AppID}}' />
   </swiper-item>
 </swiper>
 <fixed-footer-container>

@@ -64,7 +64,7 @@ Page({
                 const { code, msg, data } = res.data
                 if (code === 0) {
                   wx.redirectTo({
-                    url: `/pages/consult/index?consultid=${ConsultantID}`
+                    url: `/pages/consult/index?pid=${pid}&consultid=${ConsultantID}`
                   })
                 } else {
                   wx.showModal({

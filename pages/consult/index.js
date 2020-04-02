@@ -27,10 +27,10 @@ Page({
     let func = () => new Promise()
     // 项目详情入口
     if (pid) {
-      func = () => _dispatch({ UnionID, ProjectID: pid })
+      func = () => _dispatch({ UnionID, ProjectID: pid, ConsultantID: consultantID })
     }
     // 扫码入口
-    if (consultantID) {
+    if (consultantID && !pid) {
       func = () => _scan({ UnionID, ConsultantID: consultantID })
     }
     app.loading('加载中')
