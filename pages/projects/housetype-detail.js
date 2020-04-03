@@ -6,9 +6,7 @@ import {
 import {
   _like
 } from '../../api/like'
-import {
-  _memberextinfo
-} from '../../api/member'
+import { _memberextinfo, _registaddpoint } from '../../api/member'
 const app = getApp()
 MComponent({
   data: {
@@ -291,13 +289,26 @@ MComponent({
     },
     // 增加分享次数
     addShare(e) {
-      // const { id } = this.data
       const { value } = e.detail
-      // const type = 'HuXing'
-      // app.addShare({ id, type })
       this.set({
         member: value
       })
+      const { id: ObjectID } = this.data
+      const Type = 'HuXing'
+      const ShareUnionID = wx.getStorageSync('shareuid')
+      const UnionID = wx.getStorageSync('uid') || ''
+      console.log(ShareUnionID, UnionID, ObjectID, Type)
+      if (!ObjectID || !Type || !ShareUnionID) {
+        return
+      }
+      console.log('授权后增加积分')
+      _registaddpoint({ ShareUnionID, UnionID, ObjectID, Type })
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log(err)
+        })
     },
     goSurround() {
       const {

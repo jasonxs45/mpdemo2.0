@@ -10,7 +10,7 @@
     </view>
   </view>
   <view slot='bottom' class='footer flex'>
-    <auth-btn class='func-btn' bindsuccess='addShare'>
+    <auth-btn class='func-btn'>
       <button class='btn' bindtap='like'>
         <x-icon class='icon' type='{{isLike?"star-fill":"star"}}' />
         <text class='txt'>{{isLike?"已收藏":"收藏"}}</text>

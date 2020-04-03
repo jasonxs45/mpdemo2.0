@@ -18,3 +18,16 @@ export const _consultcode = ({ ConsultantID }) => fetch({
   action: 'CreateConsultantQRcode',
   ConsultantID
 })
+// 授权后加积分
+export const _registaddpoint = ({
+  ShareUnionID,
+  UnionID,
+  ObjectID,
+  Type
+}) => fetch({
+  action: 'SignByShareUnionID',
+  ShareUnionID,
+  UnionID,
+  ObjectID,
+  Type
+})

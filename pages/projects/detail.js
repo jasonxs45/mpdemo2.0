@@ -7,7 +7,7 @@ import {
 } from '../../api/projects'
 import { _list, _dispatch } from '../../api/consult'
 import { _like } from '../../api/like'
-import { _memberextinfo } from '../../api/member'
+import { _memberextinfo, _registaddpoint } from '../../api/member'
 const app = getApp()
 import { USER_DIALOG, USER_DATE } from '../../config/tmplIds'
 const tmplIds = [USER_DIALOG, USER_DATE]
@@ -400,14 +400,26 @@ MComponent({
     },
     // 增加分享次数
     addShare(e) {
-      // const { id } = this.data
       const { value } = e.detail
-      // const type = 'Project'
-      // console.log(id)
-      // app.addShare({ id, type })
       this.set({
         member: value
       })
+      const { id: ObjectID } = this.data
+      const Type = 'Project'
+      const ShareUnionID = wx.getStorageSync('shareuid')
+      const UnionID = wx.getStorageSync('uid') || ''
+      console.log(ShareUnionID, UnionID, ObjectID, Type)
+      if (!ObjectID || !Type || !ShareUnionID) {
+        return
+      }
+      console.log('授权后增加积分')
+      _registaddpoint({ ShareUnionID, UnionID, ObjectID, Type })
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log(err)
+        })
     },
     goSurround() {
       const {

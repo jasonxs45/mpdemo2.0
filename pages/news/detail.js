@@ -225,12 +225,6 @@ Page({
         })
       })
   },
-  // 增加分享次数
-  addShare() {
-    const { id } = this.data
-    const type = 'News'
-    app.addShare({ id, type })
-  },
   onLoad(options) {
     console.log(options, options.scene)
     const fromScan = options.scene
@@ -264,7 +258,7 @@ Page({
       console.log('scan', id)
     }
     this.initQuery()
-    this.addShare()
+    // this.addShare()
   },
   onShow() {
     wx.hideHomeButton()

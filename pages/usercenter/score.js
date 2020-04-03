@@ -79,12 +79,12 @@ MComponent({
       _list({ UnionID, PageIndex, PageSize })
         .then(res => {
           const data = res.data.data.List
-          const list = list.slice().concat(data)
+          const list1 = list.slice().concat(data)
           const total = res.data.data.TotalPoint
           this.set({
             total,
             loading: false,
-            list,
+            list: list1,
             pageIndex: PageIndex
           })
         })

@@ -9,7 +9,7 @@
   </view>
   <list-container length='{{list.length}}' finished='{{finished}}' loading='{{loading}}'>
     <view>
-      <view wx:for='{{showList}}' wx:key='id-{{item.ID}}' url='/pages/activity/detail?id={{item.ID}}' class='flex card'>
+      <view wx:for='{{showList}}' wx:key='ID' url='/pages/activity/detail?id={{item.ID}}' class='flex card'>
         <view class='reason'>
           <view class='text'>{{item.Msg}}</view>
           <view class='time'>{{item.AddTime}}</view>
