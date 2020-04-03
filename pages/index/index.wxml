@@ -46,7 +46,7 @@
     <view class='panel'>
       <swiper current='{{current}}' duration='200' autoplay='{{adShow}}' interval="5000" class="swiper ads" bindchange='onChange'>
         <swiper-item wx:for="{{ads}}" wx:key="index" class="swiper-item">
-          <media type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' class="ad-img" />
+          <media type='{{item.ResourceType}}' src='{{item.Image}}' link='{{item.LinkUrl}}' appId='{{item.AppID}}' class="ad-img" />
         </swiper-item>
       </swiper>
       <view class='dots flex'>
