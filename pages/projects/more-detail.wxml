@@ -1,3 +1,6 @@
+<view class='p-desc section' wx:if='{{detail.Project.Instruction}}}'>
+  <article words='{{detail.Project.Instruction}}' />
+</view>
 <view wx:for='{{showList}}' wx:key='index' class='flex p'>
   <view class='ph'>{{item[0]}} :</view>
   <view class='pb'>{{item[1] || '暂无'}}</view>

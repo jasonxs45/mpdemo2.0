@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "楼盘信息",
-  "usingComponents": {}
+  "usingComponents": {
+    "article": "/components/article/index"
+  }
 }

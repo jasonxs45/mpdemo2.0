@@ -1,3 +1,10 @@
+.p-desc {
+  font-size:28rpx;
+  line-height:40rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #ddd;
+  color: #888;
+}
 .p{
   background: #fff;
   padding: 30rpx;
