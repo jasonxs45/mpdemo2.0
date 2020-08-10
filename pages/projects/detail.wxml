@@ -326,3 +326,4 @@
     <button class='btn red' bindtap='saveImg'>保存图片</button>
   </view>
 </view>
+<auth-btn2></auth-btn2>

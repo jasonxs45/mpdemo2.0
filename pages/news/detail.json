@@ -5,6 +5,7 @@
   "usingComponents": {
     "fixed-footer-container": "/components/fixed-footer-container/index",
     "auth-btn": "/components/auth-btn/index",
+    "auth-btn2": "/components/auth-btn2/index",
     "article": "/components/article/index",
     "x-icon": "/components/x-icon/index"
   }

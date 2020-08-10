@@ -69,3 +69,4 @@
     <text>在线咨询</text>
   </auth-btn>
 </view>
+<auth-btn2></auth-btn2>

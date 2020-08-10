@@ -67,3 +67,4 @@
     <button class='btn' bindtap='hideCode'>关闭</button>
   </view>
 </view>
+<auth-btn2></auth-btn2>

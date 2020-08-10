@@ -8,6 +8,7 @@
     "x-icon": "/components/x-icon/index",
     "media": "/components/media/index",
     "auth-btn": "/components/auth-btn/index",
+    "auth-btn2": "/components/auth-btn2/index",
     "mp-tabbar": "/components/tabbar/tabbar"
   }
 }

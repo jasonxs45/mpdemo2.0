@@ -181,3 +181,4 @@
     <button class='btn main-theme' bindtap='bindJuke'>绑定</button>
   </view>
 </view>
+<auth-btn2></auth-btn2>
